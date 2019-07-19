@@ -1,0 +1,94 @@
+Computing Machine version 1 (July 19, 2019) by Jamie Michelle ( https://github.com/Jamie-Michelle ). Released under the GNU General Public License, Version 2.
+
+This desktop-environment theme is entitled Computing Machine. It is for GTK+ 2/Gnome 2 applications; GTK+ 3/Gnome 3 applications; and Qt 5/KDE 5 applications via the Qt5 Configuration Tool ( https://sourceforge.net/projects/qt5ct/ ). This theme was developed on the XFCE desktop environment.
+
+The './gtk-2.0/gtkrc' file is a modification of the 'gtk-engines-2.20.2/themes/Redmond/gtk-2.0/gtkrc' file from https://download.gnome.org/sources/gtk-engines/2.20/gtk-engines-2.20.2.tar.bz2 (688171 bytes, MD5: 5deb287bc6075dc21812130604c7dc4f).
+
+The files in the './gtk-3.0/' directory are modified from the './gtk-3.0/' portion of Reactionary Creatures version of August 23, 2018 ( https://www.opendesktop.org/p/1255961/ ; ReactionaryGTKCreatures.tar.gz , 32669 bytes, MD5: 76dc59f2a7d36ceb5f26f15cf0bbe53e) by phob1an ( https://github.com/phobi4n ).
+
+The files in the './xfwm4/' directory are from the 'xfwm4-themes-4.10.0/themes/default-4.8/' directory from http://archive.xfce.org/src/art/xfwm4-themes/4.10/xfwm4-themes-4.10.0.tar.bz2 (621206 bytes, MD5: eaa58362053a3549c8be0b32efd3c54f).
+
+The './xfce-notify-4.0/gtk.css' file is a modification of the 'xfce4-notifyd-0.4.4/themes/gtk-3.20/ZOMG-PONIES!/gtk.css' file from http://archive.xfce.org/src/apps/xfce4-notifyd/0.4/xfce4-notifyd-0.4.4.tar.bz2 (536304 bytes, MD5: 9614d4f7c0790e8ab24e55896a44a8ac).
+
+####################
+
+If this theme is located system-wide at '/usr/share/themes/Computing-Machine/' instead of user-specific at '~/.themes/Computing-Machine/', make sure that all the files of this theme have the correct permissions, which can be done with the following commands:
+
+$ cd /usr/share/themes/Computing-Machine/
+$ find . -type f | xargs sudo chmod 644
+
+####################
+
+In order for GTK+ 2 tooltips to show the desired colors, the below was included in the '~/.gtkrc-2.0' file (excluding the doubled quotation marks [""] used to indicate a block quotation):
+
+""
+# ~/.gtkrc-2.0
+#
+# Configurations for GTK+ 2 programs.
+
+# Make sure the following file has the file-permission of 644 (-rw-r--r--)
+include "/usr/share/themes/Computing-Machine/gtk-2.0/gtkrc"
+gtk-icon-theme-name="Faenza"
+gtk-font-name="Cantarell 10"
+
+""
+
+Also put the following line in the '~/.profile' file:
+
+""
+export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+
+""
+
+####################
+
+'qt5ct' set on Appearance > Style: gtk2
+
+Putting
+
+""
+QT_QPA_PLATFORMTHEME="qt5ct"
+
+""
+
+in '/etc/environment' fixed the problem of Firefox not opening the KDE Dolphin file-manager with icons or the right theme, after an actual computer-restart.
+
+Apparently the first and perhaps both of the following two lines also have to be in the '~/.profile' file:
+
+""
+export QT_QPA_PLATFORMTHEME="qt5ct"
+export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+
+""
+
+In order for 'qt5ct' to work with GTK+ 2 styles, I believe it requires the following package (named such on Arch Linux-based distributions): 'qt5-styleplugins' (from https://github.com/qt/qtstyleplugins ).
+
+####################
+
+In order for the GTK+ 2 portion of this theme to work across different window managers and desktop environments, put the following in the '/etc/gtk-2.0/gtkrc' file:
+
+""
+gtk-icon-theme-name="Faenza"
+gtk-theme-name="Computing-Machine"
+gtk-font-name="Cantarell 10"
+
+""
+
+In order for the GTK+ 3 portion of this theme to work across different window managers and desktop environments, put the following in the '/etc/gtk-3.0/settings.ini' file:
+
+""
+[Settings]
+gtk-icon-theme-name=Faenza
+gtk-menu-images=1
+gtk-theme-name=Computing-Machine
+gtk-font-name=Cantarell 10
+
+""
+
+####################
+
+For additional helpful information on configuring this theme, see the following resources (which are also useful for distributions not based on Arch Linux):
+
+* "GTK", ArchWiki, https://wiki.archlinux.org/index.php/GTK .
+
+* "Qt", ArchWiki, https://wiki.archlinux.org/index.php/Qt .

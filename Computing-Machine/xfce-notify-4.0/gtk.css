@@ -1,0 +1,46 @@
+#XfceNotifyWindow {
+  background-color: #ff7fbf;
+  border-radius: 10px;
+  border: 6px solid #ffff00;
+}
+
+#XfceNotifyWindow label,
+#XfceNotifyWindow image {
+  font-family: Z003;
+  font-size: 22;
+  color: #ffff00;
+}
+
+#XfceNotifyWindow label#summary {
+  font-weight: bold;
+}
+
+#XfceNotifyWindow button {
+  border-style: none;
+  background-image: none;
+  background-color : #7f00bf;
+}
+
+#XfceNotifyWindow button:hover {
+  border-style: none;
+  background-image: none;
+  background-color : #7f007f;
+}
+
+#XfceNotifyWindow progressbar {
+  border-radius: 3px;
+}
+
+#XfceNotifyWindow progressbar progress {
+  min-height: 16px;
+  background-image: none;
+  background-color: shade(#ffff00, 1.2);
+}
+
+#XfceNotifyWindow progressbar trough {
+  min-height: 16px;
+  background-image: none;
+  background-color: #7f007f;
+  border: 1px solid shade(#7f007f, 0.667);
+  border-radius: 3px;
+}
