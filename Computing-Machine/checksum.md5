@@ -1,4 +1,4 @@
-d975cfdd5e62e95e65db511cdd39be3f *./gtk-3.0/gtk.css
+67c7b3a9b72700a34d47230dee7060b1 *./gtk-3.0/gtk.css
 6a2122936706116c55ff11b9d22d41cc *./gtk-3.0/assets/checkbox-mixed-insensitive.png
 d49e7fc92dda85df47f89f8dc14e70d8 *./gtk-3.0/assets/menuitem-checkbox-checked-insensitive.png
 18c8c92b0513abdc800cb887da58fb8f *./gtk-3.0/assets/menuitem-checkbox-mixed.png
@@ -146,5 +146,5 @@ bb0dc8f1450ca5a38be4fef1c62fd0b0 *./xfwm4/hide-prelight.png
 11e03c81a41c82840e3030a7ed816717 *./xfwm4/shade-toggled-prelight.xpm
 c60adb598b93d908c44fbd245bf2d7c8 *./xfwm4/bottom-left-inactive.png
 2cace5191fab8379bac4366e3339b140 *./xfwm4/menu-inactive.png
-29f9c356d2fbcc1f510b4d3223bcfeda *./Information.txt
-463dc9c471ad8ca5006638a0c0b392c1 *./gtk-2.0/gtkrc
+6b3fb7318979b89da0d06d706c60178c *./Information.txt
+4f5c61f830f0921de14d57d539a3a5cf *./gtk-2.0/gtkrc
