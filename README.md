@@ -13,3 +13,9 @@ The Conky system-monitor setup depicted below is available here: https://github.
 ![Computing-Machine-GTK-3.png](https://raw.githubusercontent.com/Jamie-Michelle/Computing-Machine/master/Computing-Machine-GTK-3.png)
 
 ![Computing-Machine-Qt-5.png](https://raw.githubusercontent.com/Jamie-Michelle/Computing-Machine/master/Computing-Machine-Qt-5.png)
+
+⁂
+
+Changes for version 2.0:
+
+Made the colors more consistent and coherent.
