@@ -8,14 +8,14 @@ The computer-desktop background/wallpaper image featured below is entitled Angel
 
 The Conky system-monitor setup depicted below is available here: https://github.com/Jamie-Michelle/Conky-Files
 
-![Computing-Machine-GTK-2.png](https://raw.githubusercontent.com/Jamie-Michelle/Computing-Machine/master/Computing-Machine-GTK-2.png)
-
-![Computing-Machine-GTK-3.png](https://raw.githubusercontent.com/Jamie-Michelle/Computing-Machine/master/Computing-Machine-GTK-3.png)
-
-![Computing-Machine-Qt-5.png](https://raw.githubusercontent.com/Jamie-Michelle/Computing-Machine/master/Computing-Machine-Qt-5.png)
-
 ⁂
 
 Changes for version 2.0:
 
 Made the colors more consistent and coherent.
+
+![Computing-Machine-GTK-2.png](https://raw.githubusercontent.com/Jamie-Michelle/Computing-Machine/master/Computing-Machine-GTK-2.png)
+
+![Computing-Machine-GTK-3.png](https://raw.githubusercontent.com/Jamie-Michelle/Computing-Machine/master/Computing-Machine-GTK-3.png)
+
+![Computing-Machine-Qt-5.png](https://raw.githubusercontent.com/Jamie-Michelle/Computing-Machine/master/Computing-Machine-Qt-5.png)
