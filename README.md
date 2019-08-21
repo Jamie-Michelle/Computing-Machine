@@ -10,9 +10,11 @@ The Conky system-monitor setup depicted below is available here: https://github.
 
 ⁂
 
-Changes for version 2.0:
+Changes for version 3.0:
 
-Made the colors more consistent and coherent.
+Now with extra spiff!!
+
+General improvements to help make people's lives more spiffy.
 
 ![Computing-Machine-GTK-2.png](https://raw.githubusercontent.com/Jamie-Michelle/Computing-Machine/master/Computing-Machine-GTK-2.png)
 
