@@ -1,4 +1,6 @@
 active_text_color=#ffffff
+active_color_1=#4a7fb4
+inactive_color_1=#b9b9b9
 button_offset=5
 button_spacing=0
 full_width_title=false

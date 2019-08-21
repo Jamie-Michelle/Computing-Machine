@@ -37,10 +37,10 @@ style "standard-default"
   GtkScrolledWindow::scrollbars-within-bevel = 1
 
   bg[ACTIVE] = "#bfbfbf" # 75/100 gray -- unselected (inactive) window tabs; non-moused-over selected (i.e., active; indented) buttons; non-handle parts of the scroll bars
-  bg[INSENSITIVE] = "#b9b9b9" # 29/40 gray -- inactive title bars (a.k.a. header bars); inactive window outlines (i.e., borders) are based upon this color; unusable (nonselectable) buttons; inactive scroll-bar buttons, i.e., scroll-bar ends when the scroll-bar handles are abutting them
+  bg[INSENSITIVE] = "#b9b9b9" # 29/40 gray -- (inactive title bars (a.k.a. header bars); inactive window outlines (i.e., borders) are based upon this color [note: since xfwm4 4.14.n, these functions have been moved to the '../xfwm4/themerc' file];) unusable (nonselectable) buttons; inactive scroll-bar buttons, i.e., scroll-bar ends when the scroll-bar handles are abutting them
   bg[NORMAL] = "#d9d9d9" # 85/100 gray -- main parts of the windows, i.e., window frames; non-moused-over scroll-bar handles; active scroll-bar buttons, i.e., scroll-bar ends when the scroll-bar handles are not abutting them; active window tabs; non-moused-over unselected (i.e., inactive; non-indented) buttons; text-area next to check-boxes when not moused-over
   bg[PRELIGHT] = "#ececec" # 37/40 gray -- moused-over buttons
-  bg[SELECTED] = "#4a7fb4" # 14/48 R, 1/2 G, 34/48 B -- active title bars (a.k.a. header bars); active window outlines (i.e., borders) are based upon this color; most (but not all) progress bars; notices-bar in Viewnior
+  bg[SELECTED] = "#4a7fb4" # 14/48 R, 1/2 G, 34/48 B -- (active title bars (a.k.a. header bars); active window outlines (i.e., borders) are based upon this color [note: since xfwm4 4.14.n, these functions have been moved to the '../xfwm4/themerc' file];) most (but not all) progress bars; notices-bar in Viewnior
 
   fg[ACTIVE] = "#0c0c0c" # 5/100 gray -- text within 'bg[ACTIVE]'; dotted lines around text of non-moused-over selected items (e.g., buttons; directory items in file-managers such as KDE Dolphin)
   fg[INSENSITIVE] = "#656565" # 40/100 gray -- text within 'bg[INSENSITIVE]'
