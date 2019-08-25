@@ -366,7 +366,7 @@ check,
 check row:selected,
 check row:selected:focus {
   padding: 4px;
-  -gtk-icon-source: -gtk-scaled(url("assets/checkbox-unchecked.png"));
+  -gtk-icon-source: url("assets/checkbox-unchecked.png");
 }
 
 check:disabled,
@@ -381,7 +381,7 @@ check row:selected:active,
 check row:selected:checked,
 check row:selected:focus:active,
 check row:selected:focus:checked {
-  -gtk-icon-source: -gtk-scaled(url("assets/checkbox-checked.png"));
+  -gtk-icon-source: url("assets/checkbox-checked.png");
 }
 
 check:active:disabled,
@@ -1376,29 +1376,29 @@ menuitem radio:checked {
 }
 
 menuitem check {
-  -gtk-icon-source: -gtk-scaled(url("assets/checkbox-unchecked.png"));
+  -gtk-icon-source: url("assets/checkbox-unchecked.png");
 }
 
 menuitem check:active,
 menuitem check:checked {
-  -gtk-icon-source: -gtk-scaled(url("assets/checkbox-checked.png"));
+  -gtk-icon-source: url("assets/checkbox-checked.png");
 }
 
 menuitem check:indeterminate {
-  -gtk-icon-source: -gtk-scaled(url("assets/checkbox-mixed.png"));
+  -gtk-icon-source: url("assets/checkbox-mixed.png");
 }
 
 menuitem radio {
-  -gtk-icon-source: -gtk-scaled(url("assets/radio-unselected.png"));
+  -gtk-icon-source: url("assets/radio-unselected.png");
 }
 
 menuitem radio:active,
 menuitem radio:checked {
-  -gtk-icon-source: -gtk-scaled(url("assets/radio-selected.png"));
+  -gtk-icon-source: url("assets/radio-selected.png");
 }
 
 menuitem radio:indeterminate {
-  -gtk-icon-source: -gtk-scaled(url("assets/radio-mixed.png"));
+  -gtk-icon-source: url("assets/radio-mixed.png");
 }
 
 menuitem calendar:indeterminate {
@@ -1441,17 +1441,21 @@ model menuitem box image {
 
 /*
 **********
-popovers
+popover
 **********
 */
 popover.background {
   padding: 6px;
-  background: shade(@theme_bg_color, 1.1);
+  background: shade(@theme_bg_color, 1.075);
 }
 
 .csd popover.background,
 popover.background {
-  border: 1px solid #000000;
+  border: 1px solid black;
+}
+
+modelbutton {
+  padding: 2px;
 }
 
 modelbutton:active:hover,
@@ -1791,24 +1795,12 @@ scale slider {
   background-position: center center;
 }
 
+/* vertical sliders */
 scale.vertical slider {
   min-height: 15px;
   min-width: 21px;
-}
-
-/* vertical sliders */
-scale.vertical slider {
   border-radius: 0px;
   background-image: url("assets/slider-vert.png");
-}
-
-scale.fine-tune slider:active,
-scale.fine-tune slider:active:hover,
-scale.fine-tune slider.horizontal:active,
-scale.fine-tune slider.horizontal:active:hover {
-  background-size: 70%;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 scale marks {
@@ -1850,7 +1842,7 @@ scale trough {
   border-color: @button_border_dark;
   border-bottom-color: @button_border_light;
   border-right-color: @button_border_light;
-  background-color: @theme_bg_color;
+  background-color: transparent;
   color: @theme_fg_color;
   box-shadow:
     inset 1px 0 @inset_dark,

@@ -1,4 +1,4 @@
-Computing Machine version 3 (Aug. 21, 2019) by Jamie Michelle ( https://github.com/Jamie-Michelle ). Released under the GNU General Public License, Version 2.
+Computing Machine version 4 (Aug. 25, 2019) by Jamie Michelle ( https://github.com/Jamie-Michelle ). Released under the GNU General Public License, Version 2.
 
 This desktop-environment theme is entitled Computing Machine. It is for GTK+ 2/Gnome 2 applications; GTK+ 3/Gnome 3 applications; and Qt 5/KDE 5 applications via the Qt5 Configuration Tool ( https://sourceforge.net/projects/qt5ct/ ). This theme was developed on the XFCE desktop environment.
 
@@ -51,7 +51,9 @@ QT_QPA_PLATFORMTHEME="qt5ct"
 
 ""
 
-in '/etc/environment' fixed the problem of Firefox not opening the KDE Dolphin file-manager with icons or the right theme, after an actual computer-restart.
+in the '/etc/environment' file fixed the problem of Firefox not opening the KDE Dolphin file-manager with icons or the right theme, after an actual computer-restart.
+
+A recommended icon set to use with the Qt 5/KDE 5 portion of this theme is Oxygen. When installed on one's system, the icon set can be selected via the 'qt5ct' program's Icon Theme tab.
 
 Apparently the first and perhaps both of the following two lines also have to be in the '~/.profile' file:
 
