@@ -10,11 +10,9 @@ The Conky system-monitor setup depicted below is available here: https://github.
 
 ⁂
 
-Changes for version 3.0:
+Changes for version 4.0:
 
-Now with extra spiff!!
-
-General improvements to help make people's lives more spiffy.
+Fixed some issues with scale troughs and with popovers; and made various other improvements.
 
 ![Computing-Machine-GTK-2.png](https://raw.githubusercontent.com/Jamie-Michelle/Computing-Machine/master/Computing-Machine-GTK-2.png)
 
