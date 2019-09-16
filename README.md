@@ -10,9 +10,9 @@ The Conky system-monitor setup depicted below is available here: https://github.
 
 ⁂
 
-Changes for version 4.0:
+Changes for version 5.0:
 
-Fixed some issues with scale troughs and with popovers; and made various other improvements.
+Made better icons in the 'gtk-3.0/assets/' directory. Various other improvements.
 
 ![Computing-Machine-GTK-2.png](https://raw.githubusercontent.com/Jamie-Michelle/Computing-Machine/master/Computing-Machine-GTK-2.png)
 
