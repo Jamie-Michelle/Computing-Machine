@@ -1,5 +1,5 @@
 /*
-The '../gtk-3.0/' portion of this theme is based on Reactionary Creatures version of August 23, 2018 ( https://www.opendesktop.org/p/1255961/ ) by phob1an ( https://github.com/phobi4n ).
+This '../gtk-3.0/gtk.css' file and the '../gtk-3.0/settings.ini' file are modified from the aforenamed files of  Reactionary Creatures version of August 23, 2018 ( https://www.opendesktop.org/p/1255961/ ) by phob1an ( https://github.com/phobi4n ).
 */
 
 /*
@@ -223,13 +223,13 @@ notebook > header {
 }
 
 /* disable inset shadow */
-button:active *:disabled,
+/* button:active *:disabled,
 toolbar.primary-toolbar button:active *:disabled,
 combobox button.combo:checked *:disabled,
 headerbar button:active *:disabled,
 entry:disabled {
   box-shadow: none;
-}
+} */
 
 /*
 **********
@@ -1777,8 +1777,8 @@ scale
 **********
 */
 scale {
-  min-height: 10px;
-  min-width: 10px;
+  min-height: 12px;
+  min-width: 12px;
   padding: 12px;
   border-width: 1px;
   border-radius: 0px;
@@ -1787,7 +1787,7 @@ scale {
 scale slider {
   border-radius: 0px;
   min-height: 21px;
-  min-width: 15px;
+  min-width: 16px;
   margin: -9px;
   background-color: transparent;
   background-repeat: no-repeat;
@@ -1797,7 +1797,7 @@ scale slider {
 
 /* vertical sliders */
 scale.vertical slider {
-  min-height: 15px;
+  min-height: 16px;
   min-width: 21px;
   border-radius: 0px;
   background-image: url("assets/slider-vert.png");
