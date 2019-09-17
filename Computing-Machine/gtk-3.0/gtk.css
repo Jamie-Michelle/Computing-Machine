@@ -69,8 +69,8 @@ color definitions
 @define-color menubar_selected_bg_color #5a7fa4;
 @define-color menubar_selected_fg_color #ececec;
 
-@define-color toolbar_bg_color @dark_bg_color; /* @theme_bg_color; */
-@define-color toolbar_fg_color @dark_fg_color; /* @theme_fg_color; */
+@define-color toolbar_bg_color @dark_bg_color;
+@define-color toolbar_fg_color @dark_fg_color;
 
 @define-color menu_bg_color @theme_bg_color;
 @define-color menu_fg_color @theme_fg_color;
@@ -213,7 +213,6 @@ notebook .active-page label {
 button:active,
 toolbar.primary-toolbar button:active,
 combobox button.combo:checked,
-/* headerbar button:active, */
 notebook > header {
   box-shadow:
     inset 1px 0 alpha(black, 0.07),
@@ -221,15 +220,6 @@ notebook > header {
     inset -1px 0 alpha(black, 0.07),
     inset 0 -1px alpha(black, 0.05);
 }
-
-/* disable inset shadow */
-/* button:active *:disabled,
-toolbar.primary-toolbar button:active *:disabled,
-combobox button.combo:checked *:disabled,
-headerbar button:active *:disabled,
-entry:disabled {
-  box-shadow: none;
-} */
 
 /*
 **********
@@ -807,9 +797,6 @@ scrolled window
 **********
 */
 scrolledwindow .frame {
-  /* border-width: 1px;
-  border-style: solid;
-  border-color: shade(@theme_bg_color, 0.8); */
   border: none;
   border-radius: 0;
 }
@@ -886,7 +873,7 @@ infobar {
   border-left-color: shade(@info_bg_color, 0.72);
   border-bottom-color: shade(@info_bg_color, 0.7);
   background-color: shade(@info_bg_color, 1.08);
-  color: @theme_fg_color; /* @info_fg_color; */
+  color: @theme_fg_color;
 }
 
 .info button:hover {
@@ -933,7 +920,7 @@ infobar {
 
 .warning button {
   background-color: @warning_bg_color;
-  color: @theme_fg_color; /* @warning_fg_color; */
+  color: @theme_fg_color;
 }
 
 .warning button:hover {
@@ -976,7 +963,7 @@ infobar {
   border-left-color: shade(@question_bg_color, 0.72);
   border-bottom-color: shade(@question_bg_color, 0.7);
   background-color: shade(@question_bg_color, 1.08);
-  color: @theme_fg_color; /* @question_fg_color; */
+  color: @theme_fg_color;
 }
 
 .question button:hover {
@@ -1027,7 +1014,7 @@ infobar {
   border-left-color: shade(@error_bg_color, 0.72);
   border-bottom-color: shade(@error_bg_color, 0.7);
   background-color: shade(@error_bg_color, 1.08);
-  color: @theme_fg_color; /* @error_fg_color; */
+  color: @theme_fg_color;
 }
 
 .error button:hover {
@@ -1158,12 +1145,6 @@ label selection {
   background-color: @theme_selected_bg_color;
   color: @theme_selected_fg_color;
 }
-
-/*
-label:backdrop {
-  color: alpha(@theme_fg_color, 0.5);
-}
-*/
 
 .dnd {
   border-width: 1px;
@@ -1526,7 +1507,6 @@ notebook tab:checked {
 }
 
 notebook tab label {
-  /* padding: 1px; */
   padding: 4px 8px 4px 8px;
 }
 
@@ -1940,12 +1920,10 @@ scrollbar.vertical button.up {
 }
 
 scrollbar.horizontal button.down {
-  /* -gtk-icon-source: -gtk-icontheme("pan-right-symbolic"); */
   -gtk-icon-source: -gtk-icontheme("pan-end-symbolic");
 }
 
 scrollbar.horizontal button.up {
-  /* -gtk-icon-source: -gtk-icontheme("pan-left-symbolic"); */
   -gtk-icon-source: -gtk-icontheme("pan-start-symbolic");
 }
 
@@ -2086,19 +2064,8 @@ spinbutton
 **********
 */
 spinbutton {
-  /* border-width: 1px;
-  border-radius: 0px;
-  border-style: solid;
-  border-color: @button_border_dark;
-  border-top-color: @button_border_light;
-  border-left-color: @button_border_light; */
   background-color: @theme_bg_color;
   color: @theme_fg_color;
-  /* box-shadow:
-    inset -1px 0 @inset_dark,
-    inset 0 -1px @inset_dark,
-    inset 1px 0 @inset_light,
-    inset 0 1px @inset_light; */
 }
 
 spinbutton:disabled {
@@ -2106,8 +2073,6 @@ spinbutton:disabled {
 }
 
 spinbutton.horizontal entry {
-  /* border-top-right-radius: 0;
-  border-bottom-right-radius: 0; */
   padding: 0px 4px;
 }
 
@@ -2120,8 +2085,6 @@ spinbutton.horizontal button.up {
 }
 
 spinbutton.vertical entry {
-  /* border-radius: 0;
-  box-shadow: none; */
   padding: 4px 0px;
 }
 
@@ -2465,11 +2428,6 @@ toolbar entry {
   border-color: @button_border_dark;
   border-bottom-color: @button_border_light;
   border-right-color: @button_border_light;
-  /* box-shadow:
-    inset 1px 0 @inset_dark,
-    inset -1px 0 @inset_light,
-    inset 0 -1px @inset_light,
-    inset 0 1px @inset_dark; */
 }
 
 .primary-toolbar entry:active,
@@ -3280,14 +3238,10 @@ decoration:backdrop {
 /* controls borders/shadows around pop-up menus: */
 .csd.popup decoration {
   box-shadow: none;
-    /* 0 1px 2px rgba(0, 0, 0, 0.2),
-    0 0 0 1px rgba(0, 0, 0, 0.13); */
 }
 
 tooltip.csd decoration {
-  box-shadow:
-    0 3px 6px rgba(0, 0, 0, 0.1),
-    0 0 0 1px rgba(0, 0, 0, 0.1);
+  box-shadow: none;
 }
 
 messagedialog.csd decoration {
