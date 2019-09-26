@@ -40,7 +40,7 @@
 #XfceNotifyWindow progressbar trough {
   min-height: 16px;
   background-image: none;
-  background-color: #7f007f;
+  background-color: #bf00bf;
   border: 1px solid shade(#7f007f, 0.667);
   border-radius: 3px;
 }

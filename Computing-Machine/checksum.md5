@@ -1,4 +1,4 @@
-47d76b21a158050201cb15322264a522 *./gtk-3.0/gtk.css
+51135b91f7da3ba2a7b7b2a7a1b55754 *./gtk-3.0/gtk.css
 bffe4de47fae913d1817fea0e996cb95 *./gtk-3.0/assets/checkbox-mixed-insensitive.png
 a2f0dc141b89a50b4ae35316ca811d01 *./gtk-3.0/assets/menuitem-checkbox-checked-insensitive.png
 70294738bc1c79174563f492639cc6be *./gtk-3.0/assets/menuitem-checkbox-mixed.png
@@ -29,7 +29,7 @@ f46c561b7f8e6840852ade02301471d1 *./gtk-3.0/assets/radio-selected.png
 b09af1243fefe1e372f4efa5519e6155 *./Theme-Resources/SOURCE-menuitem-radio-checked-insensitive.png
 723f53dbed06fed2433c0446a3df7bd2 *./Theme-Resources/SOURCE-radio-unselected.png
 18b4adcbf7f45b53828020c6240de3ef *./Theme-Resources/SOURCE-radio-unselected-insensitive.png
-10abf533898de76a08e6b95ee9cb656c *./xfce-notify-4.0/gtk.css
+9b36b483dc71a00b5896d45633b8ad29 *./xfce-notify-4.0/gtk.css
 d03a993add76d4a06dce3cd16e1691c0 *./xfwm4/hide-pressed.png
 d36e22bf792e0f69ee8bbd6e3eb87b1f *./xfwm4/stick-pressed.xpm
 3f3df1481d33c31473cf2183bf000a64 *./xfwm4/hide-pressed.xpm
@@ -152,5 +152,5 @@ bb0dc8f1450ca5a38be4fef1c62fd0b0 *./xfwm4/hide-prelight.png
 11e03c81a41c82840e3030a7ed816717 *./xfwm4/shade-toggled-prelight.xpm
 c60adb598b93d908c44fbd245bf2d7c8 *./xfwm4/bottom-left-inactive.png
 2cace5191fab8379bac4366e3339b140 *./xfwm4/menu-inactive.png
-81f9085e4771b68e6f33c936c0880999 *./Information.txt
+970e6042ae3619323fb75c265e5f438b *./Information.txt
 2b7b88509b56490b8d9e13723f4b068d *./gtk-2.0/gtkrc

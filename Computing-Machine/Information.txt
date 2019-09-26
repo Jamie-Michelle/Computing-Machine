@@ -1,4 +1,4 @@
-Computing Machine version 6 (Sept. 17, 2019) by Jamie Michelle ( https://github.com/Jamie-Michelle ). Released under the GNU General Public License, Version 2.
+Computing Machine version 7 (Sept. 26, 2019) by Jamie Michelle ( https://github.com/Jamie-Michelle ). Released under the GNU General Public License, Version 2.
 
 This desktop-environment theme is entitled Computing Machine. It is for GTK+ 2/Gnome 2 applications; GTK+ 3/Gnome 3 applications; and Qt 5/KDE 5 applications via the Qt5 Configuration Tool ( https://sourceforge.net/projects/qt5ct/ ). This theme was developed on the XFCE desktop environment.
 
