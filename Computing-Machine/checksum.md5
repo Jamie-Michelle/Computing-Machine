@@ -1,4 +1,4 @@
-51135b91f7da3ba2a7b7b2a7a1b55754 *./gtk-3.0/gtk.css
+047bf493b9e165a6209aaf0e692da5b7 *./gtk-3.0/gtk.css
 bffe4de47fae913d1817fea0e996cb95 *./gtk-3.0/assets/checkbox-mixed-insensitive.png
 a2f0dc141b89a50b4ae35316ca811d01 *./gtk-3.0/assets/menuitem-checkbox-checked-insensitive.png
 70294738bc1c79174563f492639cc6be *./gtk-3.0/assets/menuitem-checkbox-mixed.png
@@ -8,10 +8,12 @@ ce076698b5160ed6e680a2e0d780f8af *./gtk-3.0/assets/slider-vert.png
 5d22e5084ec74dccb6c58cfd7aec824c *./gtk-3.0/assets/checkbox-unchecked.png
 79da9ac6437d84ad454069df3a1fee4e *./gtk-3.0/assets/checkbox-unchecked-insensitive.png
 9bc8d272408a78dd1a7918e64b6c0431 *./gtk-3.0/assets/menuitem-radio-checked-insensitive.png
+e58dac9a4ac90b7ccd997770d1e1f61a *./gtk-3.0/assets/slider-horiz-focus.png
 76f76647a2903c2e819b4f409fd47370 *./gtk-3.0/assets/radio-selected-insensitive.png
 cdda2338abbe36fd537343200646359a *./gtk-3.0/assets/radio-mixed.png
 cf043091206af722ba10af800e71577e *./gtk-3.0/assets/checkbox-mixed.png
 33af961812d0baba39981a3ca9ddbfcf *./gtk-3.0/assets/radio-unselected.png
+218603a7034d5fc97cca1ee9dde0ee0a *./gtk-3.0/assets/slider-vert-focus.png
 f0b48b01abb056e8b636b86b0e3b47a5 *./gtk-3.0/assets/slider-horiz.png
 f2c25d85e4d7bee12b4c247c730f909f *./gtk-3.0/assets/menuitem-checkbox-mixed-selected.png
 be1bd21ef238aec5233ec2d05541de54 *./gtk-3.0/assets/menuitem-radio-checked.png
@@ -152,5 +154,5 @@ bb0dc8f1450ca5a38be4fef1c62fd0b0 *./xfwm4/hide-prelight.png
 11e03c81a41c82840e3030a7ed816717 *./xfwm4/shade-toggled-prelight.xpm
 c60adb598b93d908c44fbd245bf2d7c8 *./xfwm4/bottom-left-inactive.png
 2cace5191fab8379bac4366e3339b140 *./xfwm4/menu-inactive.png
-970e6042ae3619323fb75c265e5f438b *./Information.txt
+fd282f6d0662c1603de13c808fa9d524 *./Information.txt
 2b7b88509b56490b8d9e13723f4b068d *./gtk-2.0/gtkrc

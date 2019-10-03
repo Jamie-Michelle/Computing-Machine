@@ -1,4 +1,4 @@
-Computing Machine version 7 (Sept. 26, 2019) by Jamie Michelle ( https://github.com/Jamie-Michelle ). Released under the GNU General Public License, Version 2.
+Computing Machine version 8 (Oct. 2, 2019) by Jamie Michelle ( https://github.com/Jamie-Michelle ). Released under the GNU General Public License, Version 2.
 
 This desktop-environment theme is entitled Computing Machine. It is for GTK+ 2/Gnome 2 applications; GTK+ 3/Gnome 3 applications; and Qt 5/KDE 5 applications via the Qt5 Configuration Tool ( https://sourceforge.net/projects/qt5ct/ ). This theme was developed on the XFCE desktop environment.
 
@@ -104,3 +104,29 @@ For additional helpful information on configuring this theme, see the following 
 * "GTK", ArchWiki, https://wiki.archlinux.org/index.php/GTK .
 
 * "Qt", ArchWiki, https://wiki.archlinux.org/index.php/Qt .
+
+####################
+
+For modifying the Computing Machine theme, the below programs are useful. See also within the included './Theme-Resources/' directory.
+
+$ gtk3-widget-factory # GTK Widget Factory
+
+$ gtk3-demo # GTK+ Code Demos
+
+$ gtk3-icon-browser
+
+$ gtk-query-settings
+
+$ awf-gtk3 # A Widget Factory (AWF) by Valère Monseur, from https://github.com/valr/awf
+
+$ awf-gtk2
+
+$ gtk-demo # GTK+ 2 Code Demos
+
+And see the GTK+ 3 Inspector program, which can be enabled with the following command:
+
+$ gsettings set org.gtk.Settings.Debug enable-inspector-keybinding true
+
+Said Inspector program can be used with programs in the below manner:
+
+$ GTK_DEBUG=interactive geany

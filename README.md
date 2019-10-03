@@ -10,9 +10,9 @@ The Conky system-monitor setup depicted below is available here: https://github.
 
 ⁂
 
-Changes for version 7.0:
+Changes for version 8.0:
 
-Numerous improvements.
+A multitudinous smörgåsbord of improvements are incorporated into this release. With this release, I have achieved all of my main goals for this theme. Anything left to do now would simply be minor refinements.
 
 ![Computing-Machine-GTK-2.png](https://raw.githubusercontent.com/Jamie-Michelle/Computing-Machine/master/Computing-Machine-GTK-2.png)
 
