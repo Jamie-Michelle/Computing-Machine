@@ -1,5 +1,5 @@
 /*
-This '../gtk-3.0/gtk.css' file and the '../gtk-3.0/settings.ini' file are modified from the aforenamed files of  Reactionary Creatures version of August 23, 2018 ( https://www.opendesktop.org/p/1255961/ ) by phob1an ( https://github.com/phobi4n ).
+This '../gtk-3.0/gtk.css' file and the '../gtk-3.0/settings.ini' file are modified from files of Reactionary Creatures version of August 23, 2018 ( https://www.opendesktop.org/p/1255961/ ) by phob1an ( https://github.com/phobi4n ).
 */
 
 /*
@@ -18,7 +18,7 @@ color definitions
 @define-color theme_text_color #191919;
 
 @define-color theme_selected_bg_color #547faa;
-@define-color theme_selected_fg_color #ffffff;
+@define-color theme_selected_fg_color #ffffff; /* also sets the text color of XFCE's desktop icons */ 
 
 @define-color theme_tooltip_bg_color #ffff7f;
 @define-color theme_tooltip_fg_color #0c0c0c;
@@ -28,9 +28,9 @@ color definitions
 @define-color dark_fg_color #050505;
 
 /* button border colors */
-@define-color button_border_light #f9f9f9;
-@define-color button_border_dark #252525;
-@define-color button_border_select #ffbf00;
+@define-color border_light #f9f9f9;
+@define-color border_dark #252525;
+@define-color border_focus #ffbf00;
 
 /* box-shadow inset colors */
 @define-color inset_light #f2f2f2;
@@ -133,7 +133,7 @@ base states
   outline-style: solid;
   outline-offset: 0;
 
-  /* inherit colors from parent: */
+  /* inherit colors from parent */
   background-color: inherit;
   color: inherit;
 }
@@ -220,40 +220,34 @@ assistant .sidebar {
 button
 **********
 */
-/* undepressed button: */
+/* unpressed button: */
 button {
   padding: 3px 6px;
   border-width: 1px;
   border-radius: 0;
   border-style: solid;
-  border-color: @button_border_dark;
-  border-top-color: @button_border_light;
-  border-left-color: @button_border_light;
+  border-color: @border_dark;
+  border-top-color: @border_light;
+  border-left-color: @border_light;
   background-color: @theme_bg_color;
   color: @theme_fg_color;
   box-shadow:
     inset -1px 0 @inset_dark,
-    inset 0 1px @inset_light,
-    inset 1px 0 @inset_light,
+    inset 1px 1px @inset_light,
     inset 0 -1px @inset_dark;
 }
 
-/* depressed button: */
+/* pressed button: */
 button:active,
 button:checked {
-  border-color: @button_border_dark;
-  border-bottom-color: @button_border_light;
-  border-right-color: @button_border_light;
+  border-color: @border_dark;
+  border-bottom-color: @border_light;
+  border-right-color: @border_light;
   background-color: shade(@theme_bg_color, 0.9);
   box-shadow:
     inset 1px 0 @inset_dark,
-    inset -1px 0 @inset_light,
-    inset 0 -1px @inset_light,
+    inset -1px -1px @inset_light,
     inset 0 1px @inset_dark;
-}
-
-button:focus {
-  border-color: @button_border_select;
 }
 
 button:hover {
@@ -264,14 +258,17 @@ button:disabled {
   background-color: shade(@theme_bg_color, 0.85);
 }
 
+button:focus {
+  border-color: @border_focus;
+}
+
 /*
 **********
 cell and row
 **********
 */
 .cell {
-  border-width: 0;
-  border-radius: 0;
+  border: none;
 }
 
 .cell:selected {
@@ -305,6 +302,11 @@ radio {
   border-style: solid;
   border-color: transparent;
   background-color: transparent;
+}
+
+check:focus,
+radio:focus {
+  border-color: @border_focus;
 }
 
 check {
@@ -362,12 +364,7 @@ radio:indeterminate:disabled {
 
 radiobutton:hover,
 checkbutton:hover {
-  background-color: shade(@theme_bg_color, 1.1);
-}
-
-check:focus,
-radio:focus {
-  border-color: @button_border_select;
+  background-color: alpha(white, 0.57);
 }
 
 /*
@@ -380,14 +377,8 @@ button:link {
   color: @link_color;
 }
 
-/* inconsistently dishevels a border of Geany's Configure Plugins dialogue (via Edit > Plugin Preferences) if one or perhaps both of the next two declaration blocks are absent: */
-*:link:visited,
-button:link:visited {
-  color: mix(@link_color, #ff0000, 0.5);
-}
-
-*:selected *:link:visited,
-*:selected button:visited:link {
+/* inconsistently dishevels a border of Geany 1.35's Configure Plugins dialogue (via Edit > Plugin Preferences) if this declaration block is absent: */
+*:selected *:link:visited {
   color: mix(@link_color, #ffffff, 0.5);
 }
 
@@ -413,28 +404,6 @@ treeview header button {
 
 treeview header:last-child button {
   border-width: 0 0 1px 0;
-}
-
-/*
-**********
-content view
-**********
-*/
-.content-view.view {
-  background-color: @theme_base_color;
-}
-
-.content-view.view:hover {
-  background-color: alpha(@theme_selected_bg_color, 0.6);
-}
-
-.content-view.view:selected,
-.content-view.view:active {
-  background-color: @theme_selected_bg_color;
-}
-
-.content-view.view:disabled {
-  background-color: shade(@theme_base_color, 0.9);
 }
 
 /*
@@ -484,7 +453,7 @@ calendar button {
 
 calendar highlight,
 calendar.highlight {
-  border-width: 0;
+  border: none;
   background-color: transparent;
   color: @theme_selected_bg_color;
 }
@@ -501,22 +470,20 @@ entry
 */
 /* nota bene: if one experiences wiggle-worm behavior with the entry fields, experiment with increasing the 'min-height:' value: */
 entry {
-  padding: 4px 3px;
-  min-width: 18px;
-  min-height: 18px;
+  padding: 0px 3px;
+  min-height: 26px;
   border-width: 1px;
   border-radius: 0;
   border-style: solid;
-  border-color: @button_border_dark;
-  border-bottom-color: @button_border_light;
-  border-right-color: @button_border_light;
+  border-color: @border_dark;
+  border-bottom-color: @border_light;
+  border-right-color: @border_light;
   background-color: @theme_base_color;
   color: @theme_fg_color;
   box-shadow:
     inset 1px 0 @inset_dark,
-    inset 0 1px @inset_dark,
-    inset -1px 0 @inset_light,
-    inset 0 -1px @inset_light;
+    inset -1px -1px @inset_light,
+    inset 0 1px @inset_dark;
 }
 
 entry:selected,
@@ -610,7 +577,6 @@ scrolled window
 */
 scrolledwindow .frame {
   border: none;
-  border-radius: 0;
 }
 
 /* file chooser white bg color on iconview */
@@ -620,7 +586,7 @@ scrolledwindow .frame {
 
 /* avoid double borders when a viewport is packed into a GtkScrolledWindow */
 scrolledwindow viewport frame {
-  border-style: none;
+  border: none;
 }
 
 /*
@@ -628,20 +594,11 @@ scrolledwindow viewport frame {
 iconview
 **********
 */
-view.view.cell:selected {
-  border-width: 1px;
-  border-style: solid;
-  border-color: shade(@theme_selected_bg_color, 0.9);
-  border-radius: 0;
-  background-color: @theme_selected_bg_color;
-  color: @theme_selected_fg_color;
-}
-
+/* box drawn around icons being selected: */
 rubberband,
 .rubberband,
 view rubberband,
-.view.rubberband,
-.content-view.view.rubberband {
+.view.rubberband {
   border-width: 1px;
   border-style: solid;
   border-color: shade(@theme_selected_bg_color, 0.9);
@@ -870,15 +827,14 @@ menu {
   border-width: 1px;
   border-radius: 0;
   border-style: solid;
-  border-color: @button_border_dark;
-  border-top-color: @button_border_light;
-  border-left-color: @button_border_light;
+  border-color: @border_dark;
+  border-top-color: @border_light;
+  border-left-color: @border_light;
   background-color: @menu_bg_color;
   color: @menu_fg_color;
   box-shadow:
     inset -1px 0 @inset_dark,
-    inset 0 1px @inset_light,
-    inset 1px 0 @inset_light,
+    inset 1px 1px @inset_light,
     inset 0 -1px @inset_dark;
 }
 
@@ -888,7 +844,7 @@ menu:selected {
 }
 
 menu button {
-  border-width: 0;
+  border: none;
   background-color: @menu_bg_color;
 }
 
@@ -919,7 +875,7 @@ menubar
 */
 menubar {
   -GtkWidget-window-dragging: true;
-  border-style: none;
+  border: none;
   background-color: @menubar_bg_color;
   color: @menubar_fg_color;
 }
@@ -932,23 +888,15 @@ menubar item
 menubar menuitem,
 menubar > menuitem {
   padding: 3px 5px;
-  border-width: 0;
-  border-style: solid;
-  border-color: transparent;
+  border: none;
   background-color: transparent;
   color: @menubar_fg_color;
 }
 
 menubar menuitem:hover,
 menubar > menuitem:hover {
-  border-color: mix(@menubar_bg_color, @menubar_fg_color, 0.21);
   background-color: @menubar_selected_bg_color;
   color: @menubar_selected_fg_color;
-}
-
-menubar menuitem *:hover,
-menubar > menuitem *:hover {
-  color: shade(@menubar_fg_color, 1.08);
 }
 
 /*
@@ -958,23 +906,19 @@ menuitem
 */
 treemenu menuitem {
   padding: 0;
-  border-width: 0;
+  border: none;
 }
 
 menu menuitem,
 menu > menuitem {
   padding: 3px 3px;
-  border-width: 0;
-  border-style: solid;
-  border-color: transparent;
-  border-radius: 0;
+  border: none;
   background-color: @menu_bg_color;
   color: @menu_fg_color;
 }
 
 menu menuitem:hover,
 menu menuitem:active {
-  border-color: shade(@theme_selected_bg_color, 0.9);
   background-color: @theme_selected_bg_color;
 }
 
@@ -1024,16 +968,14 @@ menuitem calendar:indeterminate {
 }
 
 menuitem calendar button {
-  border-style: none;
+  border: none;
   background-color: transparent;
 }
 
 menuitem entry {
-  border-color: shade(@menu_bg_color, 0.7);
-  background-color: @menu_bg_color;
-  color: @menu_fg_color;
 }
 
+/* text of keyboard shortcuts: */
 menuitem accelerator {
   color: alpha(@menu_fg_color, 0.6);
 }
@@ -1069,7 +1011,7 @@ modelbutton {
   padding: 2px;
 }
 
-modelbutton:active:hover,
+modelbutton:active,
 modelbutton:hover,
 modelbutton:selected {
   background-color: @theme_selected_bg_color;
@@ -1083,15 +1025,12 @@ notebook
 */
 notebook {
   background-color: @theme_bg_color;
-  border-radius: 0;
   padding: 0;
   background-clip: border-box;
-  border-color: shade(@theme_bg_color, 0.82);
-  border-width: 0;
-  border-style: solid;
+  border: none;
 }
 
-/* the background color #000000 is displayed for some tabbed pages when 'background-color:' other than 'background-color: none;' is used: */
+/* the color #000000 is displayed for some tabbed pages when 'background-color:' other than 'background-color: none;' is used: */
 notebook > stack:not(:only-child) {
   border-radius: 0;
   padding: 0;
@@ -1106,7 +1045,7 @@ notebook > frame {
 }
 
 notebook > header {
-  border-width: 0;
+  border: none;
   background-color: @theme_bg_color;
 }
 
@@ -1121,9 +1060,9 @@ notebook tab {
   margin: 1px;
   border-radius: 0;
   border-style: solid;
-  border-color: @button_border_dark;
-  border-top-color: @button_border_light;
-  border-left-color: @button_border_light;
+  border-color: @border_dark;
+  border-top-color: @border_light;
+  border-left-color: @border_light;
   background-color: shade(@theme_bg_color, 0.875);
   color: shade(@theme_bg_color, 0.35);
 }
@@ -1145,37 +1084,15 @@ notebook header.top tab {
   margin-bottom: 0;
   box-shadow:
     inset -1px 0 @inset_dark,
-    inset 1px 0 @inset_light,
-    inset 0 1px @inset_light;
+    inset 1px 1px @inset_light;
 }
 
 notebook header.top tab:checked {
-  padding: 3px 6px 1px 6px;
+  padding: 3px 5px 1px 5px;
   box-shadow:
     inset -1px 0 @inset_dark,
-    inset 1px 0 @inset_light,
-    inset 0 1px @inset_light,
+    inset 1px 1px @inset_light,
     0 1px @theme_bg_color;
-}
-
-notebook header.right tab {
-  padding: 3px 4px 3px 0;
-  border-radius: 0;
-  border-left-width: 0;
-  margin-left: 0;
-  box-shadow:
-    inset -1px 0 @inset_dark,
-    inset 0 -1px @inset_dark,
-    inset 0 1px @inset_light;
-}
-
-notebook header.right tab:checked {
-  padding: 3px 6px 3px 1px;
-  box-shadow:
-    inset -1px 0 @inset_dark,
-    inset 0 -1px @inset_dark,
-    inset 0 1px @inset_light,
-    -1px 0 @theme_bg_color;
 }
 
 notebook header.bottom tab {
@@ -1185,16 +1102,14 @@ notebook header.bottom tab {
   margin-top: 0;
   box-shadow:
     inset 1px 0 @inset_light,
-    inset -1px 0 @inset_dark,
-    inset 0 -1px @inset_dark;
+    inset -1px -1px @inset_dark;
 }
 
 notebook header.bottom tab:checked {
-  padding: 1px 6px 3px 6px;
+  padding: 1px 5px 3px 5px;
   box-shadow:
     inset 1px 0 @inset_light,
-    inset -1px 0 @inset_dark,
-    inset 0 -1px @inset_dark,
+    inset -1px -1px @inset_dark,
     0 -1px @theme_bg_color;
 }
 
@@ -1204,18 +1119,34 @@ notebook header.left tab {
   border-radius: 0;
   margin-right: 0;
   box-shadow:
-    inset 1px 0 @inset_light,
-    inset 0 1px @inset_light,
+    inset 1px 1px @inset_light,
     inset 0 -1px @inset_dark;
 }
 
 notebook header.left tab:checked {
-  padding: 3px 1px 3px 6px;
+  padding: 4px 1px 4px 4px;
   box-shadow:
-    inset 1px 0 @inset_light,
-    inset 0 1px @inset_light,
+    inset 1px 1px @inset_light,
     inset 0 -1px @inset_dark,
     1px 0 @theme_bg_color;
+}
+
+notebook header.right tab {
+  padding: 3px 4px 3px 0;
+  border-radius: 0;
+  border-left-width: 0;
+  margin-left: 0;
+  box-shadow:
+    inset -1px -1px @inset_dark,
+    inset 0 1px @inset_light;
+}
+
+notebook header.right tab:checked {
+  padding: 4px 4px 4px 1px;
+  box-shadow:
+    inset -1px -1px @inset_dark,
+    inset 0 1px @inset_light,
+    -1px 0 @theme_bg_color;
 }
 
 notebook GtkDrawingArea {
@@ -1231,10 +1162,7 @@ notebook tab button,
 notebook tab button:active,
 notebook tab button:hover {
   padding: 1px;
-  border-width: 0;
-  border-radius: 0;
-  border-style: solid;
-  border-color: transparent;
+  border: none;
   background-color: transparent;
   box-shadow: none;
   color: mix(@theme_text_color, @theme_base_color, 0.5);
@@ -1307,7 +1235,7 @@ paned > separator {
 }
 
 paned .sidebar {
-  border-style: none;
+  border: none;
 }
 
 /*
@@ -1317,7 +1245,7 @@ progressbar
 */
 progressbar trough {
   background-color: #bfbfbf;
-  border-color: #7f7f7f;
+  border-color: #858585;
   border-width: 1px;
   border-style: inset;
   padding: 2px;
@@ -1371,8 +1299,7 @@ scale {
   min-height: 12px;
   min-width: 12px;
   padding: 12px;
-  border-width: 0;
-  border-radius: 0;
+  border: none;
 }
 
 scale trough {
@@ -1381,16 +1308,15 @@ scale trough {
   border-width: 1px;
   border-radius: 0;
   border-style: solid;
-  border-color: @button_border_dark;
-  border-bottom-color: @button_border_light;
-  border-right-color: @button_border_light;
+  border-color: @border_dark;
+  border-bottom-color: @border_light;
+  border-right-color: @border_light;
   background-color: transparent; /* dishevels the scale troughs of XFCE's 'xfce4-terminal --preferences' "Position" section under the "Drop-down" tab if a color other than 'transparent' is used */
   color: @theme_fg_color;
   box-shadow:
     inset 1px 0 @inset_dark,
-    inset 0 1px @inset_dark,
-    inset -1px 0 @inset_light,
-    inset 0 -1px @inset_light;
+    inset -1px -1px @inset_light,
+    inset 0 1px @inset_dark;
 }
 
 scale trough:disabled {
@@ -1402,9 +1328,8 @@ scale highlight {
   background-color: alpha(#00ff00, 0.125);
   box-shadow:
     inset 1px 0 @inset_dark,
-    inset 0 1px @inset_dark,
-    inset -1px 0 @inset_light,
-    inset 0 -1px @inset_light;
+    inset -1px -1px @inset_light,
+    inset 0 1px @inset_dark;
 }
 
 scale marks {
@@ -1468,8 +1393,7 @@ scrollbar
 **********
 */
 scrollbar {
-  border-width: 0;
-  border-style: solid;
+  border: none;
   padding: 0;
   background-color: shade(@theme_bg_color, 0.95);
 }
@@ -1497,15 +1421,14 @@ scrollbar slider {
   border-width: 1px;
   border-radius: 0;
   border-style: solid;
-  border-color: @button_border_dark;
-  border-top-color: @button_border_light;
-  border-left-color: @button_border_light;
+  border-color: @border_dark;
+  border-top-color: @border_light;
+  border-left-color: @border_light;
   background-color: @theme_bg_color;
   color: @theme_fg_color;
   box-shadow:
     inset -1px 0 @inset_dark,
-    inset 0 1px @inset_light,
-    inset 1px 0 @inset_light,
+    inset 1px 1px @inset_light,
     inset 0 -1px @inset_dark;
 }
 
@@ -1546,94 +1469,33 @@ treeview ~ scrollbar.vertical {
 separator
 **********
 */
-separator,
-.separator,
-.view.separator,
-.view separator,
-.sidebar.view separator,
-.sidebar.view.separator {
+separator {
   min-width: 1px;
   min-height: 1px;
   -gtk-icon-source: none;
-  border-style: none;
+  border: none;
   background-color: transparent;
   background-image: image(shade(@theme_bg_color, 0.9));
   background-size: 1px 1px;
 }
 
 /* button separator */
-button separator,
-button.separator {
+button separator {
   min-width: 1px;
   min-height: 1px;
   background-image: image(shade(@theme_bg_color, 0.95));
 }
 
-button separator:disabled,
-button.separator:disabled {
-  background-image: image(shade(@theme_bg_color, 0.85));
-}
-
 /* x-bar separator */
-toolbar.separator,
-toolbar separator,
-.primary-toolbar.separator,
-.primary-toolbar separator {
+toolbar separator {
   background-image: image(shade(@toolbar_bg_color, 0.95));
   border: 3px solid transparent;
-}
-
-headerbar separator,
-headerbar.separator,
-headerbar.titlebar separator,
-headerbar.titlebar.separator {
-  background-image: image(shade(@titlebar_bg_color, 0.35));
-}
-
-/* x-bar button separator */
-toolbar button separator,
-toolbar button.separator,
-toolbar.primary-toolbar button separator,
-toolbar.primary-toolbar button.separator {
-  background-image: image(shade(@toolbar_bg_color, 0.95));
-}
-
-headerbar button separator,
-headerbar button.separator,
-headerbar.titlebar button separator,
-headerbar.titlebar button.separator {
-  background-image: image(shade(@titlebar_bg_color, 0.95));
 }
 
 /* titlebutton separator */
 .titlebar separator.titlebutton {
   padding: 0;
   background-image: image(shade(currentColor, 0.9));
-}
-
-/* x-bar button separator disabled */
-toolbar button separator:disabled,
-toolbar button.separator:disabled,
-toolbar.primary-toolbar button separator:disabled,
-toolbar.primary-toolbar button.separator:disabled {
-  background-image: image(shade(@toolbar_bg_color, 0.85));
-}
-
-headerbar button separator:disabled,
-headerbar button.separator:disabled,
-headerbar.titlebar button separator:disabled,
-headerbar.titlebar button.separator:disabled {
-  background-image: image(shade(@titlebar_bg_color, 0.85));
-}
-
-menuitem separator,
-menuitem.separator {
-  background-image: image(shade(@menu_bg_color, 0.9));
-}
-
-combobox separator,
-combobox.separator {
-  background-color: transparent;
 }
 
 /*
@@ -1668,9 +1530,13 @@ spinbutton:disabled {
   color: mix(@theme_text_color, @theme_base_color, 0.7);
 }
 
+spinbutton entry {
+  min-height: 22px;
+  min-width: 28px;
+}
+
 spinbutton.horizontal entry {
-  padding: 2px 4px;
-  min-width: 24px;
+  padding: 0 0 0 2px;
 }
 
 spinbutton.horizontal button.down {
@@ -1680,8 +1546,7 @@ spinbutton.horizontal button.up {
 }
 
 spinbutton.vertical entry {
-  padding: 2px 0;
-  min-width: 24px;
+  padding: 0;
 }
 
 /*
@@ -1734,21 +1599,17 @@ switch
 switch {
   padding: 0;
   margin: 0;
-  border-radius: 0;
-  border-width: 1px;
-  border-color: shade(@theme_bg_color, 0.8);
+  border: none;
   background-color: shade(@theme_bg_color, 0.95);
   color: @theme_fg_color;
 }
 
 switch:checked {
-  border-color: shade(@theme_selected_bg_color, 0.9);
   background-color: @theme_selected_bg_color;
   color: @theme_selected_fg_color;
 }
 
 switch:disabled {
-  border-color: shade(@theme_bg_color, 0.85);
   background-color: shade(@theme_bg_color, 0.9);
   color: mix(@theme_fg_color, @theme_bg_color, 0.5);
 }
@@ -1759,28 +1620,27 @@ switch slider {
   border-width: 1px;
   border-radius: 0;
   border-style: solid;
-  border-color: @button_border_dark;
-  border-top-color: @button_border_light;
-  border-left-color: @button_border_light;
+  border-color: @border_dark;
+  border-top-color: @border_light;
+  border-left-color: @border_light;
   background-color: @theme_bg_color;
   color: @theme_fg_color;
   box-shadow:
     inset -1px 0 @inset_dark,
-    inset 0 1px @inset_light,
-    inset 1px 0 @inset_light,
+    inset 1px 1px @inset_light,
     inset 0 -1px @inset_dark;
-}
-
-switch slider:disabled {
-  background-color: shade(@theme_bg_color, 0.85);
 }
 
 switch slider:hover {
   background-color: shade(@theme_bg_color, 1.1);
 }
 
+switch slider:disabled {
+  background-color: shade(@theme_bg_color, 0.85);
+}
+
 switch slider:focus {
-  border-color: @button_border_select;
+  border-color: @border_focus;
 }
 
 /*
@@ -1827,36 +1687,6 @@ colorswatch:selected {
 colorswatch:hover,
 colorswatch:selected:hover {
   border-color: alpha(black, 0.3);
-}
-
-colorswatch.color-light:selected:hover,
-colorswatch.color-dark:selected:hover {
-}
-
-colorswatch.left,
-colorswatch:first-child {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-colorswatch.right,
-colorswatch:last-child {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-colorswatch:only-child {
-  border-radius: 0;
-}
-
-colorswatch.top {
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-}
-
-colorswatch.bottom {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
 }
 
 colorchooser #add-color-button {
@@ -1916,9 +1746,7 @@ headerbar {
 
 headerbar:not(.titlebar) {
   padding: 4px;
-  border-width: 0;
-  border-style: solid;
-  border-color: shade(@theme_bg_color, 0.8);
+  border: none;
   background-color: @theme_bg_color;
   color: @theme_fg_color;
 }
@@ -1935,8 +1763,6 @@ headerbar .subtitle {
 
 headerbar entry:active,
 headerbar entry selection:focus {
-  border-width: 1px;
-  border-color: shade(@theme_selected_bg_color, 0.6);
 }
 
 /*
@@ -1946,7 +1772,7 @@ toolbar
 */
 toolbar {
   padding: 4px;
-  border-style: none;
+  border: none;
   background-color: @toolbar_bg_color;
   color: @toolbar_fg_color;
 }
@@ -1977,29 +1803,12 @@ primary-toolbar
 **********
 */
 .primary-toolbar,
-.primary-toolbar toolbar,
-.primary-toolbartoolbar {
+.primary-toolbar toolbar {
   -GtkWidget-window-dragging: true;
   padding: 4px;
-  border-width: 0;
-  border-style: solid;
-  border-color: shade(@toolbar_bg_color, 0.8);
+  border: none;
   background-color: @toolbar_bg_color;
   color: @toolbar_fg_color;
-}
-
-.primary-toolbar combobox,
-toolbar.primary-toolbar button {
-}
-
-.primary-toolbar entry,
-toolbar entry {
-}
-
-.primary-toolbar entry:active,
-.primary-toolbar entry selection:focus,
-toolbar entry:active,
-toolbar entry selection:focus {
 }
 
 /* inline-toolbar */
@@ -2048,8 +1857,7 @@ treeview.dnd {
 }
 
 treeview entry {
-  border-radius: 0;
-  background-color: @theme_base_color;
+  background-color: #bfffff;
 }
 
 /* treeview */
@@ -2065,7 +1873,7 @@ viewport
 **********
 */
 viewport frame {
-  border-width: 0;
+  border: none;
 }
 
 /* controls the color of the main fields of the file-chooser, Thunar, Mousepad and Wisker Menu; and the top section of the "Visual" page of GTK+ 3 Inspector and most of its other pages' main fields: */
@@ -2143,7 +1951,7 @@ button.file image:last-child {
 
 /*
 **********
-app notifications
+app notification
 **********
 */
 .app-notification {
@@ -2355,7 +2163,7 @@ overshoot and undershoot
 **********
 */
 overshoot.top {
-  background-image: -gtk-gradient(radial, center top, 0, center top, 0.6, from(rgba(127, 127, 127, 0.2)), to(rgba(127, 127, 127, 0)));
+  background-image: -gtk-gradient(radial, center top, 0, center top, 0.6, from(alpha(#7f7f7f, 0.2)), to(alpha(#7f7f7f, 0)));
   background-size: 100% 60%;
   background-repeat: no-repeat;
   background-position: center top;
@@ -2365,7 +2173,7 @@ overshoot.top {
 }
 
 overshoot.bottom {
-  background-image: -gtk-gradient(radial, center bottom, 0, center bottom, 0.6, from(rgba(127, 127, 127, 0.2)), to(rgba(127, 127, 127, 0)));
+  background-image: -gtk-gradient(radial, center bottom, 0, center bottom, 0.6, from(alpha(#7f7f7f, 0.2)), to(alpha(#7f7f7f, 0)));
   background-size: 100% 60%;
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -2375,7 +2183,7 @@ overshoot.bottom {
 }
 
 overshoot.left {
-  background-image: -gtk-gradient(radial, left center, 0, left center, 0.6, from(rgba(127, 127, 127, 0.2)), to(rgba(127, 127, 127, 0)));
+  background-image: -gtk-gradient(radial, left center, 0, left center, 0.6, from(alpha(#7f7f7f, 0.2)), to(alpha(#7f7f7f, 0)));
   background-size: 60% 100%;
   background-repeat: no-repeat;
   background-position: left center;
@@ -2385,7 +2193,7 @@ overshoot.left {
 }
 
 overshoot.right {
-  background-image: -gtk-gradient(radial, right center, 0, right center, 0.6, from(rgba(127, 127, 127, 0.2)), to(rgba(127, 127, 127, 0)));
+  background-image: -gtk-gradient(radial, right center, 0, right center, 0.6, from(alpha(#7f7f7f, 0.2)), to(alpha(#7f7f7f, 0)));
   background-size: 60% 100%;
   background-repeat: no-repeat;
   background-position: right center;
@@ -2396,7 +2204,7 @@ overshoot.right {
 
 undershoot.top {
   background-color: transparent;
-  background-image: linear-gradient(to left, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0.2) 50%);
+  background-image: linear-gradient(to left, alpha(#ffffff, 0.2) 50%, alpha(#000000, 0.2) 50%);
   padding-top: 1px;
   background-size: 10px 1px;
   background-repeat: repeat-x;
@@ -2406,7 +2214,7 @@ undershoot.top {
 
 undershoot.bottom {
   background-color: transparent;
-  background-image: linear-gradient(to left, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0.2) 50%);
+  background-image: linear-gradient(to left, alpha(#ffffff, 0.2) 50%, alpha(#000000, 0.2) 50%);
   padding-bottom: 1px;
   background-size: 10px 1px;
   background-repeat: repeat-x;
@@ -2416,7 +2224,7 @@ undershoot.bottom {
 
 undershoot.left {
   background-color: transparent;
-  background-image: linear-gradient(to top, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0.2) 50%);
+  background-image: linear-gradient(to top, alpha(#ffffff, 0.2) 50%, alpha(#000000, 0.2) 50%);
   padding-left: 1px;
   background-size: 1px 10px;
   background-repeat: repeat-y;
@@ -2426,7 +2234,7 @@ undershoot.left {
 
 undershoot.right {
   background-color: transparent;
-  background-image: linear-gradient(to top, rgba(255, 255, 255, 0.2) 50%, rgba(0, 0, 0, 0.2) 50%);
+  background-image: linear-gradient(to top, alpha(#ffffff, 0.2) 50%, alpha(#000000, 0.2) 50%);
   padding-right: 1px;
   background-size: 1px 10px;
   background-repeat: repeat-y;

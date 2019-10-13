@@ -42,7 +42,7 @@ style "standard-default"
   bg[PRELIGHT] = "#ececec" # 37/40 gray -- moused-over buttons
   bg[SELECTED] = "#4a7fb4" # 14/48 R, 1/2 G, 34/48 B -- (active title bars (a.k.a. header bars); active window outlines (i.e., borders) are based upon this color [note: since xfwm4 4.14.n, these functions have been moved to the '../xfwm4/themerc' file];) progress-bars in Qt 5 programs; notices-bar in Viewnior
 
-  fg[ACTIVE] = "#0c0c0c" # 5/100 gray -- text within 'bg[ACTIVE]'; dotted lines around text of non-moused-over selected items (e.g., buttons; directory items in file-managers such as KDE Dolphin)
+  fg[ACTIVE] = "#0c0c0c" # 5/100 gray -- text within 'bg[ACTIVE]'; dotted lines around text of non-moused-over selected items (e.g., buttons; directory items in the KDE Dolphin file-manager)
   fg[INSENSITIVE] = "#656565" # 40/100 gray -- text within 'bg[INSENSITIVE]'
   fg[NORMAL] = "#252525" # 15/100 gray -- text within 'bg[NORMAL]'
   fg[PRELIGHT] = "#191919" # 1/10 gray -- text within 'bg[PRELIGHT]'

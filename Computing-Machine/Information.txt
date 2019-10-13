@@ -1,10 +1,10 @@
-Computing Machine version 9 (Oct. 5, 2019) by Jamie Michelle ( https://github.com/Jamie-Michelle ). Released under the GNU General Public License, Version 2.
+Computing Machine version 10 (Oct. 13, 2019) by Jamie Michelle ( https://github.com/Jamie-Michelle ). Released under the GNU General Public License, Version 2.
 
 This desktop-environment theme is entitled Computing Machine. It is for GTK+ 2/Gnome 2 applications; GTK+ 3/Gnome 3 applications; and Qt 5/KDE 5 applications via the Qt5 Configuration Tool ( https://sourceforge.net/projects/qt5ct/ ). This theme was developed on the XFCE desktop environment.
 
 The './gtk-2.0/gtkrc' file is a modification of the 'gtk-engines-2.20.2/themes/Redmond/gtk-2.0/gtkrc' file from https://download.gnome.org/sources/gtk-engines/2.20/gtk-engines-2.20.2.tar.bz2 (688171 bytes, MD5: 5deb287bc6075dc21812130604c7dc4f).
 
-The './gtk-3.0/gtk.css' and './gtk-3.0/settings.ini' files are modified from the aforenamed files of Reactionary Creatures version of August 23, 2018 ( https://www.opendesktop.org/p/1255961/ ; ReactionaryGTKCreatures.tar.gz , 32669 bytes, MD5: 76dc59f2a7d36ceb5f26f15cf0bbe53e) by phob1an ( https://github.com/phobi4n ).
+The './gtk-3.0/gtk.css' and './gtk-3.0/settings.ini' files are modified from files of Reactionary Creatures version of August 23, 2018 ( https://www.opendesktop.org/p/1255961/ ; ReactionaryGTKCreatures.tar.gz , 32669 bytes, MD5: 76dc59f2a7d36ceb5f26f15cf0bbe53e) by phob1an ( https://github.com/phobi4n ).
 
 The files in the './xfwm4/' directory are modified from the 'xfwm4-themes-4.10.0/themes/default-4.8/' directory from http://archive.xfce.org/src/art/xfwm4-themes/4.10/xfwm4-themes-4.10.0.tar.bz2 (621206 bytes, MD5: eaa58362053a3549c8be0b32efd3c54f).
 

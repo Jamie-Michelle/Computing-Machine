@@ -185,7 +185,7 @@ rgb(0, 0, 0); #000000; 0/48, 0.0
 
 ####################
 
-Formula to apply for 0 to 255 inclusive (i.e., 256 total) integer color values. Round to nearest odd integer for exact n.5 decimal-point cases; or to zero for results less than zero.
+Formula to apply for 0 to 255 inclusive (i.e., 256 total) integer color values. Round to nearest odd integer for exact n.5 decimal-point results; or to zero for results less than zero.
 
 256.*(x/y)-1
 
@@ -197,7 +197,7 @@ Examples:
 
 ####################
 
-$ fricas
+$ fricas # the FriCAS computer algebra system, from http://fricas.sourceforge.net , https://fricas.github.io
 
 (1) -> radix(250, 16)
 

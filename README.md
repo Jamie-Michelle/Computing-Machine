@@ -10,9 +10,9 @@ The Conky system-monitor setup depicted below is available here: https://github.
 
 ⁂
 
-Changes for version 9.0:
+Changes for version 10.0:
 
-The epic quest for interfacial perfection has reached a zenithal milestone. At least with my operating-system setup, the Computing Machine theme has become quite refined and polished.
+Eliminated wiggle-worm behavior of entry fields (at least with my system's font setup). Eliminated wiggle-worm behavior of tabs. A number of other refinements.
 
 ![Computing-Machine-GTK-2.png](https://raw.githubusercontent.com/Jamie-Michelle/Computing-Machine/master/Computing-Machine-GTK-2.png)
 

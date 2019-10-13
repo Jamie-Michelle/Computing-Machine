@@ -1,4 +1,4 @@
-bc6f3a0d698eab10fb77b35b475561dd *./gtk-3.0/gtk.css
+cf48119f6e91e0cf5b1c6a9860e04019 *./gtk-3.0/gtk.css
 bffe4de47fae913d1817fea0e996cb95 *./gtk-3.0/assets/checkbox-mixed-insensitive.png
 a2f0dc141b89a50b4ae35316ca811d01 *./gtk-3.0/assets/menuitem-checkbox-checked-insensitive.png
 70294738bc1c79174563f492639cc6be *./gtk-3.0/assets/menuitem-checkbox-mixed.png
@@ -26,7 +26,7 @@ ab9016974c7b2ca44f3b90d25db20453 *./gtk-3.0/assets/checkbox-checked-insensitive.
 f46c561b7f8e6840852ade02301471d1 *./gtk-3.0/assets/radio-selected.png
 2cd31c55b2970d4ba4d85c2d9bb092d8 *./gtk-3.0/settings.ini
 359a4d5b15a29f0aacc9a5fa9f22b9fc *./Theme-Resources/SOURCE-menuitem-radio-checked-selected.png
-3b004197c580f8c08e306f37a37ffd07 *./Theme-Resources/Theme-Colors.txt
+0536d587699b5aced91ec9f2a04eeb6d *./Theme-Resources/Theme-Colors.txt
 7b2cbff3fc501756b4623b0ca6fde5cb *./Theme-Resources/SOURCE-menuitem-radio-checked.png
 b09af1243fefe1e372f4efa5519e6155 *./Theme-Resources/SOURCE-menuitem-radio-checked-insensitive.png
 723f53dbed06fed2433c0446a3df7bd2 *./Theme-Resources/SOURCE-radio-unselected.png
@@ -154,5 +154,5 @@ bb0dc8f1450ca5a38be4fef1c62fd0b0 *./xfwm4/hide-prelight.png
 11e03c81a41c82840e3030a7ed816717 *./xfwm4/shade-toggled-prelight.xpm
 c60adb598b93d908c44fbd245bf2d7c8 *./xfwm4/bottom-left-inactive.png
 2cace5191fab8379bac4366e3339b140 *./xfwm4/menu-inactive.png
-8dd6703d7588aa1c05149844b0a4e875 *./Information.txt
-bce9d3ae429e5a9d9d19c1372f5c3a10 *./gtk-2.0/gtkrc
+7e0b8eebf1da95861bd7d73e31a366ce *./Information.txt
+0471ca70523b1ad223fc5291f206aa82 *./gtk-2.0/gtkrc
