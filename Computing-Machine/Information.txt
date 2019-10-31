@@ -1,4 +1,4 @@
-Computing Machine version 10 (Oct. 13, 2019) by Jamie Michelle ( https://github.com/Jamie-Michelle ). Released under the GNU General Public License, Version 2.
+Computing Machine version 11 (Oct. 31, 2019) by Jamie Michelle ( https://github.com/Jamie-Michelle ). Released under the GNU General Public License, Version 2.
 
 This desktop-environment theme is entitled Computing Machine. It is for GTK+ 2/Gnome 2 applications; GTK+ 3/Gnome 3 applications; and Qt 5/KDE 5 applications via the Qt5 Configuration Tool ( https://sourceforge.net/projects/qt5ct/ ). This theme was developed on the XFCE desktop environment.
 
@@ -63,7 +63,26 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
 ""
 
-In order for 'qt5ct' to work with GTK+ 2 styles, I believe it requires the following package (named such on Arch Linux-based distributions): 'qt5-styleplugins' (from https://github.com/qt/qtstyleplugins ).
+In order for 'qt5ct' to work with GTK+ 2 styles, it requires the following package (named such on Arch Linux-based distributions): 'qt5-styleplugins' (from https://code.qt.io/cgit/qt/qtstyleplugins , https://github.com/qt/qtstyleplugins ). On Debian-based systems, said package is named 'qt5-style-plugins'.
+
+Alternatively, the 'qt5ct' program does not have to be used, as one can use the following environment variable instead in the '/etc/environment' and '~/.profile' files when 'qtstyleplugins' is installed. However, one then loses the ability to select icon sets and fonts specifically for the Qt 5 applications, which will instead use whatever is set for the GTK+ 2 portion of the theme.
+
+""
+QT_QPA_PLATFORMTHEME="gtk2"
+
+""
+
+As an aside which might be of help in some instances, note also the following Qt 5 application switches and environment variables, which can be used in various combinations:
+
+$ dolphin --platformtheme gtk2
+
+$ dolphin --style windows
+
+$ QT_QPA_PLATFORMTHEME=gtk2 dolphin
+
+$ QT_STYLE_OVERRIDE=cde dolphin
+
+$ QT_QPA_PLATFORMTHEME=windows QT_STYLE_OVERRIDE=windows dolphin
 
 ####################
 
@@ -104,6 +123,8 @@ For additional helpful information on configuring this theme, see the following 
 * "GTK", ArchWiki, https://wiki.archlinux.org/index.php/GTK .
 
 * "Qt", ArchWiki, https://wiki.archlinux.org/index.php/Qt .
+
+* "Uniform look for Qt and GTK applications", ArchWiki, https://wiki.archlinux.org/index.php/Uniform_look_for_Qt_and_GTK_applications .
 
 ####################
 

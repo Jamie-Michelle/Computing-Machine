@@ -36,12 +36,6 @@ color definitions
 @define-color inset_light #f2f2f2;
 @define-color inset_dark #8c8c8c;
 
-/* progressbar and levelbar colors */
-@define-color progressbar_color #3fbf3f;
-
-@define-color levelbar_high_color #00ff00;
-@define-color levelbar_low_color #ff0000;
-
 /* miscellaneous colors used by GTK+ 3 */
 @define-color info_bg_color #7fbfff;
 @define-color info_fg_color #2c2c2c;
@@ -398,12 +392,9 @@ column-header
 **********
 */
 treeview header button {
-  border-width: 0 1px 1px 0;
-  border-radius: 0;
 }
 
 treeview header:last-child button {
-  border-width: 0 0 1px 0;
 }
 
 /*
@@ -615,7 +606,7 @@ iconview text selection {
 
 /*
 **********
-infobar
+notices and special buttons
 **********
 */
 infobar {
@@ -1252,7 +1243,7 @@ progressbar trough {
 }
 
 progressbar progress {
-  background-color: @progressbar_color;
+  background-color: #3fbf3f;
   border-color: black;
   border-style: solid;
   border-width: 1px;
@@ -1271,18 +1262,18 @@ levelbar block {
   border-style: solid;
   padding: 2px;
   border-radius: 0;
-  border-color: shade(@theme_selected_bg_color, 0.9);
-  background-color: @theme_selected_bg_color;
+  border-color: shade(#0000ff, 0.8);
+  background-color: #0000ff;
 }
 
 levelbar block.high {
-  border-color: shade(@levelbar_high_color, 0.80);
-  background-image: linear-gradient(to bottom, shade(@levelbar_high_color, 1.2), @levelbar_high_color 75%, shade(@levelbar_high_color, 0.9));
+  border-color: shade(#00ff00, 0.8);
+  background-image: linear-gradient(to bottom, shade(#00ff00, 1.2), #00ff00 75%, shade(#00ff00, 0.9));
 }
 
 levelbar block.low {
-  border-color: shade(@levelbar_low_color, 0.80);
-  background-image: linear-gradient(to bottom, shade(@levelbar_low_color, 1.2), @levelbar_low_color 75%, shade(@levelbar_low_color, 0.9));
+  border-color: shade(#ff0000, 0.8);
+  background-image: linear-gradient(to bottom, shade(#ff0000, 1.2), #ff0000 75%, shade(#ff0000, 0.9));
 }
 
 levelbar block.empty {
@@ -1989,12 +1980,17 @@ overlay.osd {
 
 /*
 **********
-destructive-action button
+action buttons
 **********
 */
 .destructive-action {
   background-color: @destructive_bg_color;
   color: @destructive_fg_color;
+}
+
+.destructive-action:active,
+.destructive-action:checked {
+  background-color: shade(@destructive_bg_color, 0.9);
 }
 
 .destructive-action:hover {
@@ -2005,14 +2001,14 @@ destructive-action button
   background-color: shade(@destructive_bg_color, 0.85);
 }
 
-/*
-**********
-suggested-action button
-**********
-*/
 .suggested-action {
   background-color: @suggested_bg_color;
   color: @suggested_fg_color;
+}
+
+.suggested-action:active,
+.suggested-action:checked {
+  background-color: shade(@suggested_bg_color, 0.9);
 }
 
 .suggested-action:hover {

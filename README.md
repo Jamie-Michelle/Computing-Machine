@@ -10,9 +10,13 @@ The Conky system-monitor setup depicted below is available here: https://github.
 
 ⁂
 
-Changes for version 10.0:
+Changes for version 11.0:
 
-Eliminated wiggle-worm behavior of entry fields (at least with my system's font setup). Eliminated wiggle-worm behavior of tabs. A number of other refinements.
+The Allhallowtide/Día de Muertos Spookfest Special Edition! The same fortified and wholesome yumminess as the Regular Edition, but now with more spooky action at a distance! It's a festival of spookiness!
+
+Boo!
+
+Improved the treeview header buttons. Improved the action buttons. Various other improvements.
 
 ![Computing-Machine-GTK-2.png](https://raw.githubusercontent.com/Jamie-Michelle/Computing-Machine/master/Computing-Machine-GTK-2.png)
 
