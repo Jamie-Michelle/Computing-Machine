@@ -10,13 +10,11 @@ The Conky system-monitor setup depicted below is available here: https://github.
 
 ⁂
 
-Changes for version 11.0:
+Changes for version 12.0:
 
-The Allhallowtide/Día de Muertos Spookfest Special Edition! The same fortified and wholesome yumminess as the Regular Edition, but now with more spooky action at a distance! It's a festival of spookiness!
+The Armistice Day Special Edition.
 
-Boo!
-
-Improved the treeview header buttons. Improved the action buttons. Various other improvements.
+Numerous improvements.
 
 ![Computing-Machine-GTK-2.png](https://raw.githubusercontent.com/Jamie-Michelle/Computing-Machine/master/Computing-Machine-GTK-2.png)
 

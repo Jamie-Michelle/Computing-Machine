@@ -1,4 +1,4 @@
-Computing Machine version 11 (Oct. 31, 2019) by Jamie Michelle ( https://github.com/Jamie-Michelle ). Released under the GNU General Public License, Version 2.
+Computing Machine version 12 (Nov. 11, 2019) by Jamie Michelle ( https://github.com/Jamie-Michelle ). Released under the GNU General Public License, Version 2.
 
 This desktop-environment theme is entitled Computing Machine. It is for GTK+ 2/Gnome 2 applications; GTK+ 3/Gnome 3 applications; and Qt 5/KDE 5 applications via the Qt5 Configuration Tool ( https://sourceforge.net/projects/qt5ct/ ). This theme was developed on the XFCE desktop environment.
 
@@ -86,6 +86,12 @@ $ QT_QPA_PLATFORMTHEME=windows QT_STYLE_OVERRIDE=windows dolphin
 
 ####################
 
+In order to adjust the theme settings for Qt 4/KDE 4 applications, see the following program:
+
+$ qtconfig-qt4
+
+####################
+
 In order for the GTK+ 2 portion of this theme to work across different window managers and desktop environments, put the following in the '/etc/gtk-2.0/gtkrc' file (using your preferred icon set and system font):
 
 ""
@@ -114,7 +120,7 @@ On the XFCE desktop environment, the window-manager portion of the Computing Mac
 
 On the XFCE desktop environment, the notifier portion of the Computing Machine theme ('./xfce-notify-4.0/') can be selected via the Notifications program ('xfce4-notifyd-config').
 
-The Computing Machine theme can be selected as the theme of the LightDM GTK+ Greeter ('lightdm-gtk-greeter', https://launchpad.net/lightdm-gtk-greeter ) via the Settings Editor for LightDM GTK+ Greeter ('lightdm-gtk-greeter-settings' or 'lightdm-gtk-greeter-settings-pkexec', https://launchpad.net/lightdm-gtk-greeter-settings ) when the Computing Machine theme is installed system-wide at '/usr/share/themes/Computing-Machine/'.
+The Computing Machine theme can be selected as the theme of the LightDM GTK+ Greeter ('lightdm-gtk-greeter', https://launchpad.net/lightdm-gtk-greeter ) via the Settings Editor for LightDM GTK+ Greeter ('lightdm-gtk-greeter-settings' or 'lightdm-gtk-greeter-settings-pkexec', https://launchpad.net/lightdm-gtk-greeter-settings ) when the Computing Machine theme is installed system-wide at '/usr/share/themes/Computing-Machine/'. Alternatively, one does not have to use said Settings Editor, as the theme of the LightDM GTK+ Greeter can be set by directly editing its '/etc/lightdm/lightdm-gtk-greeter.conf' file.
 
 ####################
 

@@ -16,15 +16,11 @@
 }
 
 #XfceNotifyWindow button {
-  border-style: none;
-  background-image: none;
   background-color : #7f00bf;
 }
 
 #XfceNotifyWindow button:hover {
-  border-style: none;
-  background-image: none;
-  background-color : #7f007f;
+  background-color : shade(#7f00bf, 1.1);
 }
 
 #XfceNotifyWindow progressbar {
@@ -33,13 +29,11 @@
 
 #XfceNotifyWindow progressbar progress {
   min-height: 16px;
-  background-image: none;
   background-color: shade(#ffff00, 1.2);
 }
 
 #XfceNotifyWindow progressbar trough {
   min-height: 16px;
-  background-image: none;
   background-color: #bf00bf;
   border: 1px solid shade(#7f007f, 0.667);
   border-radius: 3px;

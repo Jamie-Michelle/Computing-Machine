@@ -192,25 +192,6 @@ notebook .active-page {
 
 /*
 **********
-assistant
-**********
-*/
-assistant .sidebar highlight {
-  font-weight: bold;
-}
-
-assistant .sidebar {
-  padding: 4px;
-  border-width: 0 1px 0 0;
-  border-style: solid;
-  border-right-color: shade(@theme_bg_color, 0.8);
-  border-radius: 0;
-  background-color: @theme_bg_color;
-  color: mix(@theme_fg_color, @theme_bg_color, 0.1);
-}
-
-/*
-**********
 button
 **********
 */
@@ -316,7 +297,6 @@ check:checked {
   -gtk-icon-source: url("assets/checkbox-checked.png");
 }
 
-check:active:disabled,
 check:checked:disabled {
   -gtk-icon-source: url("assets/checkbox-checked-insensitive.png");
 }
@@ -343,7 +323,6 @@ radio:checked {
   -gtk-icon-source: url("assets/radio-selected.png");
 }
 
-radio:active:disabled,
 radio:checked:disabled {
   -gtk-icon-source: url("assets/radio-selected-insensitive.png");
 }
@@ -384,17 +363,6 @@ button:hover:link {
 button:link > label,
 button:visited > label {
   text-decoration-line: underline;
-}
-
-/*
-**********
-column-header
-**********
-*/
-treeview header button {
-}
-
-treeview header:last-child button {
 }
 
 /*
@@ -461,7 +429,7 @@ entry
 */
 /* nota bene: if one experiences wiggle-worm behavior with the entry fields, experiment with increasing the 'min-height:' value: */
 entry {
-  padding: 0px 3px;
+  padding: 0 3px;
   min-height: 26px;
   border-width: 1px;
   border-radius: 0;
@@ -1221,8 +1189,10 @@ pane separator
 **********
 */
 paned > separator {
-  background-color: @theme_bg_color;
-  color: transparent;
+  min-width: 1px;
+  min-height: 1px;
+  padding: 0;
+  background: @theme_selected_bg_color;
 }
 
 paned .sidebar {
@@ -1359,23 +1329,21 @@ scale slider {
   min-width: 16px;
   margin: -6px;
   background-color: transparent;
-  background-repeat: no-repeat;
-  background-image: url("assets/slider-horiz.png");
-  background-position: center center;
+  -gtk-icon-source: url("assets/slider-horiz.png");
 }
 
 scale slider:focus {
-  background-image: url("assets/slider-horiz-focus.png");
+  -gtk-icon-source: url("assets/slider-horiz-focus.png");
 }
 
 scale.vertical slider {
   min-height: 16px;
   min-width: 21px;
-  background-image: url("assets/slider-vert.png");
+  -gtk-icon-source: url("assets/slider-vert.png");
 }
 
 scale.vertical slider:focus {
-  background-image: url("assets/slider-vert-focus.png");
+  -gtk-icon-source: url("assets/slider-vert-focus.png");
 }
 
 /*
@@ -1507,8 +1475,27 @@ placessidebar .view,
 .sidebar row:hover,
 .sidebar .view:hover,
 placessidebar .view row:hover {
-  border-color: shade(@theme_selected_bg_color, 1.05);
   background-color: shade(@theme_selected_bg_color, 1.05);
+  color: @theme_selected_fg_color;
+}
+
+/*
+**********
+assistant
+**********
+*/
+assistant .sidebar {
+  padding: 4px;
+  border-width: 0 1px 0 0;
+  border-style: solid;
+  border-right-color: shade(@theme_bg_color, 0.8);
+  border-radius: 0;
+  background-color: shade(@theme_bg_color, 1.05);
+  color: @theme_fg_color;
+}
+
+assistant .sidebar label.highlight {
+  background-color: @theme_selected_bg_color;
   color: @theme_selected_fg_color;
 }
 
@@ -1840,6 +1827,13 @@ tooltip * {
 treeview
 **********
 */
+/* column-header: */
+treeview header button {
+}
+
+treeview header:last-child button {
+}
+
 treeview.dnd {
   border-width: 1px;
   border-style: solid;
