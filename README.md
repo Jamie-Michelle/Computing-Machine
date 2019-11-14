@@ -10,11 +10,9 @@ The Conky system-monitor setup depicted below is available here: https://github.
 
 ⁂
 
-Changes for version 12.0:
+Changes for version 13.0:
 
-The Armistice Day Special Edition.
-
-Numerous improvements.
+I completely reworked the GTK+ 3 portion of the theme. Now it's far more correspondent to classic desktop environments. For example, now the outset borders of the tabs go all the way around their tabbed pages; it now uses grooved separators; etc. The button, tab and entry borders have also been overhauled, which now use GTK+ 3's built-in CSS outset/inset borders, instead of trying to create GTK+ 2-reminiscent borders for these elements (as was attempted earlier), which created bad-looking border-corners, and which would have made attempting to create outset tabbed pages connected to their tabs a nightmare. This also simplifies the code.
 
 ![Computing-Machine-GTK-2.png](https://raw.githubusercontent.com/Jamie-Michelle/Computing-Machine/master/Computing-Machine-GTK-2.png)
 
