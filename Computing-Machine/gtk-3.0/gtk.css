@@ -28,7 +28,8 @@ color definitions
 @define-color dark_fg_color #050505;
 
 /* border colors */
-@define-color border_color #858585;
+@define-color border_dark #858585;
+@define-color border_light #efefef;
 @define-color focus_color #ffbf00;
 
 /* miscellaneous colors used by GTK+ 3 */
@@ -196,7 +197,7 @@ button {
   border-width: 2px;
   border-radius: 0;
   border-style: outset;
-  border-color: @border_color;
+  border-color: @border_dark;
   background-color: @theme_bg_color;
   color: @theme_fg_color;
 }
@@ -416,7 +417,7 @@ entry {
   border-width: 2px;
   border-radius: 0;
   border-style: inset;
-  border-color: @border_color;
+  border-color: @border_dark;
   background-color: @theme_base_color;
   color: @theme_fg_color;
 }
@@ -490,7 +491,7 @@ frame
 frame > border {
   border-width: 2px;
   border-style: groove;
-  border-color: @border_color;
+  border-color: @border_dark;
   border-radius: 0;
   box-shadow: none;
 }
@@ -762,7 +763,7 @@ menu {
   border-width: 2px;
   border-radius: 0;
   border-style: outset;
-  border-color: @border_color;
+  border-color: @border_dark;
   background-color: @menu_bg_color;
   color: @menu_fg_color;
 }
@@ -952,12 +953,16 @@ modelbutton:selected {
 notebook
 **********
 */
+notebook {
+  background-color: @theme_bg_color;
+}
+
 /* the color #000000 is displayed for some tabbed pages when 'background-color:' other than 'background-color: none;' is used: */
 notebook.frame > stack,
 notebook > stack:not(:only-child) {
   border-radius: 0;
   padding: 0;
-  border-color: @border_color;
+  border-color: @border_dark;
   border-width: 2px;
   border-style: outset;
 }
@@ -973,7 +978,7 @@ notebook tab {
   margin: 1px;
   border-radius: 0;
   border-style: outset;
-  border-color: @border_color;
+  border-color: @border_dark;
   background-color: shade(@theme_bg_color, 0.875);
   color: shade(@theme_bg_color, 0.35);
 }
@@ -1104,28 +1109,12 @@ notebook > header > tabs > arrow:disabled {
 
 /*
 **********
-pane separator
-**********
-*/
-paned > separator {
-  min-width: 1px;
-  min-height: 1px;
-  padding: 0;
-  background: @theme_selected_bg_color;
-}
-
-paned .sidebar {
-  border: none;
-}
-
-/*
-**********
 progressbar
 **********
 */
 progressbar trough {
   background-color: #bfbfbf;
-  border-color: @border_color;
+  border-color: @border_dark;
   border-width: 1px;
   border-style: inset;
   padding: 2px;
@@ -1188,7 +1177,7 @@ scale trough {
   border-width: 2px;
   border-radius: 0;
   border-style: inset;
-  border-color: @border_color;
+  border-color: @border_dark;
   background-color: transparent; /* dishevels the scale troughs of XFCE's 'xfce4-terminal --preferences' "Position" section under the "Drop-down" tab if a color other than 'transparent' is used */
   color: @theme_fg_color;
 }
@@ -1239,7 +1228,7 @@ scale slider {
   border-width: 2px;
   border-radius: 0;
   border-style: outset;
-  border-color: @border_color;
+  border-color: @border_dark;
   background-color: @theme_bg_color;
 }
 
@@ -1294,7 +1283,7 @@ scrollbar slider {
   border-width: 2px;
   border-radius: 0;
   border-style: outset;
-  border-color: @border_color;
+  border-color: @border_dark;
   background-color: @theme_bg_color;
   color: @theme_fg_color;
 }
@@ -1333,16 +1322,40 @@ treeview ~ scrollbar.vertical {
 
 /*
 **********
-separator
+separators
 **********
 */
-separator {
+separator.horizontal {
   margin: 1px;
-  border-radius: 0;
-  border-right-width: 2px;
-  border-bottom-width: 2px;
-  border-style: groove;
-  border-color: @border_color;
+  padding: 0;
+  border-top: 1px solid @border_dark;
+  border-bottom: 1px solid @border_light;
+}
+
+separator.vertical {
+  margin: 1px;
+  padding: 0;
+  border-left: 1px solid @border_dark;
+  border-right: 1px solid @border_light;
+}
+
+menu separator {
+  margin: 1px;
+  padding: 0;
+  border-top: 1px solid @border_dark;
+  border-bottom: 1px solid @border_light;
+}
+
+/* x-bar separator */
+toolbar separator {
+  margin: 3px;
+  padding: 0;
+  border-left: 1px solid @border_dark;
+  border-right: 1px solid @border_light;
+}
+
+/* titlebutton separator */
+.titlebar separator.titlebutton {
 }
 
 /* button separator */
@@ -1350,13 +1363,19 @@ button separator {
   margin: 1px;
 }
 
-/* x-bar separator */
-toolbar separator {
-  margin: 3px;
+paned > separator {
+  min-width: 2px;
+  min-height: 2px;
+  -gtk-icon-source: none;
+  border-style: none;
+  background-color: transparent;
+  background-image: image(mix(@theme_selected_bg_color, #bfbfbf, 0.25));
 }
 
-/* titlebutton separator */
-.titlebar separator.titlebutton {
+paned.horizontal > separator {
+}
+
+paned.vertical > separator {
 }
 
 /*
@@ -1407,7 +1426,7 @@ spinbutton
 **********
 */
 spinbutton:disabled {
-  color: mix(@theme_text_color, @theme_base_color, 0.7);
+  color: mix(@theme_text_color, @theme_base_color, 0.5);
 }
 
 spinbutton entry {
@@ -1500,7 +1519,7 @@ switch slider {
   border-width: 2px;
   border-radius: 0;
   border-style: outset;
-  border-color: @border_color;
+  border-color: @border_dark;
   background-color: @theme_bg_color;
   color: @theme_fg_color;
 }

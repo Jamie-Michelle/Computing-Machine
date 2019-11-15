@@ -1,4 +1,4 @@
-40/40 through 0/40 grays (used for actual grayscale definitions):
+40/40 through 0/40 white (used for actual grayscale definitions):
 
 rgb(255, 255, 255); #ffffff; 40/40, 1.0
 
@@ -83,7 +83,7 @@ rgb(5, 5, 5); #050505; 1/40, 0.025
 rgb(0, 0, 0); #000000; 0/40, 0.0
 
 
-48/48 through 0/48 grays (values used as individual R, G or B values within actual color definitions, i.e., non-grayscale definitions):
+48/48 through 0/48 white (values used as individual R, G or B values within actual color definitions, i.e., non-grayscale definitions):
 
 rgb(255, 255, 255); #ffffff; 48/48, 1.0
 
