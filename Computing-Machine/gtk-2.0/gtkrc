@@ -40,7 +40,7 @@ style "standard-default"
   bg[INSENSITIVE] = "#acacac" # 0.675 white -- (inactive title bars (a.k.a. header bars); inactive window outlines (i.e., borders) are based upon this color [note: since xfwm4 4.14.n, these functions have been moved to the '../xfwm4/themerc' file];) unusable (nonselectable) buttons; inactive scroll-bar buttons, i.e., scroll-bar ends when the scroll-bar handles are abutting them
   bg[NORMAL] = "#cccccc" # 0.8 white -- main parts of the windows, i.e., window frames; non-moused-over scroll-bar handles; active scroll-bar buttons, i.e., scroll-bar ends when the scroll-bar handles are not abutting them; active window tabs; non-moused-over unselected (i.e., inactive; non-indented) buttons; text-area next to check-boxes when not moused-over
   bg[PRELIGHT] = "#dfdfdf" # 0.875 white -- moused-over buttons
-  bg[SELECTED] = "#4a7fb4" # 14/48 R, 1/2 G, 34/48 B -- (active title bars (a.k.a. header bars); active window outlines (i.e., borders) are based upon this color [note: since xfwm4 4.14.n, these functions have been moved to the '../xfwm4/themerc' file];) progress-bars in Qt 4/5 programs; notices-bar in Viewnior
+  bg[SELECTED] = "#4a7fb4" # 7/24 R, 1/2 G, 17/24 B -- (active title bars (a.k.a. header bars); active window outlines (i.e., borders) are based upon this color [note: since xfwm4 4.14.n, these functions have been moved to the '../xfwm4/themerc' file];) progress-bars in Qt 4/5 programs; notices-bar in Viewnior
 
   fg[ACTIVE] = "#0c0c0c" # 0.05 white -- text within 'bg[ACTIVE]'; dotted lines around text of non-moused-over selected items (e.g., buttons; directory items in the KDE Dolphin file-manager)
   fg[INSENSITIVE] = "#656565" # 0.4 white -- text within 'bg[INSENSITIVE]'
@@ -52,7 +52,7 @@ style "standard-default"
   base[INSENSITIVE] = "#bfbfbf" # 0.75 white -- inactive fields that text can be written into when activated; lighter alternating rows of inactive fields of selectable lists (the darker alternating rows are based upon this color)
   base[NORMAL] = "#ffffff" # 1.0 white -- fields that text can be written into, where text appears as output, or where there are selectable items (usually white, as if to suggest paper), i.e., the main fields; moused-over directory items within the KDE Dolphin file-manager
   base[PRELIGHT] = "#447fba" # 13/48 R, 1/2 G, 35/48 B -- moused-over selectable checkboxes; area around some (but not all) moused-over hyperlinks
-  base[SELECTED] = "#4f7faf" # 15/48 R, 1/2 G, 33/48 B -- selected items within active windows; color surrounding selected text within 'bg[NORMAL]'
+  base[SELECTED] = "#4f7faf" # 5/16 R, 1/2 G, 11/16 B -- selected items within active windows; color surrounding selected text within 'bg[NORMAL]'
 
   text[ACTIVE] = "#c5c5c5" # 0.775 white -- selected text in an inactive field; file-size information of selected directory items within the KDE Dolphin file-manager (this is inconsistent behavior); text of selected directory items within an inactive window of the KDE Dolphin file-manager
   text[INSENSITIVE] = "#7f7f7f" # 0.5 white

@@ -10,9 +10,11 @@ The Conky system-monitor setup depicted below is available here: https://github.
 
 ⁂
 
-Changes for version 14.0:
+Changes for version 15.0:
 
-I revised some of the colors for the GTK+ 2 portion of the theme to better match the new and improved GTK+ 3 portion. I fixed some issues with separators in the GTK+ 3 portion, in addition to other fixes. Now every program that I've so far thrown at it looks pretty.
+This release incorporates a number of improvements. Now the complete GTK+ 3 portion of the theme is defined in the 'gtk-3.0/gtk.css' file, thereby doing away with separate image files. A problem with the color-chooser's selected color not showing through the overlay has been fixed. Various other improvements have also been made.
+
+Keep in mind that since version 13.0, the GTK+ 3 portion of the theme has been revised and is much improved.
 
 ![Computing-Machine-GTK-2.png](https://raw.githubusercontent.com/Jamie-Michelle/Computing-Machine/master/Computing-Machine-GTK-2.png)
 
