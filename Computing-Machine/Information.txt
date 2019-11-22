@@ -1,4 +1,4 @@
-Computing Machine version 15 (Nov. 19, 2019) by Jamie Michelle ( https://github.com/Jamie-Michelle ). Released under the GNU General Public License, Version 2.
+Computing Machine version 16 (Nov. 22, 2019) by Jamie Michelle ( https://github.com/Jamie-Michelle ). Released under the GNU General Public License, Version 2.
 
 This desktop-environment theme is entitled Computing Machine. It is for GTK+ 2/Gnome 2 applications; GTK+ 3/Gnome 3 applications; and Qt 5/KDE 5 applications via the Qt5 Configuration Tool ( https://sourceforge.net/projects/qt5ct/ ). This theme was developed on the XFCE desktop environment.
 
@@ -19,7 +19,7 @@ $ find . -type f | xargs sudo chmod 644
 
 ####################
 
-In order for GTK+ 2 tooltips to show the desired colors, the below was included in the '~/.gtkrc-2.0' file (excluding the doubled quotation marks [""] used to indicate a block quotation):
+To enable the GTK+ 2 portion of the theme for a specific user, include the below in the '~/.gtkrc-2.0' file (using your preferred icon set and system font; and excluding the doubled quotation marks [""] used to indicate a block quotation):
 
 ""
 # ~/.gtkrc-2.0
@@ -51,7 +51,7 @@ QT_QPA_PLATFORMTHEME="qt5ct"
 
 ""
 
-in the '/etc/environment' file fixed the problem of Firefox not opening the KDE Dolphin file-manager with icons or the right theme, after an actual computer-restart.
+in the '/etc/environment' file fixed a problem concerning Firefox not opening the KDE Dolphin file-manager with icons or the right theme, after an actual computer-restart.
 
 A recommended icon set to use with the Qt 5/KDE 5 portion of this theme is Oxygen. When installed on one's system, the icon set can be selected via the 'qt5ct' program's Icon Theme tab.
 
@@ -63,7 +63,7 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
 ""
 
-In order for 'qt5ct' to work with GTK+ 2 styles, it requires the following package (named such on Arch Linux-based distributions): 'qt5-styleplugins' (from https://code.qt.io/cgit/qt/qtstyleplugins , https://github.com/qt/qtstyleplugins ). On Debian-based systems, said package is named 'qt5-style-plugins'.
+In order for 'qt5ct' to work with GTK+ 2 styles, it requires the 'qtstyleplugins' software (from https://code.qt.io/cgit/qt/qtstyleplugins , https://github.com/qt/qtstyleplugins ). On Arch Linux-based distributions, said software is the package named 'qt5-styleplugins'; on Debian-based systems, it is the package named 'qt5-style-plugins'.
 
 Alternatively, the 'qt5ct' program does not have to be used, as one can use the following environment variable instead in the '/etc/environment' and '~/.profile' files when 'qtstyleplugins' is installed. However, one then loses the ability to select icon sets and fonts specifically for the Qt 5 applications, which will instead use whatever is set for the GTK+ 2 portion of the theme.
 
@@ -134,7 +134,7 @@ For additional helpful information on configuring this theme, see the following 
 
 ####################
 
-For modifying the Computing Machine theme, the below programs are useful.
+For modifying the Computing Machine theme, the below programs are useful:
 
 $ gtk3-widget-factory # GTK Widget Factory
 

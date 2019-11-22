@@ -10,9 +10,9 @@ The Conky system-monitor setup depicted below is available here: https://github.
 
 ⁂
 
-Changes for version 15.0:
+Changes for version 16.0:
 
-This release incorporates a number of improvements. Now the complete GTK+ 3 portion of the theme is defined in the 'gtk-3.0/gtk.css' file, thereby doing away with separate image files. A problem with the color-chooser's selected color not showing through the overlay has been fixed. Various other improvements have also been made.
+This release implements a clean-up of the code, with a few minor visual improvements.
 
 Keep in mind that since version 13.0, the GTK+ 3 portion of the theme has been revised and is much improved.
 

@@ -1,14 +1,3 @@
-# /usr/share/themes/Computing-Machine/gtk-2.0/gtkrc
-#
-# or:
-#
-# ~/.themes/Computing-Machine/gtk-2.0/gtkrc
-#
-# This is a modification of the Redmond 'gtkrc' file (from https://download.gnome.org/sources/gtk-engines/2.20/gtk-engines-2.20.2.tar.gz ). Make sure that if located at '/usr/share/themes/Computing-Machine/gtk-2.0/gtkrc' that this file has the file-permission of 644 (-rw-r--r--).
-#
-# Also put the below line in the '~/.gtkrc-2.0' file:
-#
-# include "/usr/share/themes/Computing-Machine/gtk-2.0/gtkrc"
 
 gtk-icon-sizes = "mini-commander-icon=32,32:print-manager=32,32:panel-button=32,32:gtk-dnd=32,32:gtk-menu=16,16:panel-menu=22,22:gtk-large-toolbar=16,16:gtk-small-toolbar=16,16:gtk-button=16,16:gtk-dialog=32,32"
 
