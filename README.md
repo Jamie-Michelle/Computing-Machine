@@ -10,9 +10,9 @@ The Conky system-monitor setup depicted below is available here: https://github.
 
 ⁂
 
-Changes for version 16.0:
+Changes for version 17.0:
 
-This release implements a clean-up of the code, with a few minor visual improvements.
+Some additional code clean-up has been done. Visually it should be the same as the previous release.
 
 Keep in mind that since version 13.0, the GTK+ 3 portion of the theme has been revised and is much improved.
 

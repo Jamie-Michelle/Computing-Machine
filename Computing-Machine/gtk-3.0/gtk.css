@@ -471,13 +471,11 @@ scale marks {
   color: alpha(currentColor, 0.55);
 }
 
-scale marks.top,
-scale.fine-tune marks.top {
+scale marks.top {
   margin: -6px 6px 6px -6px;
 }
 
-scale marks.bottom,
-scale.fine-tune marks.bottom {
+scale marks.bottom {
   margin: 6px -6px -6px 6px;
 }
 
@@ -574,14 +572,14 @@ entry {
   color: @theme_fg_color;
 }
 
-entry selection {
-  background-color: @theme_selected_bg_color;
-  color: @theme_selected_fg_color;
-}
-
 entry:disabled {
   background-color: shade(@theme_bg_color, 0.95);
   color: mix(@theme_text_color, @theme_base_color, 0.5);
+}
+
+entry selection {
+  background-color: @theme_selected_bg_color;
+  color: @theme_selected_fg_color;
 }
 
 entry progress {
@@ -656,14 +654,14 @@ notebook tab {
   color: shade(@theme_bg_color, 0.35);
 }
 
-notebook tab label {
-  padding: 3px 6px;
-}
-
 notebook tab:checked {
   margin: 0;
   padding: 2px;
   background-color: @theme_bg_color;
+}
+
+notebook tab label {
+  padding: 3px 6px;
 }
 
 notebook header.top tab {
@@ -809,14 +807,14 @@ scrolledwindow .frame {
   border: none;
 }
 
-/* file chooser white bg color on iconview */
-.nautilus-window scrolledwindow {
-  background-color: @theme_base_color;
-}
-
 /* avoid double borders when a viewport is packed into a GtkScrolledWindow */
 scrolledwindow viewport frame {
   border: none;
+}
+
+/* color of Nautilus file-manager main-window background: */
+.nautilus-window scrolledwindow {
+  background-color: @theme_base_color;
 }
 
 /*
@@ -874,12 +872,6 @@ scrollbar.horizontal button.down {
 
 scrollbar.horizontal button.up {
   -gtk-icon-source: -gtk-icontheme('pan-start-symbolic');
-}
-
-/* affects the Whisker Menu's main-window (i.e., programs list) vertical scrollbar: */
-treeview ~ scrollbar.vertical {
-  margin-top: -1px;
-  border-top: 1px solid transparent;
 }
 
 /*
@@ -1198,7 +1190,7 @@ assistant box.sidebar > label.highlight {
 
 /*
 **********
-color chooser
+color-chooser
 **********
 */
 colorswatch
@@ -1233,6 +1225,11 @@ calendar {
   padding: 3px;
 }
 
+calendar:selected {
+  background-color: @theme_selected_bg_color;
+  color: @theme_selected_fg_color;
+}
+
 calendar:indeterminate {
   color: mix(@theme_fg_color, @theme_bg_color, 0.5);
 }
@@ -1249,17 +1246,12 @@ calendar.highlight {
   color: shade(@theme_selected_bg_color, 0.9);
 }
 
-calendar:selected {
-  background-color: @theme_selected_bg_color;
-  color: @theme_selected_fg_color;
-}
-
 /*
 **********
 tooltip
 **********
 */
-/* affects the text color of some tabbed pages: */
+/* affects text color of some tabbed pages: */
 tooltip * {
   color: @theme_tooltip_fg_color;
 }
@@ -1411,6 +1403,10 @@ spinner:checked:disabled {
 expander
 **********
 */
+expander {
+  color: currentColor;
+}
+
 expander arrow {
   min-width: 16px;
   min-height: 16px;
@@ -1423,10 +1419,6 @@ expander arrow:dir(rtl) {
 
 expander arrow:checked {
   -gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
-}
-
-expander {
-  color: currentColor;
 }
 
 /*
@@ -1465,9 +1457,8 @@ toolbar separator {
 paned > separator {
   min-width: 2px;
   min-height: 2px;
-  -gtk-icon-source: none;
   border-style: none;
-  background-color: transparent;
+  -gtk-icon-source: none;
   background-image: image(mix(@theme_selected_bg_color, #bfbfbf, 0.25));
 }
 
@@ -1482,8 +1473,6 @@ overshoot.top {
   background-repeat: no-repeat;
   background-position: center top;
   background-color: transparent;
-  border: none;
-  box-shadow: none;
 }
 
 overshoot.bottom {
@@ -1492,8 +1481,6 @@ overshoot.bottom {
   background-repeat: no-repeat;
   background-position: center bottom;
   background-color: transparent;
-  border: none;
-  box-shadow: none;
 }
 
 overshoot.left {
@@ -1502,8 +1489,6 @@ overshoot.left {
   background-repeat: no-repeat;
   background-position: left center;
   background-color: transparent;
-  border: none;
-  box-shadow: none;
 }
 
 overshoot.right {
@@ -1512,46 +1497,44 @@ overshoot.right {
   background-repeat: no-repeat;
   background-position: right center;
   background-color: transparent;
-  border: none;
-  box-shadow: none;
 }
 
 undershoot.top {
-  background-color: transparent;
   background-image: linear-gradient(to left, alpha(white, 0.2) 50%, alpha(black, 0.2) 50%);
   padding-top: 1px;
   background-size: 10px 1px;
   background-repeat: repeat-x;
   background-origin: content-box;
   background-position: center top;
+  background-color: transparent;
 }
 
 undershoot.bottom {
-  background-color: transparent;
   background-image: linear-gradient(to left, alpha(white, 0.2) 50%, alpha(black, 0.2) 50%);
   padding-bottom: 1px;
   background-size: 10px 1px;
   background-repeat: repeat-x;
   background-origin: content-box;
   background-position: center bottom;
+  background-color: transparent;
 }
 
 undershoot.left {
-  background-color: transparent;
   background-image: linear-gradient(to top, alpha(white, 0.2) 50%, alpha(black, 0.2) 50%);
   padding-left: 1px;
   background-size: 1px 10px;
   background-repeat: repeat-y;
   background-origin: content-box;
   background-position: left center;
+  background-color: transparent;
 }
 
 undershoot.right {
-  background-color: transparent;
   background-image: linear-gradient(to top, alpha(white, 0.2) 50%, alpha(black, 0.2) 50%);
   padding-right: 1px;
   background-size: 1px 10px;
   background-repeat: repeat-y;
   background-origin: content-box;
   background-position: right center;
+  background-color: transparent;
 }
