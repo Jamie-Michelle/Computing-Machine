@@ -6,7 +6,7 @@ style "standard-default"
 {
   GtkWidget::interior_focus = 2
 
-  GtkComboBox::appears-as-list = 1
+  GtkComboBox::appears-as-list = 0
 
   GtkNotebook::tab-overlap = 4
 
@@ -46,7 +46,7 @@ style "standard-default"
   text[ACTIVE] = "#c5c5c5" # 0.775 white -- selected text in an inactive field; file-size information of selected directory items within the KDE Dolphin file-manager (this is inconsistent behavior); text of selected directory items within an inactive window of the KDE Dolphin file-manager
   text[INSENSITIVE] = "#7f7f7f" # 0.5 white
   text[NORMAL] = "#050505" # 0.025 white -- text within 'base[NORMAL]' (usually black, as if to suggest printed letters on paper)
-  text[PRELIGHT] = "#ffff00" # 1/1 R, 1/1 G, 0/1 B -- checks within 'base[PRELIGHT]'
+  # text[PRELIGHT] = "#ffff00" # 1/1 R, 1/1 G, 0/1 B -- checks within 'base[PRELIGHT]'; text of moused-over 'GtkComboBox::appears-as-list = 0'
   text[SELECTED] = "#d2d2d2" # 0.825 white -- selected text within an active field; text within 'base[SELECTED]'
 
   # engine "redmond95" {}
@@ -91,8 +91,8 @@ class "GtkScrollbar" style "standard-scrollbar"
 
 style "standard-scales"
 {
-  GtkRange::slider-width = 21
-  GtkScale::slider-length = 11
+  GtkRange::slider-width = 19
+  GtkScale::slider-length = 13
 }
 class "*Scale*" style "standard-scales"
 

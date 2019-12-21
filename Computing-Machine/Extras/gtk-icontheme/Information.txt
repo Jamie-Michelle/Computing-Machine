@@ -1,0 +1,11 @@
+The SVG files in this directory are all the icons used in the "-gtk-icon-source: -gtk-icontheme('...');" declarations within the '../../gtk-3.0/gtk.css' file of the Computing Machine theme. They are taken from adwaita-icon-theme 3.34.3 ( https://gitlab.gnome.org/GNOME/adwaita-icon-theme/tree/3.34.3 ; https://gitlab.gnome.org/GNOME/adwaita-icon-theme/-/archive/3.34.3/adwaita-icon-theme-3.34.3.tar.bz2 , 33416825 bytes, MD5: 1700e51e9cb0b0474c442cadc44af295). They are included here simply for theme-completeness and to allow easier modification of the theme. Below is where they were installed on my hard-drive:
+
+/usr/share/icons/Adwaita/scalable/actions/list-remove-symbolic.svg
+/usr/share/icons/Adwaita/scalable/actions/media-record-symbolic.svg
+/usr/share/icons/Adwaita/scalable/actions/object-select-symbolic.svg
+/usr/share/icons/Adwaita/scalable/ui/pan-down-symbolic.svg
+/usr/share/icons/Adwaita/scalable/ui/pan-end-symbolic-rtl.svg
+/usr/share/icons/Adwaita/scalable/ui/pan-end-symbolic.svg
+/usr/share/icons/Adwaita/scalable/ui/pan-start-symbolic.svg
+/usr/share/icons/Adwaita/scalable/ui/pan-up-symbolic.svg
+/usr/share/icons/Adwaita/scalable-up-to-32/status/process-working-symbolic.svg

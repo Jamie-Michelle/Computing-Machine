@@ -833,18 +833,6 @@ scrollbar trough {
   background-color: shade(@theme_bg_color, 0.85);
 }
 
-scrollbar button {
-  padding: 3px;
-}
-
-scrollbar.vertical button {
-  min-height: 6px;
-}
-
-scrollbar.horizontal button {
-  min-width: 6px;
-}
-
 scrollbar slider {
   min-height: 42px;
   min-width: 10px;
@@ -856,6 +844,18 @@ scrollbar slider {
 scrollbar.horizontal slider {
   min-width: 42px;
   min-height: 10px;
+}
+
+scrollbar button {
+  padding: 3px;
+}
+
+scrollbar.vertical button {
+  min-height: 6px;
+}
+
+scrollbar.horizontal button {
+  min-width: 6px;
 }
 
 scrollbar.vertical button.down {

@@ -1,6 +1,6 @@
-Computing Machine version 17 (Nov. 30, 2019) by Jamie Michelle ( https://github.com/Jamie-Michelle ). Released under the GNU General Public License, Version 2.
+Computing Machine version 17.1 (Dec. 21, 2019) by Jamie Michelle ( https://github.com/Jamie-Michelle ). Released under the GNU General Public License, Version 2.
 
-This desktop-environment theme is entitled Computing Machine. It is for GTK+ 2/Gnome 2 applications; GTK+ 3/Gnome 3 applications; and Qt 5/KDE 5 applications via the Qt5 Configuration Tool ( https://sourceforge.net/projects/qt5ct/ ). This theme was developed on the XFCE desktop environment.
+This Unix-like desktop-environment theme is entitled Computing Machine. It is for GTK+ 2/Gnome 2 applications; GTK+ 3/Gnome 3 applications; Qt 4/KDE 4 applications; and Qt 5/KDE 5 applications via the Qt5 Configuration Tool ( https://sourceforge.net/projects/qt5ct/ ). This theme was developed on the XFCE desktop environment.
 
 The './gtk-2.0/gtkrc' file is a modification of the 'gtk-engines-2.20.2/themes/Redmond/gtk-2.0/gtkrc' file from https://download.gnome.org/sources/gtk-engines/2.20/gtk-engines-2.20.2.tar.bz2 (688171 bytes, MD5: 5deb287bc6075dc21812130604c7dc4f).
 
@@ -12,10 +12,9 @@ The './xfce-notify-4.0/gtk.css' file is a modification of the 'xfce4-notifyd-0.4
 
 ####################
 
-If this theme is located system-wide at '/usr/share/themes/Computing-Machine/' instead of user-specific at '~/.themes/Computing-Machine/', make sure that all the files of this theme have the correct permissions, which can be done with the following commands:
+If this theme is located system-wide at '/usr/share/themes/Computing-Machine/' instead of user-specific at '~/.themes/Computing-Machine/', make sure that all the files of this theme have the correct permissions, which can be done with the following command:
 
-$ cd /usr/share/themes/Computing-Machine/
-$ find . -type f | xargs sudo chmod 644
+$ cd /usr/share/themes/Computing-Machine/ && find . -type f | xargs sudo chmod 644
 
 ####################
 
@@ -47,7 +46,7 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 Putting
 
 ""
-QT_QPA_PLATFORMTHEME="qt5ct"
+QT_QPA_PLATFORMTHEME=qt5ct
 
 ""
 
@@ -58,17 +57,19 @@ A recommended icon set to use with the Qt 5/KDE 5 portion of this theme is Oxyge
 Apparently the first and perhaps both of the following two lines also have to be in the '~/.profile' file:
 
 ""
-export QT_QPA_PLATFORMTHEME="qt5ct"
+export QT_QPA_PLATFORMTHEME=qt5ct
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
 ""
 
 In order for 'qt5ct' to work with GTK+ 2 styles, it requires the 'qtstyleplugins' software (from https://code.qt.io/cgit/qt/qtstyleplugins , https://github.com/qt/qtstyleplugins ). On Arch Linux-based distributions, said software is the package named 'qt5-styleplugins'; on Debian-based systems, it is the package named 'qt5-style-plugins'.
 
+Besides the 'qtstyleplugins' software for making GTK+ 2 styles work with Qt 5 applications, one can also use 'qt5gtk2' by Ilya Kotov ( https://bitbucket.org/trialuser02/qt5gtk2/ ).
+
 Alternatively, the 'qt5ct' program does not have to be used, as one can use the following environment variable instead in the '/etc/environment' and '~/.profile' files when 'qtstyleplugins' is installed. However, one then loses the ability to select icon sets and fonts specifically for the Qt 5 applications, which will instead use whatever is set for the GTK+ 2 portion of the theme.
 
 ""
-QT_QPA_PLATFORMTHEME="gtk2"
+QT_QPA_PLATFORMTHEME=gtk2
 
 ""
 
@@ -84,9 +85,11 @@ $ QT_STYLE_OVERRIDE=cde dolphin
 
 $ QT_QPA_PLATFORMTHEME=windows QT_STYLE_OVERRIDE=windows dolphin
 
+Additionally, contained in the included './Extras/' directory is the 'Computing-Machine.conf' file, which can be placed in either the '/usr/share/qt5ct/colors/' directory or the '~/.config/qt5ct/colors/' directory so that the 'qt5ct' program can use the Computing Machine color-palette with different interface styles (selectable under Appearance > Palette > Custom [checked] > Color scheme: Computing-Machine). In order to have dialogue button-layouts match the GTK sequence when using different interface styles with the 'qt5ct' program, set it via Interface > Dialog buttons layout: GNOME, rather than via Appearance > Standard dialogs: GTK2, which instead is best left on Default.
+
 ####################
 
-In order to adjust the theme settings for Qt 4/KDE 4 applications, see the following program:
+In order to adjust the theme settings for Qt 4/KDE 4 applications, see the below program. Also see the settings files '/etc/xdg/Trolltech.conf' and/or '~/.config/Trolltech.conf'.
 
 $ qtconfig-qt4
 
@@ -112,6 +115,8 @@ gtk-font-name=Cantarell 10
 
 ""
 
+Note that if the foregoing system-wide settings are instated then one does not have to instate user-specific setting in the '~/.gtkrc-2.0' and '~/.profile' files (indeed, one can do away with the '~/.gtkrc-2.0' file entirely). However, one of the above-detailed environment variables in the '/etc/environment' file should still be used.
+
 ####################
 
 On the XFCE desktop environment, the Computing Machine theme can be selected via the Appearance program ('xfce4-appearance-settings').
@@ -134,7 +139,7 @@ For additional helpful information on configuring this theme, see the following 
 
 ####################
 
-For modifying the Computing Machine theme, the below programs are useful:
+For modifying the Computing Machine theme, the below programs are useful. See also within the included './Extras/' directory for additional resources that can be of help in modifying this theme.
 
 $ gtk3-widget-factory # GTK Widget Factory
 
