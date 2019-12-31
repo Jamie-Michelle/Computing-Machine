@@ -10,13 +10,11 @@ The Conky system-monitor setup depicted below is available here: https://github.
 
 ⁂
 
-Changes for version 17.1:
+Changes for version 17.2:
 
-The Christmas Special Edition! May everyone have a splendiferous Christmastide!
+The New Year Special Edition! May everyone have crystal-clear vision for the duration of the new year and far into the future!
 
-Improved the GTK+ 2 portion of the theme with "GtkComboBox::appears-as-list = 0" instead of "GtkComboBox::appears-as-list = 1" in the 'gtk-2.0/gtkrc' file, which brings it more in accordance with the GTK+ 3 portion of the theme; and which is more logical since with "GtkComboBox::appears-as-list = 1", the non-entry comboboxes appear exactly like the entry comboboxes even though they have no actual entry-field. Also made some other small improvements to the GTK+ 2 portion of the theme.
-
-Created the 'Computing-Machine.conf' file in the 'Extras/' directory, which can be used with the 'qt5ct' program in order to apply the Computing Machine color-scheme upon different Qt 5 interface styles. See the included 'Information.txt' file for instructions on how to use it.
+Improved the GTK+ 2 portion of the theme by changing "gtk-large-toolbar=16,16" to "gtk-large-toolbar=24,24" in the 'gtk-2.0/gtkrc' file. Improved the documentation by recommending the line "gtk-toolbar-style=GTK_TOOLBAR_ICONS" in the '~/.gtkrc-2.0' and/or the '/etc/gtk-2.0/gtkrc' files. Together these changes make the toolbars of the GTK+ 2 portion of the theme look the same on other window managers as they do on the XFCE desktop environment.
 
 Keep in mind that since version 13.0, the GTK+ 3 portion of the theme has been revised and is much improved.
 

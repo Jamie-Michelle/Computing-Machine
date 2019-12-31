@@ -1,5 +1,5 @@
 
-gtk-icon-sizes = "mini-commander-icon=32,32:print-manager=32,32:panel-button=32,32:gtk-dnd=32,32:gtk-menu=16,16:panel-menu=22,22:gtk-large-toolbar=16,16:gtk-small-toolbar=16,16:gtk-button=16,16:gtk-dialog=32,32"
+gtk-icon-sizes = "mini-commander-icon=32,32:print-manager=32,32:panel-button=32,32:gtk-dnd=32,32:gtk-menu=16,16:panel-menu=22,22:gtk-large-toolbar=24,24:gtk-small-toolbar=16,16:gtk-button=16,16:gtk-dialog=32,32"
 
 
 style "standard-default"
