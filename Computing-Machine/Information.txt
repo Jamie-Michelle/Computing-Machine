@@ -1,4 +1,4 @@
-Computing Machine version 17.2 (Dec. 31, 2019) by Jamie Michelle ( https://github.com/Jamie-Michelle ). Released under the GNU General Public License, Version 2.
+Computing Machine version 17.3 (Jan. 8, 2020) by Jamie Michelle ( https://github.com/Jamie-Michelle , https://www.opendesktop.org/u/jamiemichelle/ ). Released under the GNU General Public License, Version 2.
 
 This Unix-like desktop-environment theme is entitled Computing Machine. It is for GTK+ 2/Gnome 2 applications; GTK+ 3/Gnome 3 applications; Qt 4/KDE 4 applications; and Qt 5/KDE 5 applications via the Qt5 Configuration Tool ( https://sourceforge.net/projects/qt5ct/ ). This theme was developed on the XFCE desktop environment.
 
@@ -6,9 +6,9 @@ The './gtk-2.0/gtkrc' file is a modification of the 'gtk-engines-2.20.2/themes/R
 
 The './gtk-3.0/gtk.css' and './gtk-3.0/settings.ini' files are modified from files of Reactionary Creatures version of Aug. 23, 2018 ( https://www.opendesktop.org/p/1255961/ ; ReactionaryGTKCreatures.tar.gz , 32669 bytes, MD5: 76dc59f2a7d36ceb5f26f15cf0bbe53e) by phob1an ( https://github.com/phobi4n ).
 
-The files in the './xfwm4/' directory are modified from the 'xfwm4-themes-4.10.0/themes/default-4.8/' directory from http://archive.xfce.org/src/art/xfwm4-themes/4.10/xfwm4-themes-4.10.0.tar.bz2 (621206 bytes, MD5: eaa58362053a3549c8be0b32efd3c54f).
+The files in the './xfwm4/' directory are modified from the 'xfwm4-themes-4.10.0/themes/default-4.8/' directory from https://archive.xfce.org/src/art/xfwm4-themes/4.10/xfwm4-themes-4.10.0.tar.bz2 (621206 bytes, MD5: eaa58362053a3549c8be0b32efd3c54f). See said archive for the SVG files from which the herein-included PNG files are derived.
 
-The './xfce-notify-4.0/gtk.css' file is a modification of the 'xfce4-notifyd-0.4.4/themes/gtk-3.20/ZOMG-PONIES!/gtk.css' file from http://archive.xfce.org/src/apps/xfce4-notifyd/0.4/xfce4-notifyd-0.4.4.tar.bz2 (536304 bytes, MD5: 9614d4f7c0790e8ab24e55896a44a8ac).
+The './xfce-notify-4.0/gtk.css' file is a modification of the 'xfce4-notifyd-0.4.4/themes/gtk-3.20/ZOMG-PONIES!/gtk.css' file from https://archive.xfce.org/src/apps/xfce4-notifyd/0.4/xfce4-notifyd-0.4.4.tar.bz2 (536304 bytes, MD5: 9614d4f7c0790e8ab24e55896a44a8ac).
 
 ####################
 
@@ -29,7 +29,6 @@ To enable the GTK+ 2 portion of the theme for a specific user, include the below
 include "/usr/share/themes/Computing-Machine/gtk-2.0/gtkrc"
 gtk-icon-theme-name="Faenza"
 gtk-font-name="Cantarell 10"
-gtk-toolbar-style=GTK_TOOLBAR_ICONS
 
 ""
 
@@ -42,7 +41,7 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
 ####################
 
-'qt5ct' set on Appearance > Style: gtk2
+Set the 'qt5ct' program on Appearance > Style: gtk2.
 
 Putting
 
@@ -51,7 +50,7 @@ QT_QPA_PLATFORMTHEME=qt5ct
 
 ""
 
-in the '/etc/environment' file fixed a problem concerning Firefox not opening the KDE Dolphin file-manager with icons or the right theme, after an actual computer-restart.
+in the '/etc/environment' file fixed a problem concerning Firefox not opening the KDE Dolphin file-manager with icons or the right theme, after logging out and back into the window manager.
 
 A recommended icon set to use with the Qt 5/KDE 5 portion of this theme is Oxygen. When installed on one's system, the icon set can be selected via the 'qt5ct' program's Icon Theme tab.
 
@@ -74,11 +73,11 @@ QT_QPA_PLATFORMTHEME=gtk2
 
 ""
 
-As an aside which might be of help in some instances, note also the following Qt 5 application switches and environment variables, which can be used in various combinations:
+As an aside which might be of help in some instances, note also the following nonexhaustive examples of Qt 5 application switches and environment variables, which can be used in various combinations:
 
 $ dolphin --platformtheme gtk2
 
-$ dolphin --style windows
+$ dolphin --style motif
 
 $ QT_QPA_PLATFORMTHEME=gtk2 dolphin
 
@@ -102,7 +101,6 @@ In order for the GTK+ 2 portion of this theme to work across different window ma
 gtk-theme-name="Computing-Machine"
 gtk-icon-theme-name="Faenza"
 gtk-font-name="Cantarell 10"
-gtk-toolbar-style=GTK_TOOLBAR_ICONS
 
 ""
 
@@ -113,7 +111,6 @@ In order for the GTK+ 3 portion of this theme to work across different window ma
 gtk-theme-name=Computing-Machine
 gtk-icon-theme-name=Faenza
 gtk-font-name=Cantarell 10
-gtk-menu-images=1
 
 ""
 
@@ -128,6 +125,26 @@ On the XFCE desktop environment, the window-manager portion of the Computing Mac
 On the XFCE desktop environment, the notifier portion of the Computing Machine theme ('./xfce-notify-4.0/') can be selected via the Notifications program ('xfce4-notifyd-config').
 
 The Computing Machine theme can be selected as the theme of the LightDM GTK+ Greeter ('lightdm-gtk-greeter', https://launchpad.net/lightdm-gtk-greeter ) via the Settings Editor for LightDM GTK+ Greeter ('lightdm-gtk-greeter-settings' or 'lightdm-gtk-greeter-settings-pkexec', https://launchpad.net/lightdm-gtk-greeter-settings ) when the Computing Machine theme is installed system-wide at '/usr/share/themes/Computing-Machine/'. Alternatively, one does not have to use said Settings Editor, as the theme of the LightDM GTK+ Greeter can be set by directly editing its '/etc/lightdm/lightdm-gtk-greeter.conf' file.
+
+####################
+
+The Computing Machine theme presently doesn't work well with LibreOffice ( https://www.libreoffice.org ). To activate a theme that does work well with LibreOffice, put the following line in the '~/.profile' file (for user-specific activation):
+
+""
+export SAL_USE_VCLPLUGIN=gen
+
+""
+
+Or put the following line in the '/etc/environment' file (for system-wide activation):
+
+""
+SAL_USE_VCLPLUGIN=gen
+
+""
+
+Then upon logging out and back into one's window manager, the generic X Window System (X11) theme for LibreOffice should be active. To select a LibreOffice theme color that matches well with Computing Machine, from LibreOffice's menu select Tools > Options > LibreOffice > Personalization > [check] Preinstalled Theme > Gray.
+
+(The foregoing information was tested with LibreOffice 6.2.8.)
 
 ####################
 

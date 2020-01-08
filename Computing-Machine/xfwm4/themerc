@@ -1,6 +1,7 @@
-active_text_color=#ffffff
 active_color_1=#4a7fb4
-inactive_color_1=#b9b9b9
+active_text_color=#ffffff
+inactive_color_1=#acacac
+inactive_text_color=#656565
 button_offset=5
 button_spacing=0
 full_width_title=false

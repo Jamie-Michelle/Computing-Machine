@@ -10,11 +10,11 @@ The Conky system-monitor setup depicted below is available here: https://github.
 
 ⁂
 
-Changes for version 17.2:
+Changes for version 17.3:
 
-The New Year Special Edition! May everyone have crystal-clear vision for the duration of the new year and far into the future!
+Made the theme's appearance across different window managers consistent with how it appears on the XFCE desktop environment without the need for special settings in the configuration files external to the theme. See the included "Information.txt" documentation for currently-recommended settings for said external configuration files.
 
-Improved the GTK+ 2 portion of the theme by changing "gtk-large-toolbar=16,16" to "gtk-large-toolbar=24,24" in the 'gtk-2.0/gtkrc' file. Improved the documentation by recommending the line "gtk-toolbar-style=GTK_TOOLBAR_ICONS" in the '~/.gtkrc-2.0' and/or the '/etc/gtk-2.0/gtkrc' files. Together these changes make the toolbars of the GTK+ 2 portion of the theme look the same on other window managers as they do on the XFCE desktop environment.
+Made various small improvements to the rest of the theme.
 
 Keep in mind that since version 13.0, the GTK+ 3 portion of the theme has been revised and is much improved.
 

@@ -1,6 +1,6 @@
-a4b2033af4b60202f8d1379517fc888f *./gtk-3.0/gtk.css
-2cd31c55b2970d4ba4d85c2d9bb092d8 *./gtk-3.0/settings.ini
-7887acd5f69ad071da87b34880911a69 *./xfce-notify-4.0/gtk.css
+63eceec81a763dce382adbb30d0dc01b *./gtk-3.0/gtk.css
+45172a3b7e426c42ecd354233b68a2e8 *./gtk-3.0/settings.ini
+49e25788e422b83998af21d9be841235 *./xfce-notify-4.0/gtk.css
 d03a993add76d4a06dce3cd16e1691c0 *./xfwm4/hide-pressed.png
 d36e22bf792e0f69ee8bbd6e3eb87b1f *./xfwm4/stick-pressed.xpm
 3f3df1481d33c31473cf2183bf000a64 *./xfwm4/hide-pressed.xpm
@@ -48,7 +48,7 @@ cba5231fd005a723d6a0a94e02b5387b *./xfwm4/menu-prelight.xpm
 c02d48d26befda161234d64ab8f27618 *./xfwm4/shade-active.png
 28e64b25c9bf5a3debabfeba73aded20 *./xfwm4/maximize-prelight.xpm
 1f184a8435fab65fadb9bd8e32eadbf0 *./xfwm4/close-inactive.png
-93e72f865ceaa09a6807022e9866e8ab *./xfwm4/themerc
+8936570251aa36781287ab0866805895 *./xfwm4/themerc
 2cace5191fab8379bac4366e3339b140 *./xfwm4/menu-prelight.png
 21b3395cd5e5df33c2355c79c95ca294 *./xfwm4/menu-inactive.xpm
 a50791d940766c2953dda0c49b8bf075 *./xfwm4/hide-active.png
@@ -123,7 +123,7 @@ bb0dc8f1450ca5a38be4fef1c62fd0b0 *./xfwm4/hide-prelight.png
 11e03c81a41c82840e3030a7ed816717 *./xfwm4/shade-toggled-prelight.xpm
 c60adb598b93d908c44fbd245bf2d7c8 *./xfwm4/bottom-left-inactive.png
 2cace5191fab8379bac4366e3339b140 *./xfwm4/menu-inactive.png
-40790d434cc5956368cf9245c2ffed19 *./Information.txt
+22b4f0f55af20edcd44990ec39b020d9 *./Information.txt
 c2a8998d9ea495081217f600783c9936 *./Extras/Theme-Colors.txt
 ee8392c885f790e3e28170725fcbde1c *./Extras/Computing-Machine.conf
 cc9e8a4ede2e39739e0d30cf16be49aa *./Extras/gtk-icontheme/pan-end-symbolic.svg
@@ -136,4 +136,4 @@ d4a776373a0da3ba0bbfe72be8a78d08 *./Extras/gtk-icontheme/pan-end-symbolic-rtl.sv
 6aa48f7b3df6563fe52cd3f090cbdfd3 *./Extras/gtk-icontheme/pan-up-symbolic.svg
 1cef1a80c99c1d4ed99a7258f9e6c9e8 *./Extras/gtk-icontheme/pan-down-symbolic.svg
 58e68094d43b8a30f52413dc4e13e78c *./Extras/gtk-icontheme/list-remove-symbolic.svg
-076739cae2b5c9977d84da1837873e75 *./gtk-2.0/gtkrc
+92f9c929dd67699c5b0afa07037ce4f9 *./gtk-2.0/gtkrc
