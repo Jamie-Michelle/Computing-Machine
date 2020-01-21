@@ -10,11 +10,9 @@ The Conky system-monitor setup depicted below is available here: https://github.
 
 ⁂
 
-Changes for version 17.3:
+Changes for version 17.4:
 
-Made the theme's appearance across different window managers consistent with how it appears on the XFCE desktop environment without the need for special settings in the configuration files external to the theme. See the included "Information.txt" documentation for currently-recommended settings for said external configuration files.
-
-Made various small improvements to the rest of the theme.
+Improved the tabs of the GTK+ 3 portion of the theme.
 
 Keep in mind that since version 13.0, the GTK+ 3 portion of the theme has been revised and is much improved.
 

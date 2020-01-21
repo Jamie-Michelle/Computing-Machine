@@ -643,16 +643,14 @@ notebook header {
 }
 
 notebook tab {
-	font-weight: bold;
-	margin: 1px;
+	padding: 2px 3px 2px 3px;
 	border: 2px outset @dark_shadow;
 	background-color: shade(@theme_bg_color, 0.875);
 	color: shade(@theme_bg_color, 0.35);
+	font-weight: bold;
 }
 
 notebook tab:checked {
-	margin: 0;
-	padding: 2px;
 	background-color: @theme_bg_color;
 }
 
@@ -661,47 +659,47 @@ notebook tab label {
 }
 
 notebook header.top tab {
-	padding: 2px 3px 0 3px;
-	margin-bottom: 0;
+	padding-bottom: 0;
+	margin-top: 1px;
 	border-bottom: none;
 }
 
 notebook header.top tab:checked {
-	padding: 2px 4px 3px 4px;
-	margin-bottom: -2px;
+	padding-bottom: 3px;
+	margin: 0 0 -2px 0;
 }
 
 notebook header.bottom tab {
-	padding: 0 3px 2px 3px;
-	margin-top: 0;
+	padding-top: 0;
+	margin-bottom: 1px;
 	border-top: none;
 }
 
 notebook header.bottom tab:checked {
-	padding: 3px 4px 2px 4px;
-	margin-top: -2px;
+	padding-top: 3px;
+	margin: -2px 0 0 0;
 }
 
 notebook header.left tab {
-	padding: 2px 0 2px 3px;
-	margin-right: 0;
+	padding-right: 0;
+	margin-left: 1px;
 	border-right: none;
 }
 
 notebook header.left tab:checked {
-	padding: 3px 3px 3px 3px;
-	margin-right: -2px;
+	padding-right: 3px;
+	margin: 0 -2px 0 0;
 }
 
 notebook header.right tab {
-	padding: 2px 3px 2px 0;
-	margin-left: 0;
+	padding-left: 0;
+	margin-right: 1px;
 	border-left: none;
 }
 
 notebook header.right tab:checked {
-	padding: 3px 3px 3px 3px;
-	margin-left: -2px;
+	padding-left: 3px;
+	margin: 0 0 0 -2px;
 }
 
 /* close button: */
@@ -799,7 +797,7 @@ scrolledwindow .frame {
 	border: none;
 }
 
-/* avoid double borders when a viewport is packed into a GtkScrolledWindow */
+/* avoid double borders when a viewport is packed into a GtkScrolledWindow: */
 scrolledwindow viewport frame {
 	border: none;
 }
