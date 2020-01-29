@@ -1,6 +1,6 @@
-2634a2696057b0bac43336c33f4cc76e *./gtk-3.0/gtk.css
+fda9bc1d0ea338b12b98f30ee395d96a *./gtk-3.0/gtk.css
 45172a3b7e426c42ecd354233b68a2e8 *./gtk-3.0/settings.ini
-49e25788e422b83998af21d9be841235 *./xfce-notify-4.0/gtk.css
+100dc8274c35656689ffa9b0fd724e80 *./xfce-notify-4.0/gtk.css
 d03a993add76d4a06dce3cd16e1691c0 *./xfwm4/hide-pressed.png
 d36e22bf792e0f69ee8bbd6e3eb87b1f *./xfwm4/stick-pressed.xpm
 3f3df1481d33c31473cf2183bf000a64 *./xfwm4/hide-pressed.xpm
@@ -123,7 +123,7 @@ bb0dc8f1450ca5a38be4fef1c62fd0b0 *./xfwm4/hide-prelight.png
 11e03c81a41c82840e3030a7ed816717 *./xfwm4/shade-toggled-prelight.xpm
 c60adb598b93d908c44fbd245bf2d7c8 *./xfwm4/bottom-left-inactive.png
 2cace5191fab8379bac4366e3339b140 *./xfwm4/menu-inactive.png
-7d56ea8f96f497521b86e4b0c72722cb *./Information.txt
+5387daefac97167e8797b0f967c4bbed *./Information.txt
 c2a8998d9ea495081217f600783c9936 *./Extras/Theme-Colors.txt
 ee8392c885f790e3e28170725fcbde1c *./Extras/Computing-Machine.conf
 cc9e8a4ede2e39739e0d30cf16be49aa *./Extras/gtk-icontheme/pan-end-symbolic.svg

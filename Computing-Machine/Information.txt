@@ -1,4 +1,4 @@
-Computing Machine version 17.4 (Jan. 21, 2020) by Jamie Michelle ( https://github.com/Jamie-Michelle , https://www.opendesktop.org/u/jamiemichelle/ ). Released under the GNU General Public License, Version 2.
+Computing Machine version 17.5 (Jan. 29, 2020) by Jamie Michelle ( https://github.com/Jamie-Michelle , https://www.opendesktop.org/u/jamiemichelle/ ). Released under the GNU General Public License, Version 2.
 
 This Unix-like desktop-environment theme is entitled Computing Machine. It is for GTK+ 2/Gnome 2 applications; GTK+ 3/Gnome 3 applications; Qt 4/KDE 4 applications; and Qt 5/KDE 5 applications via the Qt5 Configuration Tool ( https://sourceforge.net/projects/qt5ct/ ). This theme was developed on the XFCE desktop environment.
 
@@ -158,7 +158,7 @@ For additional helpful information on configuring this theme, see the following 
 
 ####################
 
-For modifying the Computing Machine theme, the below programs are useful. See also within the included './Extras/' directory for additional resources that can be of help in modifying this theme.
+For modifying the Computing Machine theme, the below programs are useful. Furthermore, starting said programs from the command-line is useful in order to examine if any theme-parsing errors are produced in the terminal's output. See also within the included './Extras/' directory for additional resources that can be of help in modifying this theme.
 
 $ gtk3-widget-factory # GTK Widget Factory
 
