@@ -80,17 +80,14 @@ base states
 	color: inherit;
 }
 
-.background {
-	background-color: @theme_bg_color;
-	color: @theme_fg_color;
-}
-
+.background,
 .gtkstyle-fallback {
 	background-color: @theme_bg_color;
 	color: @theme_fg_color;
 }
 
-.gtkstyle-fallback:active {
+.gtkstyle-fallback:active,
+.gtkstyle-fallback:checked {
 	background-color: shade(@theme_bg_color, 0.9);
 	color: @theme_fg_color;
 }
@@ -100,27 +97,25 @@ base states
 	color: @theme_fg_color;
 }
 
-.gtkstyle-fallback:disabled {
-	background-color: shade(@theme_bg_color, 0.85);
-	color: mix(@theme_fg_color, @theme_bg_color, 0.5);
-}
-
-.gtkstyle-fallback:selected {
-	background-color: @theme_selected_bg_color;
-	color: @theme_selected_fg_color;
-}
-
+.gtkstyle-fallback:hover,
 :hover {
 	-gtk-icon-effect: highlight;
 }
 
+.gtkstyle-fallback:disabled {
+	background-color: shade(@theme_bg_color, 0.85);
+}
+
+.gtkstyle-fallback:disabled,
 :disabled {
 	color: mix(@theme_fg_color, @theme_bg_color, 0.5);
 	-gtk-icon-effect: dim; /* apply effects to disabled and prelit images */
 }
 
+.gtkstyle-fallback:selected,
 :selected,
-:selected:focus {
+:selected:focus,
+selection {
 	background-color: @theme_selected_bg_color;
 	color: @theme_selected_fg_color;
 }
@@ -134,15 +129,19 @@ grid {
 
 /*
 **********
-button
+button and slider
 **********
 */
 /* unpressed button: */
-button {
-	padding: 2px 5px;
+button,
+slider {
 	border: 2px outset @dark_shadow;
 	background-color: @theme_bg_color;
 	color: @theme_fg_color;
+}
+
+button {
+	padding: 3px;
 }
 
 /* pressed button: */
@@ -152,15 +151,18 @@ button:checked {
 	background-color: shade(@theme_bg_color, 0.9);
 }
 
-button:hover {
+button:hover,
+slider:hover {
 	background-color: shade(@theme_bg_color, 1.1);
 }
 
-button:disabled {
+button:disabled,
+slider:disabled {
 	background-color: shade(@theme_bg_color, 0.85);
 }
 
-button:focus {
+button:focus,
+slider:focus {
 	box-shadow: inset 0 0 0 1px @focus_color;
 }
 
@@ -325,8 +327,8 @@ radiobutton:hover {
 check,
 radio {
 	margin: 3px;
-	min-width: 13px;
 	min-height: 13px;
+	min-width: 13px;
 	border: 1px solid black;
 	background-color: white;
 	color: black;
@@ -359,18 +361,48 @@ check:checked {
 	-gtk-icon-source: -gtk-icontheme('object-select-symbolic');
 }
 
-check:indeterminate {
-	-gtk-icon-source: -gtk-icontheme('list-remove-symbolic');
-}
-
 radio:active,
 radio:checked {
 	-gtk-icon-palette: success black;
 	-gtk-icon-source: -gtk-icontheme('media-record-symbolic');
 }
 
+check:indeterminate,
 radio:indeterminate {
 	-gtk-icon-source: -gtk-icontheme('list-remove-symbolic');
+}
+
+/*
+**********
+arrow
+**********
+*/
+arrow {
+	min-height: 16px;
+	min-width: 16px;
+	color: currentColor;
+	-gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
+}
+
+arrow:hover {
+	color: #00ff00;
+}
+
+arrow:active {
+	color: #ff00ff;
+}
+
+/*
+**********
+expander
+**********
+*/
+expander arrow {
+	-gtk-icon-source: -gtk-icontheme('pan-end-symbolic');
+}
+
+expander arrow:checked {
+	-gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
 }
 
 /*
@@ -386,8 +418,8 @@ links
 	color: mix(@link_color, #00ff00, 0.5);
 }
 
-button:link > label,
-button:visited > label {
+button:link label,
+button:visited label {
 	text-decoration-line: underline;
 }
 
@@ -398,7 +430,6 @@ switch
 */
 switch {
 	background-color: shade(@theme_bg_color, 0.95);
-	color: @theme_fg_color;
 }
 
 switch:checked {
@@ -408,26 +439,11 @@ switch:checked {
 
 switch:disabled {
 	background-color: shade(@theme_bg_color, 0.9);
-	color: mix(@theme_fg_color, @theme_bg_color, 0.5);
 }
 
 switch slider {
-	min-width: 18px;
 	min-height: 18px;
-	border: 2px outset @dark_shadow;
-	background-color: @theme_bg_color;
-}
-
-switch slider:hover {
-	background-color: shade(@theme_bg_color, 1.1);
-}
-
-switch slider:disabled {
-	background-color: shade(@theme_bg_color, 0.85);
-}
-
-switch slider:focus {
-	box-shadow: inset 0 0 0 1px @focus_color;
+	min-width: 18px;
 }
 
 /*
@@ -436,7 +452,7 @@ scale
 **********
 */
 scale {
-	padding: 12px;
+	padding: 9px;
 }
 
 scale trough {
@@ -453,56 +469,34 @@ scale highlight {
 	background-color: alpha(#00ff00, 0.125);
 }
 
-scale marks {
-	color: alpha(currentColor, 0.6);
-}
-
-scale marks.top {
-	margin: -6px 6px 6px -6px;
-}
-
-scale marks.bottom {
-	margin: 6px -6px -6px 6px;
+marks {
+	color: alpha(currentColor, 0.7);
 }
 
 scale.horizontal indicator {
-	min-width: 1px;
 	min-height: 6px;
+	min-width: 1px;
 }
 
 scale.vertical indicator {
-	min-width: 6px;
 	min-height: 1px;
+	min-width: 6px;
 }
 
 scale slider {
 	margin: -6px;
-	min-width: 12px;
 	min-height: 17px;
-	border: 2px outset @dark_shadow;
-	background-color: @theme_bg_color;
-}
-
-scale slider:hover {
-	background-color: shade(@theme_bg_color, 1.1);
-}
-
-scale slider:disabled {
-	background-color: shade(@theme_bg_color, 0.85);
-}
-
-scale slider:focus {
-	box-shadow: inset 0 0 0 1px @focus_color;
+	min-width: 12px;
 }
 
 scale.vertical slider {
-	min-width: 17px;
 	min-height: 12px;
+	min-width: 17px;
 }
 
 /*
 **********
-progressbar and levelbars
+progressbar and levelbar
 **********
 */
 progressbar trough {
@@ -551,7 +545,8 @@ entry
 /* nota bene: if one experiences wiggle-worm behavior with the entry fields, experiment with increasing the 'min-height:' value: */
 entry {
 	min-height: 22px;
-	padding: 0 2px;
+	min-width: 24px;
+	padding: 0 1px;
 	border: 2px inset @dark_shadow;
 	background-color: @theme_base_color;
 	color: @theme_text_color;
@@ -562,35 +557,8 @@ entry:disabled {
 	color: mix(@theme_text_color, @theme_base_color, 0.5);
 }
 
-entry selection {
-	background-color: @theme_selected_bg_color;
-	color: @theme_selected_fg_color;
-}
-
 entry progress {
 	background-color: #00ff7f;
-}
-
-/*
-**********
-spinbutton
-**********
-*/
-spinbutton:disabled {
-	color: mix(@theme_text_color, @theme_base_color, 0.5);
-}
-
-spinbutton entry {
-	min-width: 26px;
-	min-height: 20px;
-}
-
-spinbutton.horizontal entry {
-	padding: 0 0 0 2px;
-}
-
-spinbutton.vertical entry {
-	padding: 0;
 }
 
 /*
@@ -602,11 +570,11 @@ frame
 	background: none;
 }
 
-frame > border {
+frame border {
 	border: 2px groove @dark_shadow;
 }
 
-frame > border.flat {
+frame border.flat {
 	border: none;
 }
 
@@ -626,7 +594,7 @@ notebook > stack:not(:only-child) {
 }
 
 tab {
-	padding: 2px 3px;
+	padding: 4px;
 	border: 2px outset @dark_shadow;
 	background-color: shade(@theme_bg_color, 0.875);
 	color: shade(@theme_fg_color, 1.8);
@@ -637,115 +605,81 @@ tab:checked {
 	background-color: @theme_bg_color;
 }
 
-tab label {
-	padding: 3px 6px;
-}
-
-header.top tab {
+.top tab {
 	margin-top: 1px;
-	padding-bottom: 0;
 	border-bottom: none;
 }
 
-header.top tab:checked {
+.top tab:checked {
 	margin: 0 0 -2px 0;
-	padding-bottom: 3px;
+	padding-bottom: 7px;
 }
 
-header.bottom tab {
+.bottom tab {
 	margin-bottom: 1px;
-	padding-top: 0;
 	border-top: none;
 }
 
-header.bottom tab:checked {
+.bottom tab:checked {
 	margin: -2px 0 0 0;
-	padding-top: 3px;
+	padding-top: 7px;
 }
 
-header.left tab {
+.left tab {
 	margin-left: 1px;
-	padding-right: 0;
 	border-right: none;
 }
 
-header.left tab:checked {
+.left tab:checked {
 	margin: 0 -2px 0 0;
-	padding-right: 3px;
+	padding-right: 7px;
 }
 
-header.right tab {
+.right tab {
 	margin-right: 1px;
-	padding-left: 0;
 	border-left: none;
 }
 
-header.right tab:checked {
+.right tab:checked {
 	margin: 0 0 0 -2px;
-	padding-left: 3px;
+	padding-left: 7px;
 }
 
 /* close button: */
 tab button,
-tab button:active,
-tab button:hover {
-	padding: 1px;
+tab button:hover,
+tab button:disabled {
 	border: none;
 	background: none;
-}
-
-header.top > tabs > arrow.up,
-header.bottom > tabs > arrow.up {
-	margin-left: 2px;
-	-gtk-icon-source: -gtk-icontheme('pan-end-symbolic');
-}
-
-header.top > tabs > arrow.down,
-header.bottom > tabs > arrow.down {
-	margin-right: 2px;
-	-gtk-icon-source: -gtk-icontheme('pan-start-symbolic');
-}
-
-header.left > tabs > arrow.up,
-header.right > tabs > arrow.up {
-	margin-top: 2px;
-	-gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
-}
-
-header.left > tabs > arrow.down,
-header.right > tabs > arrow.down {
-	margin-bottom: 2px;
-	-gtk-icon-source: -gtk-icontheme('pan-up-symbolic');
-}
-
-header > tabs > arrow {
-	color: @theme_fg_color;
-}
-
-header > tabs > arrow:hover {
-	color: #00ff00;
-}
-
-header > tabs > arrow:active {
-	color: #ff00ff;
-}
-
-header > tabs > arrow:disabled {
-	color: shade(@theme_bg_color, 0.7);
 }
 
 .dnd {
 	border: 2px solid @theme_selected_bg_color;
 }
 
-/*
-**********
-statusbar
-**********
-*/
-/* nota bene: if one experiences wiggle-worm behavior with the statusbar fields, experiment with increasing the 'min-height:' value: */
-statusbar {
-	min-height: 29px;
+arrow.down,
+arrow.up {
+	padding: 1px;
+}
+
+.top arrow.down,
+.bottom arrow.down {
+	-gtk-icon-source: -gtk-icontheme('pan-end-symbolic-rtl');
+}
+
+.top arrow.up,
+.bottom arrow.up {
+	-gtk-icon-source: -gtk-icontheme('pan-end-symbolic');
+}
+
+.left arrow.down,
+.right arrow.down {
+	-gtk-icon-source: -gtk-icontheme('pan-up-symbolic');
+}
+
+.left arrow.up,
+.right arrow.up {
+	-gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
 }
 
 /*
@@ -762,43 +696,33 @@ scrollbar trough {
 }
 
 scrollbar slider {
+	min-height: 40px;
 	min-width: 10px;
-	min-height: 42px;
-	border: 2px outset @dark_shadow;
-	background-color: @theme_bg_color;
 }
 
 scrollbar.horizontal slider {
-	min-width: 42px;
 	min-height: 10px;
-}
-
-scrollbar button {
-	padding: 3px;
-}
-
-scrollbar.vertical button {
-	min-height: 6px;
-}
-
-scrollbar.horizontal button {
-	min-width: 6px;
-}
-
-scrollbar.vertical button.down {
-	-gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
+	min-width: 40px;
 }
 
 scrollbar.vertical button.up {
+	min-height: 6px;
 	-gtk-icon-source: -gtk-icontheme('pan-up-symbolic');
 }
 
-scrollbar.horizontal button.down {
-	-gtk-icon-source: -gtk-icontheme('pan-end-symbolic');
+scrollbar.vertical button.down {
+	min-height: 6px;
+	-gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
 }
 
 scrollbar.horizontal button.up {
-	-gtk-icon-source: -gtk-icontheme('pan-start-symbolic');
+	min-width: 6px;
+	-gtk-icon-source: -gtk-icontheme('pan-end-symbolic-rtl');
+}
+
+scrollbar.horizontal button.down {
+	min-width: 6px;
+	-gtk-icon-source: -gtk-icontheme('pan-end-symbolic');
 }
 
 /*
@@ -838,17 +762,17 @@ menu {
 	font: initial;
 }
 
-menu > arrow.top {
+menu arrow.top {
 	margin-top: 3px;
 	margin-bottom: 0;
-	border-bottom: 1px solid shade(@theme_bg_color, 0.7);
+	border-bottom: 1px solid shade(@menu_bg_color, 0.7);
 	-gtk-icon-source: -gtk-icontheme('pan-up-symbolic');
 }
 
-menu > arrow.bottom {
+menu arrow.bottom {
 	margin-top: 3px;
 	margin-bottom: -3px;
-	border-top: 4px solid shade(@theme_bg_color, 0.7);
+	border-top: 4px solid shade(@menu_bg_color, 0.7);
 	-gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
 }
 
@@ -870,19 +794,11 @@ menu menuitem:disabled {
 	color: mix(@menu_fg_color, @menu_bg_color, 0.5);
 }
 
-/* menu arrow: */
-menu menuitem arrow {
-	min-width: 16px;
-	min-height: 16px;
-}
-
-menu menuitem arrow:dir(ltr) {
-	margin-left: 10px;
+menuitem arrow:dir(ltr) {
 	-gtk-icon-source: -gtk-icontheme('pan-end-symbolic');
 }
 
-menu menuitem arrow:dir(rtl) {
-	margin-right: 10px;
+menuitem arrow:dir(rtl) {
 	-gtk-icon-source: -gtk-icontheme('pan-end-symbolic-rtl');
 }
 
@@ -897,13 +813,18 @@ popover
 **********
 */
 popover.background {
-	padding: 6px;
-	border: 1px solid black;
-	background-color: shade(@theme_bg_color, 1.075);
+	padding: 4px;
+	border: 2px outset @dark_shadow;
+	background-color: shade(@menu_bg_color, 1.075);
 }
 
 modelbutton {
 	padding: 2px;
+}
+
+modelbutton check,
+modelbutton radio {
+	margin: 2px 3px;
 }
 
 modelbutton:active,
@@ -919,19 +840,28 @@ viewport
 **********
 */
 /* controls the color of the main fields of the file-chooser, Thunar, Mousepad and Wisker Menu; and the top section of the "Visual" page of GTK+ 3 Inspector and most of its other pages' main fields: */
-.view {
+.view,
+/* controls the side-bar colors in the file-chooser and the Pamac package-manager; and the bottom two sections of the "Visual" page of GTK+ 3 Inspector and all the sections on its "General" page: */
+list,
+textview {
 	background-color: @theme_base_color;
 	color: @theme_text_color;
 }
 
-.view:disabled {
+.view:selected {
+	background-color: @theme_selected_bg_color;
+	color: @theme_selected_fg_color;
+}
+
+.view:disabled,
+list:disabled {
 	background-color: shade(@theme_base_color, 0.925);
 	color: mix(@theme_text_color, @theme_base_color, 0.5);
 }
 
 /*
 **********
-list boxes
+row
 **********
 */
 row {
@@ -948,64 +878,8 @@ row:selected {
 }
 
 row:hover {
-	background-color: shade(@theme_selected_bg_color, 1.05);
+	background-color: shade(@theme_selected_bg_color, 1.1);
 	color: @theme_selected_fg_color;
-}
-
-/* controls the side-bar colors in the file-chooser and the Pamac package-manager; and the bottom two sections of the "Visual" page of GTK+ 3 Inspector and all the sections on its "General" page: */
-list {
-	background-color: @theme_base_color;
-	color: @theme_text_color;
-}
-
-list:disabled {
-	background-color: shade(@theme_base_color, 0.925);
-	color: mix(@theme_text_color, @theme_base_color, 0.5);
-}
-
-/*
-**********
-textview
-**********
-*/
-textview {
-	background-color: @theme_base_color;
-	color: @theme_text_color;
-}
-
-.view:selected,
-.view text selection {
-	background-color: @theme_selected_bg_color;
-	color: @theme_selected_fg_color;
-}
-
-/*
-**********
-iconview
-**********
-*/
-/* box drawn around icons being selected: */
-rubberband,
-.view.rubberband {
-	border: 1px solid shade(@theme_selected_bg_color, 0.9);
-	background-color: alpha(@theme_selected_bg_color, 0.3);
-}
-
-/*
-**********
-symbolic images
-**********
-*/
-image {
-	color: alpha(currentColor, 0.5);
-}
-
-image:hover {
-	color: alpha(currentColor, 0.9);
-}
-
-image:disabled {
-	color: alpha(currentColor, 0.3);
 }
 
 /*
@@ -1020,47 +894,12 @@ treeview.view:selected {
 
 /* affects some popovers: */
 treeview.view:hover {
-	background-image: image(shade(@theme_selected_bg_color, 1.05));
+	background-image: image(shade(@theme_selected_bg_color, 1.1));
 	color: @theme_selected_fg_color;
 }
 
 treeview entry {
 	background-color: #bfffff;
-}
-
-/*
-**********
-toolbar
-**********
-*/
-toolbar {
-	padding: 4px;
-	background-color: @toolbar_bg_color;
-	color: @toolbar_fg_color;
-}
-
-toolbar button {
-	padding: 3px;
-}
-
-/*
-**********
-actionbar
-**********
-*/
-actionbar {
-	padding: 4px;
-	border-top: 1px solid shade(@theme_bg_color, 0.8);
-}
-
-/*
-**********
-searchbar
-**********
-*/
-searchbar {
-	border-bottom: 1px solid shade(@theme_bg_color, 0.8);
-	background-color: shade(@theme_bg_color, 0.975);
 }
 
 /*
@@ -1080,13 +919,88 @@ sidebar
 assistant
 **********
 */
-assistant box.sidebar > label {
+assistant box.sidebar label {
 	padding: 3px;
 }
 
-assistant box.sidebar > label.highlight {
+assistant box.sidebar label.highlight {
 	background-color: @theme_selected_bg_color;
 	color: @theme_selected_fg_color;
+}
+
+/*
+**********
+iconview
+**********
+*/
+iconview.view:hover {
+	background-color: shade(@theme_selected_bg_color, 1.1);
+	color: @theme_selected_fg_color;
+}
+
+/* rectangle drawn around icons being selected: */
+rubberband,
+.rubberband {
+	border: 1px solid shade(@theme_selected_bg_color, 0.9);
+	background-color: alpha(@theme_selected_bg_color, 0.3);
+}
+
+/*
+**********
+symbolic images
+**********
+*/
+image {
+	color: alpha(currentColor, 0.7);
+}
+
+image:hover {
+	color: #00ff00;
+}
+
+image:disabled {
+	color: alpha(currentColor, 0.3);
+}
+
+/*
+**********
+toolbar
+**********
+*/
+toolbar {
+	padding: 4px;
+	background-color: @toolbar_bg_color;
+	color: @toolbar_fg_color;
+}
+
+/*
+**********
+actionbar
+**********
+*/
+actionbar {
+	padding: 4px;
+	border-top: 1px solid shade(@theme_bg_color, 0.8);
+}
+
+/*
+**********
+searchbar
+**********
+*/
+searchbar {
+	border-bottom: 1px solid shade(@theme_bg_color, 0.8);
+	background-color: mix(@theme_bg_color, @dark_bg_color, 0.5);
+}
+
+/*
+**********
+statusbar
+**********
+*/
+/* nota bene: if one experiences wiggle-worm behavior with the statusbar fields, experiment with increasing the 'min-height:' value: */
+statusbar {
+	min-height: 29px;
 }
 
 /*
@@ -1112,7 +1026,7 @@ overlay:selected {
 }
 
 overlay:hover {
-	background-color: alpha(@theme_selected_bg_color, .5);
+	background-color: alpha(@theme_selected_bg_color, 0.5);
 }
 
 /*
@@ -1122,11 +1036,6 @@ calendar
 */
 calendar {
 	padding: 3px;
-}
-
-calendar:selected {
-	background-color: @theme_selected_bg_color;
-	color: @theme_selected_fg_color;
 }
 
 calendar:indeterminate {
@@ -1165,7 +1074,7 @@ application notification
 */
 .app-notification {
 	padding: 8px;
-	border: 1px solid shade(@theme_base_color, 0.5);
+	border: 1px solid @dark_shadow;
 	border-top: none;
 	background-color: @theme_base_color;
 	color: @theme_text_color;
@@ -1180,35 +1089,35 @@ application notification
 client-side decorations (CSD)
 **********
 */
-headerbar.titlebar {
+.titlebar {
 	padding: 2px;
 	background-color: @titlebar_bg_color;
 	color: @titlebar_fg_color;
 }
 
-headerbar .title,
-headerbar .subtitle {
-	padding: 0 12px;
-	text-shadow: 1px 1px rgba(0, 0, 0, 0.8);
+.title,
+.subtitle {
+	padding: 0 4px;
+	text-shadow: 1px 1px alpha(black, 0.8);
 }
 
-headerbar .title {
+.title {
 	font-weight: bold;
 }
 
-headerbar .subtitle {
+.subtitle {
 	font-size: smaller;
 }
 
-headerbar .title:backdrop,
-headerbar .subtitle:backdrop,
-.titlebar:backdrop {
+.titlebar:backdrop,
+.title:backdrop,
+.subtitle:backdrop {
 	background-color: @titlebar_bg_unfocused;
 	color: @titlebar_fg_unfocused;
 	text-shadow: none;
 }
 
-.titlebar .titlebutton {
+.titlebutton {
 	padding: 0;
 }
 
@@ -1242,19 +1151,6 @@ tooltip.csd decoration {
 miscellanea
 **********
 */
-arrow {
-	min-width: 16px;
-	min-height: 16px;
-	color: alpha(currentColor, 0.7);
-	-gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
-}
-
-/* affects text of "About" dialogues: */
-label selection {
-	background-color: @theme_selected_bg_color;
-	color: @theme_selected_fg_color;
-}
-
 paper {
 	border: 1px solid @dark_shadow;
 	background-color: white;
@@ -1294,67 +1190,36 @@ spinner:checked:disabled {
 
 /*
 **********
-expander
-**********
-*/
-expander {
-	color: currentColor;
-}
-
-expander arrow {
-	min-width: 16px;
-	min-height: 16px;
-	-gtk-icon-source: -gtk-icontheme('pan-end-symbolic');
-}
-
-expander arrow:dir(rtl) {
-	-gtk-icon-source: -gtk-icontheme('pan-end-symbolic-rtl');
-}
-
-expander arrow:checked {
-	-gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
-}
-
-expander arrow:hover {
-	color: #00ff00;
-}
-
-/*
-**********
 separators
 **********
 */
 separator.horizontal {
 	margin: 1px;
-	padding: 0;
 	border-top: 1px solid @dark_shadow;
 	border-bottom: 1px solid @light_shadow;
 }
 
 separator.vertical {
 	margin: 1px;
-	padding: 0;
 	border-left: 1px solid @dark_shadow;
 	border-right: 1px solid @light_shadow;
 }
 
 menu separator {
 	margin: 1px;
-	padding: 0;
 	border-top: 1px solid @dark_shadow;
 	border-bottom: 1px solid @light_shadow;
 }
 
 toolbar separator {
 	margin: 3px;
-	padding: 0;
 	border-left: 1px solid @dark_shadow;
 	border-right: 1px solid @light_shadow;
 }
 
 paned > separator {
-	min-width: 2px;
 	min-height: 2px;
+	min-width: 2px;
 	background-image: image(mix(@theme_selected_bg_color, @dark_bg_color, 0.25));
 	-gtk-icon-source: none;
 }

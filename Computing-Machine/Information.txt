@@ -1,10 +1,10 @@
-Computing Machine version 17.5 (Jan. 29, 2020) by Jamie Michelle ( https://github.com/Jamie-Michelle , https://www.opendesktop.org/u/jamiemichelle/ ). Released under the GNU General Public License, Version 2.
+Computing Machine version 17.6 (Feb. 3, 2020) by Jamie Michelle ( https://github.com/Jamie-Michelle , https://www.opendesktop.org/u/jamiemichelle/ ). Released under the GNU General Public License, Version 2.
 
 This Unix-like desktop-environment theme is entitled Computing Machine. It is for GTK+ 2/Gnome 2 applications; GTK+ 3/Gnome 3 applications; Qt 4/KDE 4 applications; and Qt 5/KDE 5 applications via the Qt5 Configuration Tool ( https://sourceforge.net/projects/qt5ct/ ). This theme was developed on the XFCE desktop environment.
 
 The './gtk-2.0/gtkrc' file is a modification of the 'gtk-engines-2.20.2/themes/Redmond/gtk-2.0/gtkrc' file from https://download.gnome.org/sources/gtk-engines/2.20/gtk-engines-2.20.2.tar.bz2 (688171 bytes, MD5: 5deb287bc6075dc21812130604c7dc4f).
 
-The './gtk-3.0/gtk.css' and './gtk-3.0/settings.ini' files are modified from files of Reactionary Creatures version of Aug. 23, 2018 ( https://www.opendesktop.org/p/1255961/ ; ReactionaryGTKCreatures.tar.gz , 32669 bytes, MD5: 76dc59f2a7d36ceb5f26f15cf0bbe53e) by phob1an ( https://github.com/phobi4n ).
+The './gtk-3.0/gtk.css' and './gtk-3.0/settings.ini' files are modified from files of Reactionary Creatures version of Aug. 23, 2018 ( https://www.opendesktop.org/p/1255961/ ; ReactionaryGTKCreatures.tar.gz , 32669 bytes, MD5: 76dc59f2a7d36ceb5f26f15cf0bbe53e) by phob1an ( https://www.opendesktop.org/u/phob1an/ , https://github.com/phobi4n ).
 
 The files in the './xfwm4/' directory are modified from the 'xfwm4-themes-4.10.0/themes/default-4.8/' directory from https://archive.xfce.org/src/art/xfwm4-themes/4.10/xfwm4-themes-4.10.0.tar.bz2 (621206 bytes, MD5: eaa58362053a3549c8be0b32efd3c54f). See said archive for the SVG files from which the herein-included PNG files are derived.
 
@@ -41,7 +41,7 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 
 ####################
 
-Set the 'qt5ct' program on Appearance > Style: gtk2.
+Set the 'qt5ct' program (by Ilya Kotov, https://sourceforge.net/projects/qt5ct/ ) on Appearance > Style: gtk2.
 
 Putting
 
@@ -54,24 +54,36 @@ in the '/etc/environment' file fixed a problem concerning Firefox not opening th
 
 A recommended icon set to use with the Qt 5/KDE 5 portion of this theme is Oxygen. When installed on one's system, the icon set can be selected via the 'qt5ct' program's Icon Theme tab.
 
-Apparently the first and perhaps both of the following two lines also have to be in the '~/.profile' file:
+Also ensure that the following two lines are in the '~/.profile' file:
 
 ""
-export QT_QPA_PLATFORMTHEME=qt5ct
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+export QT_QPA_PLATFORMTHEME=qt5ct
 
 ""
 
 In order for 'qt5ct' to work with GTK+ 2 styles, it requires the 'qtstyleplugins' software (from https://code.qt.io/cgit/qt/qtstyleplugins , https://github.com/qt/qtstyleplugins ). On Arch Linux-based distributions, said software is the package named 'qt5-styleplugins'; on Debian-based systems, it is the package named 'qt5-style-plugins'.
 
-Besides the 'qtstyleplugins' software for making GTK+ 2 styles work with Qt 5 applications, one can also use 'qt5gtk2' by Ilya Kotov ( https://bitbucket.org/trialuser02/qt5gtk2/ ).
+Besides the 'qtstyleplugins' software for making GTK+ 2 styles work with Qt 5 applications, one can also use the program 'qt5gtk2' by Ilya Kotov ( https://bitbucket.org/trialuser02/qt5gtk2/ ). In which case, set the 'qt5ct' application on Appearance > Style: qt5gtk2.
 
 Alternatively, the 'qt5ct' program does not have to be used, as one can use the following environment variable instead in the '/etc/environment' and '~/.profile' files when 'qtstyleplugins' is installed. However, one then loses the ability to select icon sets and fonts specifically for the Qt 5 applications, which will instead use whatever is set for the GTK+ 2 portion of the theme.
+
+Line for the '/etc/environment' file when not using the 'qt5ct' program:
 
 ""
 QT_QPA_PLATFORMTHEME=gtk2
 
 ""
+
+Lines for the '~/.profile' file when not using the 'qt5ct' program:
+
+""
+export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+export QT_QPA_PLATFORMTHEME=gtk2
+
+""
+
+If one is instead using the 'qt5gtk2' software, then the above 'QT_QPA_PLATFORMTHEME=' lines would contain 'qt5gtk2' in place of 'gtk2'.
 
 As an aside which might be of help in some instances, note also the following nonexhaustive examples of Qt 5 application switches and environment variables, which can be used in various combinations:
 
@@ -158,7 +170,7 @@ For additional helpful information on configuring this theme, see the following 
 
 ####################
 
-For modifying the Computing Machine theme, the below programs are useful. Furthermore, starting said programs from the command-line is useful in order to examine if any theme-parsing errors are produced in the terminal's output. See also within the included './Extras/' directory for additional resources that can be of help in modifying this theme.
+For modifying the Computing Machine theme, the below programs are useful. Furthermore, starting said programs from the command-line is beneficial in order to examine if any theme-parsing errors are produced in the terminal's output. See also within the included './Extras/' directory for additional resources that can be of help in modifying this theme.
 
 $ gtk3-widget-factory # GTK Widget Factory
 

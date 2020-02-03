@@ -16,11 +16,11 @@
 }
 
 #XfceNotifyWindow button {
-	background-color : #bf7fff;
+	background-color: #bf7fff;
 }
 
 #XfceNotifyWindow button:hover {
-	background-color : shade(#bf7fff, 1.1);
+	background-color: shade(#bf7fff, 1.1);
 }
 
 #XfceNotifyWindow progressbar {

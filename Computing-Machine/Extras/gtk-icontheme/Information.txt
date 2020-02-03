@@ -6,6 +6,5 @@ The SVG files in this directory are all the icons used in the "-gtk-icon-source:
 /usr/share/icons/Adwaita/scalable/ui/pan-down-symbolic.svg
 /usr/share/icons/Adwaita/scalable/ui/pan-end-symbolic-rtl.svg
 /usr/share/icons/Adwaita/scalable/ui/pan-end-symbolic.svg
-/usr/share/icons/Adwaita/scalable/ui/pan-start-symbolic.svg
 /usr/share/icons/Adwaita/scalable/ui/pan-up-symbolic.svg
 /usr/share/icons/Adwaita/scalable-up-to-32/status/process-working-symbolic.svg

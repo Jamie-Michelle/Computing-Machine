@@ -10,11 +10,9 @@ The Conky system-monitor setup depicted below is available here: https://github.
 
 ⁂
 
-Changes for version 17.5:
+Changes for version 17.6:
 
-This release mostly implements some code-simplification, with a few minor improvements to the theme's appearance.
-
-Keep in mind that since version 13.0, the GTK+ 3 portion of the theme has been revised and is much improved.
+I implemented a great deal of improvements to the GTK+ 3 portion of the theme. I ameliorated the buttons, tabs and popovers, as well as making additional enhancements. The various theme-elements are now defined in a more consistent manner across said portion, which also enabled simplification of the code.
 
 ![Computing-Machine-GTK-2.png](https://raw.githubusercontent.com/Jamie-Michelle/Computing-Machine/master/Computing-Machine-GTK-2.png)
 
