@@ -74,8 +74,8 @@ color definitions
 base states
 **********
 */
+/* inherit colors from parent: */
 * {
-	/* inherit colors from parent: */
 	background-color: inherit;
 	color: inherit;
 }
@@ -109,21 +109,20 @@ base states
 .gtkstyle-fallback:disabled,
 :disabled {
 	color: mix(@theme_fg_color, @theme_bg_color, 0.5);
-	-gtk-icon-effect: dim; /* apply effects to disabled and prelit images */
+	-gtk-icon-effect: dim;
 }
 
 .gtkstyle-fallback:selected,
 :selected,
-:selected:focus,
 selection {
 	background-color: @theme_selected_bg_color;
 	color: @theme_selected_fg_color;
 }
 
-image,
-label,
 box,
-grid {
+grid,
+image,
+label {
 	background-color: transparent;
 }
 
@@ -132,8 +131,7 @@ grid {
 button and slider
 **********
 */
-/* unpressed button: */
-button,
+button, /* unpressed button */
 slider {
 	border: 2px outset @dark_shadow;
 	background-color: @theme_bg_color;
@@ -473,7 +471,7 @@ marks {
 	color: alpha(currentColor, 0.7);
 }
 
-scale.horizontal indicator {
+scale indicator {
 	min-height: 6px;
 	min-width: 1px;
 }
@@ -516,23 +514,24 @@ levelbar trough {
 	background-color: shade(@theme_bg_color, 0.85);
 }
 
-levelbar block {
+/* for levelbar: */
+block {
 	padding: 2px;
 	border: 2px solid shade(#0000ff, 0.8);
 	background-color: #0000ff;
 }
 
-levelbar block.empty {
+block.empty {
 	border-color: alpha(@theme_fg_color, 0.1);
 	background: none;
 }
 
-levelbar block.low {
+block.low {
 	border-color: shade(#ff0000, 0.8);
 	background-image: linear-gradient(to bottom, shade(#ff0000, 1.2), #ff0000 75%, shade(#ff0000, 0.9));
 }
 
-levelbar block.high {
+block.high {
 	border-color: shade(#00ff00, 0.8);
 	background-image: linear-gradient(to bottom, shade(#00ff00, 1.2), #00ff00 75%, shade(#00ff00, 0.9));
 }
@@ -542,7 +541,7 @@ levelbar block.high {
 entry
 **********
 */
-/* nota bene: if one experiences wiggle-worm behavior with the entry fields, experiment with increasing the 'min-height:' value: */
+/* nota bene: if one experiences wiggle-worm behavior with the entry fields, experiment with increasing the 'min-height' value: */
 entry {
 	min-height: 22px;
 	min-width: 24px;
@@ -557,7 +556,7 @@ entry:disabled {
 	color: mix(@theme_text_color, @theme_base_color, 0.5);
 }
 
-entry progress {
+progress {
 	background-color: #00ff7f;
 }
 
@@ -570,11 +569,11 @@ frame
 	background: none;
 }
 
-frame border {
+border {
 	border: 2px groove @dark_shadow;
 }
 
-frame border.flat {
+border.flat {
 	border: none;
 }
 
@@ -587,7 +586,7 @@ notebook {
 	background-color: @theme_bg_color;
 }
 
-/* the color #000000 is displayed for some tabbed pages when 'background-color:' other than 'background-color: transparent;' is used: */
+/* the color #000000 is displayed for some tabbed pages when 'background-color' other than 'background-color: transparent;' is used: */
 notebook.frame > stack,
 notebook > stack:not(:only-child) {
 	border: 2px outset @dark_shadow;
@@ -705,23 +704,21 @@ scrollbar.horizontal slider {
 	min-width: 40px;
 }
 
-scrollbar.vertical button.up {
+scrollbar.vertical button {
 	min-height: 6px;
 	-gtk-icon-source: -gtk-icontheme('pan-up-symbolic');
 }
 
 scrollbar.vertical button.down {
-	min-height: 6px;
 	-gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
 }
 
-scrollbar.horizontal button.up {
+scrollbar.horizontal button {
 	min-width: 6px;
 	-gtk-icon-source: -gtk-icontheme('pan-end-symbolic-rtl');
 }
 
 scrollbar.horizontal button.down {
-	min-width: 6px;
 	-gtk-icon-source: -gtk-icontheme('pan-end-symbolic');
 }
 
@@ -763,16 +760,14 @@ menu {
 }
 
 menu arrow.top {
-	margin-top: 3px;
-	margin-bottom: 0;
 	border-bottom: 1px solid shade(@menu_bg_color, 0.7);
 	-gtk-icon-source: -gtk-icontheme('pan-up-symbolic');
 }
 
 menu arrow.bottom {
-	margin-top: 3px;
-	margin-bottom: -3px;
-	border-top: 4px solid shade(@menu_bg_color, 0.7);
+	margin-top: 6px;
+	margin-bottom: -6px;
+	border-top: 1px solid shade(@menu_bg_color, 0.7);
 	-gtk-icon-source: -gtk-icontheme('pan-down-symbolic');
 }
 
@@ -803,7 +798,7 @@ menuitem arrow:dir(rtl) {
 }
 
 /* text of keyboard shortcuts: */
-menuitem accelerator {
+accelerator {
 	color: alpha(@menu_fg_color, 0.6);
 }
 
@@ -827,29 +822,43 @@ modelbutton radio {
 	margin: 2px 3px;
 }
 
-modelbutton:active,
-modelbutton:hover,
-modelbutton:selected {
+modelbutton:hover {
 	background-color: @theme_selected_bg_color;
 	color: @theme_selected_fg_color;
 }
 
 /*
 **********
-viewport
+viewports
 **********
 */
-/* controls the color of the main fields of the file-chooser, Thunar, Mousepad and Wisker Menu; and the top section of the "Visual" page of GTK+ 3 Inspector and most of its other pages' main fields: */
-.view,
-/* controls the side-bar colors in the file-chooser and the Pamac package-manager; and the bottom two sections of the "Visual" page of GTK+ 3 Inspector and all the sections on its "General" page: */
-list,
+.view, /* affects the main fields of the file-chooser, Thunar, Mousepad and Wisker Menu; and the top section of the "Visual" page of GTK+ 3 Inspector and most of its other pages' main fields */
+list, /* affects the sidebars in the file-chooser and Pamac; and the bottom two sections of the "Visual" page of GTK+ 3 Inspector and all the sections on its "General" page */
 textview {
 	background-color: @theme_base_color;
 	color: @theme_text_color;
 }
 
-.view:selected {
+row,
+assistant .sidebar label {
+	padding: 3px;
+}
+
+row:nth-child(odd) {
+	background-color: shade(@theme_base_color, 0.925);
+}
+
+.view:selected, /* affects selected items in Thunar's main field */
+row:selected, /* affects Pamac's sidebar; should come after 'row:nth-child(odd)' */
+treeview.view:selected, /* affects Thunar's sidebar */
+assistant .sidebar label.highlight {
 	background-color: @theme_selected_bg_color;
+	color: @theme_selected_fg_color;
+}
+
+row:hover,
+iconview.view:hover {
+	background-color: shade(@theme_selected_bg_color, 1.1);
 	color: @theme_selected_fg_color;
 }
 
@@ -861,38 +870,10 @@ list:disabled {
 
 /*
 **********
-row
-**********
-*/
-row {
-	padding: 3px;
-}
-
-row:nth-child(odd) {
-	background-color: shade(@theme_base_color, 0.925);
-}
-
-row:selected {
-	background-color: @theme_selected_bg_color;
-	color: @theme_selected_fg_color;
-}
-
-row:hover {
-	background-color: shade(@theme_selected_bg_color, 1.1);
-	color: @theme_selected_fg_color;
-}
-
-/*
-**********
 treeview
 **********
 */
-treeview.view:selected {
-	background-color: @theme_selected_bg_color;
-	color: @theme_selected_fg_color;
-}
-
-/* affects some popovers: */
+/* background only works with GNOME Klotski's "Change Puzzle" popover menu if formulated as 'image': */
 treeview.view:hover {
 	background-image: image(shade(@theme_selected_bg_color, 1.1));
 	color: @theme_selected_fg_color;
@@ -907,59 +888,11 @@ treeview entry {
 sidebar
 **********
 */
-/* controls the sidebar colors in the Thunar file-manager and the Catfish file-searcher: */
+/* affects the sidebars in Thunar, Catfish and 'assistant': */
 .sidebar,
 .sidebar .view {
 	background-color: shade(@theme_bg_color, 1.05);
 	color: @theme_fg_color;
-}
-
-/*
-**********
-assistant
-**********
-*/
-assistant box.sidebar label {
-	padding: 3px;
-}
-
-assistant box.sidebar label.highlight {
-	background-color: @theme_selected_bg_color;
-	color: @theme_selected_fg_color;
-}
-
-/*
-**********
-iconview
-**********
-*/
-iconview.view:hover {
-	background-color: shade(@theme_selected_bg_color, 1.1);
-	color: @theme_selected_fg_color;
-}
-
-/* rectangle drawn around icons being selected: */
-rubberband,
-.rubberband {
-	border: 1px solid shade(@theme_selected_bg_color, 0.9);
-	background-color: alpha(@theme_selected_bg_color, 0.3);
-}
-
-/*
-**********
-symbolic images
-**********
-*/
-image {
-	color: alpha(currentColor, 0.7);
-}
-
-image:hover {
-	color: #00ff00;
-}
-
-image:disabled {
-	color: alpha(currentColor, 0.3);
 }
 
 /*
@@ -998,7 +931,7 @@ searchbar {
 statusbar
 **********
 */
-/* nota bene: if one experiences wiggle-worm behavior with the statusbar fields, experiment with increasing the 'min-height:' value: */
+/* nota bene: if one experiences wiggle-worm behavior with the statusbar fields, experiment with increasing the 'min-height' value: */
 statusbar {
 	min-height: 29px;
 }
@@ -1054,21 +987,6 @@ calendar.highlight {
 
 /*
 **********
-tooltip
-**********
-*/
-/* affects text color of some tabbed pages: */
-tooltip * {
-	color: @theme_tooltip_fg_color;
-}
-
-tooltip.background {
-	border: 1px solid shade(@theme_tooltip_fg_color, 0.8);
-	background-color: @theme_tooltip_bg_color;
-}
-
-/*
-**********
 application notification
 **********
 */
@@ -1082,6 +1000,21 @@ application notification
 
 .app-notification border {
 	border: none;
+}
+
+/*
+**********
+tooltip
+**********
+*/
+/* affects text color of some tabbed pages: */
+tooltip * {
+	color: @theme_tooltip_fg_color;
+}
+
+tooltip.background {
+	border: 1px solid shade(@theme_tooltip_fg_color, 0.8);
+	background-color: @theme_tooltip_bg_color;
 }
 
 /*
@@ -1141,25 +1074,26 @@ decoration:backdrop {
 	box-shadow: inset 0 0 0 1px @titlebar_bg_unfocused;
 }
 
-.popup decoration,
+.popup decoration, /* affects 'menu' */
 tooltip.csd decoration {
 	box-shadow: none;
 }
 
 /*
 **********
-miscellanea
+symbolic images
 **********
 */
-paper {
-	border: 1px solid @dark_shadow;
-	background-color: white;
-	color: black;
+image {
+	color: alpha(currentColor, 0.7);
 }
 
-/* color of Nautilus file-manager main-window background: */
-.nautilus-window scrolledwindow {
-	background-color: @theme_base_color;
+image:hover {
+	color: #00ff00;
+}
+
+image:disabled {
+	color: alpha(currentColor, 0.3);
 }
 
 /*
@@ -1190,31 +1124,48 @@ spinner:checked:disabled {
 
 /*
 **********
+miscellanea
+**********
+*/
+/* rectangle drawn around icons being selected: */
+rubberband,
+.rubberband {
+	border: 1px solid shade(@theme_selected_bg_color, 0.9);
+	background-color: alpha(@theme_selected_bg_color, 0.3);
+}
+
+paper {
+	border: 1px solid @dark_shadow;
+	background-color: white;
+	color: black;
+}
+
+/* color of Nautilus file-manager main-window background: */
+.nautilus-window scrolledwindow {
+	background-color: @theme_base_color;
+}
+
+/*
+**********
 separators
 **********
 */
-separator.horizontal {
-	margin: 1px;
-	border-top: 1px solid @dark_shadow;
-	border-bottom: 1px solid @light_shadow;
-}
-
-separator.vertical {
-	margin: 1px;
-	border-left: 1px solid @dark_shadow;
-	border-right: 1px solid @light_shadow;
-}
-
+separator.horizontal,
 menu separator {
 	margin: 1px;
 	border-top: 1px solid @dark_shadow;
 	border-bottom: 1px solid @light_shadow;
 }
 
+separator.vertical,
 toolbar separator {
-	margin: 3px;
+	margin: 1px;
 	border-left: 1px solid @dark_shadow;
 	border-right: 1px solid @light_shadow;
+}
+
+toolbar separator {
+	margin: 3px;
 }
 
 paned > separator {
@@ -1229,62 +1180,45 @@ paned > separator {
 overshoot and undershoot
 **********
 */
-overshoot.top {
-	background-image: -gtk-gradient(radial, center top, 0, center top, 0.6, from(alpha(#7f7f7f, 0.2)), to(alpha(#7f7f7f, 0)));
+overshoot {
 	background-color: transparent;
+	background-image: -gtk-gradient(radial, center top, 0, center top, 0.6, from(alpha(#7f7f7f, 0.2)), to(alpha(#7f7f7f, 0)));
 }
 
 overshoot.bottom {
 	background-image: -gtk-gradient(radial, center bottom, 0, center bottom, 0.6, from(alpha(#7f7f7f, 0.2)), to(alpha(#7f7f7f, 0)));
-	background-color: transparent;
 }
 
 overshoot.left {
 	background-image: -gtk-gradient(radial, left center, 0, left center, 0.6, from(alpha(#7f7f7f, 0.2)), to(alpha(#7f7f7f, 0)));
-	background-color: transparent;
 }
 
 overshoot.right {
 	background-image: -gtk-gradient(radial, right center, 0, right center, 0.6, from(alpha(#7f7f7f, 0.2)), to(alpha(#7f7f7f, 0)));
-	background-color: transparent;
 }
 
-undershoot.top {
-	padding-top: 1px;
+undershoot {
+	padding: 1px;
+	background-color: transparent;
+	background-origin: content-box;
 	background-image: linear-gradient(to left, alpha(white, 0.2) 50%, alpha(black, 0.2) 50%);
 	background-size: 10px 1px;
 	background-repeat: repeat-x;
-	background-origin: content-box;
 	background-position: center top;
-	background-color: transparent;
 }
 
 undershoot.bottom {
-	padding-bottom: 1px;
-	background-image: linear-gradient(to left, alpha(white, 0.2) 50%, alpha(black, 0.2) 50%);
-	background-size: 10px 1px;
-	background-repeat: repeat-x;
-	background-origin: content-box;
 	background-position: center bottom;
-	background-color: transparent;
 }
 
-undershoot.left {
-	padding-left: 1px;
+undershoot.left,
+undershoot.right {
 	background-image: linear-gradient(to top, alpha(white, 0.2) 50%, alpha(black, 0.2) 50%);
 	background-size: 1px 10px;
 	background-repeat: repeat-y;
-	background-origin: content-box;
 	background-position: left center;
-	background-color: transparent;
 }
 
 undershoot.right {
-	padding-right: 1px;
-	background-image: linear-gradient(to top, alpha(white, 0.2) 50%, alpha(black, 0.2) 50%);
-	background-size: 1px 10px;
-	background-repeat: repeat-y;
-	background-origin: content-box;
 	background-position: right center;
-	background-color: transparent;
 }

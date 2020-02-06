@@ -1,6 +1,6 @@
-Computing Machine version 17.6 (Feb. 3, 2020) by Jamie Michelle ( https://github.com/Jamie-Michelle , https://www.opendesktop.org/u/jamiemichelle/ ). Released under the GNU General Public License, Version 2.
+Computing Machine version 17.7 (Feb. 6, 2020) by Jamie Michelle ( https://github.com/Jamie-Michelle , https://www.opendesktop.org/u/jamiemichelle/ ). Released under the GNU General Public License, Version 2.
 
-This Unix-like desktop-environment theme is entitled Computing Machine. It is for GTK+ 2/Gnome 2 applications; GTK+ 3/Gnome 3 applications; Qt 4/KDE 4 applications; and Qt 5/KDE 5 applications via the Qt5 Configuration Tool ( https://sourceforge.net/projects/qt5ct/ ). This theme was developed on the XFCE desktop environment.
+This Unix-like desktop-environment theme is entitled Computing Machine. It is for GTK+ 2/GNOME 2 applications; GTK+ 3/GNOME 3 applications; Qt 4/KDE 4 applications; and Qt 5/KDE 5 applications via the Qt5 Configuration Tool ( https://sourceforge.net/projects/qt5ct/ ). This theme was developed on the XFCE desktop environment.
 
 The './gtk-2.0/gtkrc' file is a modification of the 'gtk-engines-2.20.2/themes/Redmond/gtk-2.0/gtkrc' file from https://download.gnome.org/sources/gtk-engines/2.20/gtk-engines-2.20.2.tar.bz2 (688171 bytes, MD5: 5deb287bc6075dc21812130604c7dc4f).
 

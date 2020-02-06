@@ -1,6 +1,6 @@
 # Computing Machine
 
-This Linux and Unix-like desktop-environment theme is entitled Computing Machine. It is for GTK+ 2/Gnome 2 applications; GTK+ 3/Gnome 3 applications; Qt 4/KDE 4 applications; and Qt 5/KDE 5 applications via the Qt5 Configuration Tool ( https://sourceforge.net/projects/qt5ct/ ).
+This Linux and Unix-like desktop-environment theme is entitled Computing Machine. It is for GTK+ 2/GNOME 2 applications; GTK+ 3/GNOME 3 applications; Qt 4/KDE 4 applications; and Qt 5/KDE 5 applications via the Qt5 Configuration Tool ( https://sourceforge.net/projects/qt5ct/ ).
 
 This desktop theme is intended to be visually reminiscent of classic desktop user-environments. See the included "Information.txt" file for instructions on how to configure this theme.
 
@@ -10,9 +10,9 @@ The Conky system-monitor setup depicted below is available here: https://github.
 
 ⁂
 
-Changes for version 17.6:
+Changes for version 17.7:
 
-I implemented a great deal of improvements to the GTK+ 3 portion of the theme. I ameliorated the buttons, tabs and popovers, as well as making additional enhancements. The various theme-elements are now defined in a more consistent manner across said portion, which also enabled simplification of the code.
+This release mainly simplifies the code of the GTK+ 3 portion of the theme, with a few slight improvements to its appearance. Note that the prior release, version 17.6, implemented a number of major improvements to said portion.
 
 ![Computing-Machine-GTK-2.png](https://raw.githubusercontent.com/Jamie-Michelle/Computing-Machine/master/Computing-Machine-GTK-2.png)
 
