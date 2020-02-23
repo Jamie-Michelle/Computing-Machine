@@ -10,9 +10,11 @@ The Conky system-monitor setup depicted below is available here: https://github.
 
 ⁂
 
-Changes for version 17.7:
+Changes for version 17.8:
 
-This release mainly simplifies the code of the GTK+ 3 portion of the theme, with a few slight improvements to its appearance. Note that the prior release, version 17.6, implemented a number of major improvements to said portion.
+This release mainly simplifies the color-scheme of the foreground colors (i.e., the text colors) while making them consistent between the GTK+ 2 and 3 portions of the theme. It also improves the appearance of a few GTK+ 3 theme-elements, such as the calendar.
+
+Note that release version 17.6 implemented a number of major improvements to the GTK+ 3 portion of the theme.
 
 ![Computing-Machine-GTK-2.png](https://raw.githubusercontent.com/Jamie-Michelle/Computing-Machine/master/Computing-Machine-GTK-2.png)
 

@@ -8,20 +8,20 @@ color definitions
 
 /* default color scheme; also, color names hardcoded in some GTK+ 3 applications: */
 @define-color theme_bg_color #cccccc;
-@define-color theme_fg_color #252525;
+@define-color theme_fg_color #000000;
 
 @define-color theme_base_color #f9f9f9;
-@define-color theme_text_color #191919;
+@define-color theme_text_color #000000;
 
 @define-color theme_selected_bg_color #547faa;
 @define-color theme_selected_fg_color #ffffff; /* also sets the text color of XFCE's desktop icons */ 
 
 @define-color theme_tooltip_bg_color #ffff7f;
-@define-color theme_tooltip_fg_color #0c0c0c;
+@define-color theme_tooltip_fg_color #000000;
 
 /* dark color scheme: */
 @define-color dark_bg_color #bfbfbf;
-@define-color dark_fg_color #050505;
+@define-color dark_fg_color #000000;
 
 /* border colors: */
 @define-color dark_shadow #858585;
@@ -30,16 +30,16 @@ color definitions
 
 /* miscellaneous colors used by GTK+ 3: */
 @define-color info_bg_color #7fbfff;
-@define-color info_fg_color #2c2c2c;
+@define-color info_fg_color #000000;
 
 @define-color warning_bg_color #ff7f00;
-@define-color warning_fg_color #323232;
+@define-color warning_fg_color #000000;
 
 @define-color question_bg_color #007fff;
-@define-color question_fg_color #1f1f1f;
+@define-color question_fg_color #000000;
 
 @define-color error_bg_color #ff0000;
-@define-color error_fg_color #ffffff;
+@define-color error_fg_color #000000;
 
 @define-color destructive_bg_color #7f0000;
 @define-color destructive_fg_color #ffffff;
@@ -64,7 +64,7 @@ color definitions
 @define-color menubar_fg_color @dark_fg_color;
 
 @define-color menubar_selected_bg_color #5a7fa4;
-@define-color menubar_selected_fg_color #ececec;
+@define-color menubar_selected_fg_color #ffffff;
 
 @define-color menu_bg_color @theme_bg_color;
 @define-color menu_fg_color @theme_fg_color;
@@ -595,8 +595,8 @@ notebook > stack:not(:only-child) {
 tab {
 	padding: 4px;
 	border: 2px outset @dark_shadow;
-	background-color: shade(@theme_bg_color, 0.875);
-	color: shade(@theme_fg_color, 1.8);
+	background-color: shade(@theme_bg_color, 0.9);
+	color: shade(@theme_bg_color, 0.25);
 	font-weight: bold;
 }
 
@@ -885,52 +885,31 @@ treeview entry {
 
 /*
 **********
-sidebar
+interfacial bars
 **********
 */
-/* affects the sidebars in Thunar, Catfish and 'assistant': */
-.sidebar,
-.sidebar .view {
+.sidebar, /* affects the sidebars in Catfish and 'assistant' */
+.sidebar .view /* affects the sidebars in Thunar and Catfish */ {
 	background-color: shade(@theme_bg_color, 1.05);
 	color: @theme_fg_color;
 }
 
-/*
-**********
-toolbar
-**********
-*/
 toolbar {
 	padding: 4px;
 	background-color: @toolbar_bg_color;
 	color: @toolbar_fg_color;
 }
 
-/*
-**********
-actionbar
-**********
-*/
 actionbar {
 	padding: 4px;
-	border-top: 1px solid shade(@theme_bg_color, 0.8);
+	border-top: 2px groove @dark_shadow;
 }
 
-/*
-**********
-searchbar
-**********
-*/
 searchbar {
-	border-bottom: 1px solid shade(@theme_bg_color, 0.8);
+	border-bottom: 2px groove @dark_shadow;
 	background-color: mix(@theme_bg_color, @dark_bg_color, 0.5);
 }
 
-/*
-**********
-statusbar
-**********
-*/
 /* nota bene: if one experiences wiggle-worm behavior with the statusbar fields, experiment with increasing the 'min-height' value: */
 statusbar {
 	min-height: 29px;
@@ -968,7 +947,7 @@ calendar
 **********
 */
 calendar {
-	padding: 3px;
+	padding: 2px;
 }
 
 calendar:indeterminate {
@@ -977,7 +956,7 @@ calendar:indeterminate {
 
 calendar.view,
 calendar.header {
-	border: 1px solid @dark_shadow;
+	border: 2px groove @dark_shadow;
 	background: none;
 }
 
@@ -1007,13 +986,13 @@ application notification
 tooltip
 **********
 */
-/* affects text color of some tabbed pages: */
+/* also affects text color of some tabbed pages: */
 tooltip * {
 	color: @theme_tooltip_fg_color;
 }
 
 tooltip.background {
-	border: 1px solid shade(@theme_tooltip_fg_color, 0.8);
+	border: 1px solid @theme_tooltip_fg_color;
 	background-color: @theme_tooltip_bg_color;
 }
 
@@ -1107,18 +1086,11 @@ spinner
 	}
 }
 
-spinner {
-	opacity: 0;
-	background: none;
-	-gtk-icon-source: -gtk-icontheme('process-working-symbolic');
-}
-
 spinner:checked {
-	opacity: 1;
 	animation: spin 1s linear infinite;
 }
 
-spinner:checked:disabled {
+spinner:disabled {
 	opacity: 0.5;
 }
 
