@@ -1,4 +1,4 @@
-Computing Machine version 17.9 (Apr. 14, 2020) by Jamie Michelle ( https://github.com/Jamie-Michelle , https://www.opendesktop.org/u/jamiemichelle/ ). Released under the GNU General Public License, Version 2.
+Computing Machine version 17.10 (Apr. 14, 2020) by Jamie Michelle ( https://github.com/Jamie-Michelle , https://www.opendesktop.org/u/jamiemichelle/ ). Released under the GNU General Public License, Version 2.
 
 This Unix-like desktop-environment theme is entitled Computing Machine. It is for GTK+ 2/GNOME 2 applications; GTK+ 3/GNOME 3 applications; Qt 4/KDE 4 applications; and Qt 5/KDE 5 applications via the Qt5 Configuration Tool ( https://sourceforge.net/projects/qt5ct/ ). This theme was developed on the XFCE desktop environment.
 

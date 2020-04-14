@@ -833,7 +833,7 @@ viewports
 **********
 */
 .view, /* affects the main fields of the file-chooser, Thunar, Mousepad and Wisker Menu; and the top section of the "Visual" page of GTK+ 3 Inspector and most of its other pages' main fields */
-.view text, /* affects GNOME LaTeX */
+.view text, /* affects GNOME LaTeX and Firefox */
 list, /* affects the sidebars in the file-chooser and Pamac; and the bottom two sections of the "Visual" page of GTK+ 3 Inspector and all the sections on its "General" page */
 textview {
 	background-color: @theme_base_color;
@@ -850,6 +850,7 @@ row:nth-child(odd) {
 }
 
 .view:selected, /* affects selected items in Thunar's main field */
+.view text:selected,
 row:selected, /* affects Pamac's sidebar; should come after 'row:nth-child(odd)' */
 treeview.view:selected, /* affects Thunar's sidebar */
 assistant .sidebar label.highlight {
