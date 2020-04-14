@@ -10,9 +10,9 @@ The Conky system-monitor setup depicted below is available here: https://github.
 
 ⁂
 
-Changes for version 17.8:
+Changes for version 17.9:
 
-This release mainly simplifies the color-scheme of the foreground colors (i.e., the text colors) while making them consistent between the GTK+ 2 and 3 portions of the theme. It also improves the appearance of a few GTK+ 3 theme-elements, such as the calendar.
+The only visually-rendered change for this version is to the GTK+ 3 portion of the theme. I added the '.view text' selector to a declaration block, which affects the GNOME LaTeX program, and probably other programs which I haven't tested. It seems that recent versions of GTK+ 3 have changed the color of the main text-field of the GNOME LaTeX software from what prior versions of GTK+ 3 rendered, and so this change makes said field consistent with other GTK+ 3 text-entry fields (i.e., the color that prior versions of GTK+ 3 rendered for this field).
 
 Note that release version 17.6 implemented a number of major improvements to the GTK+ 3 portion of the theme.
 

@@ -1,4 +1,4 @@
-a62bef0aa9b65f790a32ae3fb48e0d07 *./gtk-3.0/gtk.css
+c8a2d695a2f373a474ea557ca184e82b *./gtk-3.0/gtk.css
 45172a3b7e426c42ecd354233b68a2e8 *./gtk-3.0/settings.ini
 862d756fb484c74cf90ebaf6327384ad *./xfce-notify-4.0/gtk.css
 d03a993add76d4a06dce3cd16e1691c0 *./xfwm4/hide-pressed.png
@@ -123,7 +123,7 @@ bb0dc8f1450ca5a38be4fef1c62fd0b0 *./xfwm4/hide-prelight.png
 11e03c81a41c82840e3030a7ed816717 *./xfwm4/shade-toggled-prelight.xpm
 c60adb598b93d908c44fbd245bf2d7c8 *./xfwm4/bottom-left-inactive.png
 2cace5191fab8379bac4366e3339b140 *./xfwm4/menu-inactive.png
-aa7a7e0592af82350848193136afff60 *./Information.txt
+47fc36da75c4376e1b9aa56921c4f421 *./Information.txt
 c2a8998d9ea495081217f600783c9936 *./Extras/Theme-Colors.txt
 1b09154241066f4677b653eb2cad2fb4 *./Extras/Computing-Machine.conf
 cc9e8a4ede2e39739e0d30cf16be49aa *./Extras/gtk-icontheme/pan-end-symbolic.svg
@@ -134,4 +134,4 @@ d4a776373a0da3ba0bbfe72be8a78d08 *./Extras/gtk-icontheme/pan-end-symbolic-rtl.sv
 6aa48f7b3df6563fe52cd3f090cbdfd3 *./Extras/gtk-icontheme/pan-up-symbolic.svg
 1cef1a80c99c1d4ed99a7258f9e6c9e8 *./Extras/gtk-icontheme/pan-down-symbolic.svg
 58e68094d43b8a30f52413dc4e13e78c *./Extras/gtk-icontheme/list-remove-symbolic.svg
-500e53fc01383665e74c2d74d5027e87 *./gtk-2.0/gtkrc
+1f0011762d73c2087ab46eb0da28484a *./gtk-2.0/gtkrc

@@ -43,7 +43,7 @@ style "standard-default"
 	bg[ACTIVE] = "#b9b9b9" # 0.725 white | unselected tabs; non-moused-over selected (i.e., pressed) workable buttons; scrollbar troughs
 	fg[ACTIVE] = "#000000" # 0.0 white | text within 'bg[ACTIVE]'; dotted lines in or around focused items (e.g., buttons; non-moused-over directory items in the KDE Dolphin file-manager)
 
-	bg[INSENSITIVE] = "#acacac" # 0.675 white | {unfocused title-bars; unfocused window borders are based upon this color; [note: since xfwm4 4.14, these functions have been moved to the '../xfwm4/themerc' file]} disabled buttons; disabled scrollbar buttons, i.e., scrollbar ends when the scrollbar handles are abutting them
+	bg[INSENSITIVE] = "#acacac" # 0.675 white | {unfocused title-bars; unfocused window borders are based upon this color; [note: since xfwm4 4.14, these functions have been moved to the '../xfwm4/themerc' file]} unworkable buttons; unworkable scrollbar buttons, i.e., scrollbar ends when the scrollbar handles are abutting them
 	fg[INSENSITIVE] = "#656565" # 0.4 white | text within 'bg[INSENSITIVE]'
 
 	bg[PRELIGHT] = "#dfdfdf" # 0.875 white | moused-over workable buttons; moused-over text-area next to workable check-boxes
@@ -59,8 +59,8 @@ style "standard-default"
 	base[ACTIVE] = "#999999" # 0.6 white | selected items within unfocused fields; color surrounding selected text within unfocused 'bg[NORMAL]'
 	text[ACTIVE] = "#d9d9d9" # 0.85 white | text within 'base[ACTIVE]'; text of selected directory items within an unfocused window of the KDE Dolphin file-manager; file-size information of selected directory items within the KDE Dolphin file-manager (this is inconsistent behavior)
 
-	base[INSENSITIVE] = "#bfbfbf" # 0.75 white | disabled fields that text can be written into when enabled; disabled check-boxes; lighter alternating rows of disabled fields of selectable lists (the darker alternating rows are based upon this color)
-	text[INSENSITIVE] = "#7f7f7f" # 0.5 white | text within 'base[INSENSITIVE]'; disabled entry and combobox text; disabled checks
+	base[INSENSITIVE] = "#bfbfbf" # 0.75 white | disabled fields that text can be written into when enabled; unworkable check-boxes; lighter alternating rows of disabled fields of selectable lists (the darker alternating rows are based upon this color)
+	text[INSENSITIVE] = "#7f7f7f" # 0.5 white | text within 'base[INSENSITIVE]'; disabled entry and combobox text; unworkable checks
 
 	base[PRELIGHT] = "#447fba" # 13/48 R, 1/2 G, 35/48 B | moused-over workable check-boxes; area around some (but not all) moused-over hyperlinks
 	# text[PRELIGHT] = "#ffff00" # 1/1 R, 1/1 G, 0/1 B | checks within 'base[PRELIGHT]'; text of moused-over 'GtkComboBox::appears-as-list = 0'
@@ -72,6 +72,33 @@ style "standard-default"
 	# engine "redmond95" {}
 }
 class "GtkWidget" style "standard-default"
+
+
+style "standard-option-menu"
+{
+	GtkOptionMenu::indicator_width = 7
+	GtkOptionMenu::indicator_left_spacing = 6
+	GtkOptionMenu::indicator_right_spacing = 4
+}
+class "GtkOptionMenu" style "standard-option-menu"
+
+
+style "standard-scrollbar"
+{
+	GtkRange::trough_border = 0
+	GtkRange::slider_width = 16
+	GtkRange::stepper_size = 16
+	GtkRange::stepper_spacing = 0
+}
+class "GtkScrollbar" style "standard-scrollbar"
+
+
+style "standard-scales"
+{
+	GtkRange::slider-width = 19
+	GtkScale::slider-length = 13
+}
+class "*Scale*" style "standard-scales"
 
 
 style "standard-menu"
@@ -97,33 +124,6 @@ style "standard-list"
 	bg[PRELIGHT] = "#000000" # 0.0 white | the original 'Redmond/gtk-2.0/gtkrc' had '{ 0.0, 0.0, 0.0 }'
 }
 class "GtkList" style "standard-list"
-
-
-style "standard-scrollbar"
-{
-	GtkRange::trough_border = 0
-	GtkRange::slider_width = 16
-	GtkRange::stepper_size = 16
-	GtkRange::stepper_spacing = 0
-}
-class "GtkScrollbar" style "standard-scrollbar"
-
-
-style "standard-scales"
-{
-	GtkRange::slider-width = 19
-	GtkScale::slider-length = 13
-}
-class "*Scale*" style "standard-scales"
-
-
-style "standard-option-menu"
-{
-	GtkOptionMenu::indicator_width = 7
-	GtkOptionMenu::indicator_left_spacing = 6
-	GtkOptionMenu::indicator_right_spacing = 4
-}
-class "GtkOptionMenu" style "standard-option-menu"
 
 
 style "standard-progressbar"
