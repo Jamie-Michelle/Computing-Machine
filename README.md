@@ -10,9 +10,9 @@ The Conky system-monitor setup depicted below is available here: https://github.
 
 ⁂
 
-Changes for version 17.10:
+Changes for version 17.11:
 
-Recent versions of GTK+ 3 have changed the colors of how some programs' particular text-entry fields render. This release makes said fields consistent with the colors of other text-entry fields.
+This release continues to correct how recent versions of GTK+ 3 render the colors of some programs' particular text-entry fields. This release makes said fields consistent with the colors of other text-entry fields.
 
 Note that release version 17.6 implemented a number of major improvements to the GTK+ 3 portion of the theme.
 

@@ -865,6 +865,7 @@ iconview.view:hover {
 }
 
 .view:disabled,
+.view text:disabled,
 list:disabled {
 	background-color: shade(@theme_base_color, 0.925);
 	color: mix(@theme_text_color, @theme_base_color, 0.5);
